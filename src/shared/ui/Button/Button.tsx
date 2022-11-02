@@ -9,6 +9,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 export enum ButtonTheme {
   'CLEAN' = 'clean',
+  'DEFAULT' = 'default',
 }
 
 export const Button: FC<ButtonProps> = (props) => {

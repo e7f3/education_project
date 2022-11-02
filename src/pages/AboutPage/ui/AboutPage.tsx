@@ -1,7 +1,10 @@
+import { useTranslation } from "react-i18next"
+
 interface Props {}
 
 const AboutPage = ({}: Props) => {
-  return <div>About Page</div>
+  const {t} = useTranslation('about')
+  return <div>{t('About us')}</div>
 }
 
 export default AboutPage
