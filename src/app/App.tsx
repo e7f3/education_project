@@ -1,19 +1,19 @@
 import './styles/index.scss'
 
-import { useTheme } from './providers/ThemeProvider'
-import { AppRouter } from './providers/router'
-import { Navbar } from 'widgets/Navbar'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Sidebar } from 'widgets/Sidebar'
 import { Suspense } from 'react'
 
-interface Props {}
+import { classNames } from 'shared/lib/classNames/classNames'
+import { Navbar } from 'widgets/Navbar'
+import { Sidebar } from 'widgets/Sidebar'
 
-export const App = ({}: Props) => {
+import { AppRouter } from './providers/router'
+import { useTheme } from './providers/ThemeProvider'
+
+export const App = () => {
   const { theme } = useTheme()
 
   return (
-    <Suspense fallback={'Loading...'}>
+    <Suspense fallback="Loading...">
       <div className={classNames('app', {}, [theme])}>
         <Navbar />
         <div className="page-content">

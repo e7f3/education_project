@@ -1,10 +1,12 @@
-import classes from './Sidebar.module.scss'
 import { FC, useState } from 'react'
+
+import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { ThemeToggler } from 'widgets/ThemeToggler'
 import { LanguageToggler } from 'widgets/LanguageToggler'
-import { useTranslation } from 'react-i18next'
+import { ThemeToggler } from 'widgets/ThemeToggler'
+
+import classes from './Sidebar.module.scss'
 
 export interface SidebarProps {
   className?: string
@@ -24,7 +26,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       className={classNames(
         classes.Sidebar,
         { [classes.collapsed]: collapsed },
-        [className]
+        [className],
       )}
     >
       <Button theme={ButtonTheme.DEFAULT} onClick={onToggle}>

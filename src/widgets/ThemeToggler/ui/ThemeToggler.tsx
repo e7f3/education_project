@@ -1,9 +1,11 @@
-import classes from './ThemeToggler.module.scss'
 import { FC } from 'react'
-import { classNames } from 'shared/lib/classNames/classNames'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+
 import { useTheme } from 'app/providers/ThemeProvider'
 import DayNight from 'shared/assets/icons/day_night.svg'
+import { classNames } from 'shared/lib/classNames/classNames'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+
+import classes from './ThemeToggler.module.scss'
 
 export interface ThemeTogglerProps {
   className?: string

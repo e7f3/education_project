@@ -1,9 +1,7 @@
-import { useTranslation } from "react-i18next"
+import { useTranslation } from 'react-i18next'
 
-interface Props {}
-
-const AboutPage = ({}: Props) => {
-  const {t} = useTranslation('about')
+const AboutPage = () => {
+  const { t } = useTranslation('about')
   return <div>{t('About us')}</div>
 }
 
