@@ -4,8 +4,6 @@ import { useTranslation } from 'react-i18next'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
-import classes from './LanguageToggler.module.scss'
-
 export interface LanguageTogglerProps {
   className?: string
 }
@@ -20,7 +18,7 @@ export const LanguageToggler: FC<LanguageTogglerProps> = (props) => {
   return (
     <Button
       theme={ButtonTheme.DEFAULT}
-      className={classNames(classes.LanguageToggler, {}, [className])}
+      className={classNames('', {}, [className])}
       onClick={toggleLanguage}
     >
       {t('Language')}
