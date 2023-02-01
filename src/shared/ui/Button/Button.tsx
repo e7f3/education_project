@@ -3,7 +3,7 @@ import { ButtonHTMLAttributes, FC } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  theme: ButtonTheme
+  theme?: ButtonTheme
   className?: string
 }
 
@@ -13,7 +13,7 @@ export enum ButtonTheme {
 }
 
 export const Button: FC<ButtonProps> = (props) => {
-  const { className, theme, children, ...restProps } = props
+  const { className, theme = ButtonTheme.DEFAULT, children, ...restProps } = props
   return (
     <button
       className={classNames(classes.Button, {}, [className, classes[theme]])}

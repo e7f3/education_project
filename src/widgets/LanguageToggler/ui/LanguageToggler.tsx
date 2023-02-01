@@ -12,7 +12,7 @@ export const LanguageToggler: FC<LanguageTogglerProps> = (props) => {
   const { className } = props
   const { t, i18n } = useTranslation()
 
-  const toggleLanguage = () => {
+  const toggleLanguage = async () => {
     i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
   }
   return (
@@ -20,6 +20,7 @@ export const LanguageToggler: FC<LanguageTogglerProps> = (props) => {
       theme={ButtonTheme.DEFAULT}
       className={classNames('', {}, [className])}
       onClick={toggleLanguage}
+      data-testid='language-toggler'
     >
       {t('Language')}
     </Button>

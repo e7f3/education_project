@@ -28,8 +28,13 @@ export const Sidebar: FC<SidebarProps> = (props) => {
         { [classes.collapsed]: collapsed },
         [className],
       )}
+      data-testid='sidebar'
     >
-      <Button theme={ButtonTheme.DEFAULT} onClick={onToggle}>
+      <Button
+        theme={ButtonTheme.DEFAULT}
+        onClick={onToggle}
+        data-testid='sidebar-collapse-button'
+      >
         {t(collapsed ? 'Expand' : 'Collapse')}
       </Button>
       <div className={classes.togglers}>
