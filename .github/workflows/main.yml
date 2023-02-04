@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [17.4.0]
+        node-version: [17.x]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -24,13 +24,13 @@ jobs:
         run: npm install
 
       - name: Build an app (production)
-        run: webpack --env mode='production'
+        run: npm run build:prod
 
       - name: Check unit tests
-        run: jest --config ./config/jest/jest.config.ts
+        run: npm run test:unit
 
       - name: Start style linter
-        run: npx stylelint \"**/*.scss\"
+        run: npm run lint:scss
 
       - name: Start typescript linter
-        run: eslint \"**/*.{ts, tsx}\"
+        run: npm run lint:ts
