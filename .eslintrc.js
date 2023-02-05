@@ -2,16 +2,19 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
-    jest: true,
+    'jest/globals': true,
   },
   extends: [
+    'plugin:import/recommended',
+    'plugin:import/typescript',
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'eslint-config-airbnb',
-    'plugin:react/jsx-runtime',
     'plugin:i18next/recommended',
+    '@storybook/eslint-config-storybook',
+    'plugin:react/jsx-runtime',
   ],
-  plugins: ['react', '@typescript-eslint'],
+  plugins: ['react', '@typescript-eslint', 'jest'],
   root: true,
 
   parser: '@typescript-eslint/parser',
@@ -21,6 +24,7 @@ module.exports = {
     },
     ecmaVersion: 'latest',
     sourceType: 'module',
+    project: './tsconfig.json',
   },
   rules: {
     semi: 'off',
@@ -60,6 +64,9 @@ module.exports = {
         ignoreAttribute: ['data-testid', 'to'],
       },
     ],
+    'prettier/prettier': 'off',
+    '@typescript-eslint/naming-convention': 'warn',
+    'react/display-name': 'off',
   },
   globals: {
     __IS_DEV__: true,
@@ -72,4 +79,10 @@ module.exports = {
       },
     },
   ],
+  settings: {
+    'import/resolver': {
+      typescript: true,
+      node: true,
+    },
+  },
 }

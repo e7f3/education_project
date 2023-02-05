@@ -16,8 +16,23 @@ export const parameters = {
   },
 }
 
+export const globalTypes = {
+  locale: {
+    name: 'Locale',
+    description: 'Internationalization locale',
+    toolbar: {
+      icon: 'globe',
+      items: [
+        { value: 'ru', title: 'Russian' },
+        { value: 'en', title: 'English' },
+      ],
+      showName: true,
+    },
+  },
+}
+
 addDecorator(RouterDecorator)
 addDecorator(StyleDecorator)
+// addDecorator(SuspenseDecorator)
 addDecorator(I18NextDecorator)
-addDecorator(SuspenseDecorator)
 addDecorator(ThemeDecorator(Theme.LIGHT))
