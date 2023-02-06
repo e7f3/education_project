@@ -16,10 +16,10 @@ export const I18NextDecorator = (
   }, [locale])
 
   return (
-    <Suspense fallback=''>
+    // <Suspense fallback=''>
       <I18nextProvider i18n={i18nForStorybook}>
         <StoryComponent />
       </I18nextProvider>
-    </Suspense>
+    // </Suspense>
   )
 }
