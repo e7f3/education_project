@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react'
 import { withTranslation } from 'react-i18next'
+
 import {
   renderWithTranslation,
 } from 'shared/lib/testHelpers/renderWithTranslation/renderWithTranslation'

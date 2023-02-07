@@ -14,6 +14,11 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  locale: 'ru',
+  locales: {
+    ru: 'Russian',
+    en: 'English',
+  },
 }
 
 export const globalTypes = {

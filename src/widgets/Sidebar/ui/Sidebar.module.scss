@@ -1,4 +1,6 @@
 .Sidebar {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -12,8 +14,28 @@
   transition: width 0.2s ease-out;
 }
 
-.collapsed {
-  width: var(--sidebar-width-collapsed);
+.links {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  width: fit-content;
+  padding: 10px 0;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+
+  column-gap: 10px;
+}
+
+.linkIcon.fill {
+  fill: var(--action-color);
+}
+
+.linkIcon.stroke {
+  stroke: var(--action-color);
 }
 
 .togglers {
@@ -24,4 +46,39 @@
 
   width: 100%;
   margin-top: auto;
+}
+
+.collapseButton {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+
+  transform: translateX(calc(100% + 5px));
+}
+
+.collapseIcon {
+  width: 100%;
+  height: 100%;
+
+  fill: var(--primary-color);
+
+  transition: transform 0.2s ease-out;
+}
+
+.collapseIcon.rotate {
+  transform: rotateY(180deg);
+}
+
+.Sidebar.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.Sidebar.collapsed .links {
+  align-self: center;
+
+  column-gap: none;
+}
+
+.Sidebar.collapsed .linkText {
+  display: none;
 }

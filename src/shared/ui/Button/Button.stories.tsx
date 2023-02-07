@@ -1,8 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
+
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
-import { Button, ButtonTheme } from './Button'
+import { Button, ButtonSize, ButtonTheme, ButtonVariant } from './Button'
 
 export default {
   title: 'shared/Button',
@@ -25,15 +26,41 @@ Clean.args = {
 export const Default = Template.bind({})
 Default.args = {
   theme: ButtonTheme.DEFAULT,
+  variant: ButtonVariant.DEFAULT
 }
 
-export const Outlined = Template.bind({})
-Outlined.args = {
-  theme: ButtonTheme.OUTLINED,
+export const Inverted = Template.bind({})
+Inverted.args = {
+  theme: ButtonTheme.INVERTED,
 }
 
-export const OutlinedDark = Template.bind({})
-OutlinedDark.args = {
-  theme: ButtonTheme.OUTLINED,
+export const InvertedDark = Template.bind({})
+InvertedDark.args = {
+  theme: ButtonTheme.INVERTED,
 }
-OutlinedDark.decorators = [ThemeDecorator(Theme.DARK)]
+InvertedDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const MediumSize = Template.bind({})
+MediumSize.args = {
+  theme: ButtonTheme.DEFAULT,
+  size: ButtonSize.M,
+}
+
+export const LargeSize = Template.bind({})
+LargeSize.args = {
+  theme: ButtonTheme.DEFAULT,
+  size: ButtonSize.L,
+}
+
+export const XLargeSize = Template.bind({})
+XLargeSize.args = {
+  theme: ButtonTheme.DEFAULT,
+  size: ButtonSize.XL,
+}
+
+export const SquareVariant = Template.bind({})
+SquareVariant.args = {
+  theme: ButtonTheme.DEFAULT,
+  variant: ButtonVariant.SQUARE,
+  children: '>'
+}

@@ -13,8 +13,9 @@ module.exports = {
     'plugin:i18next/recommended',
     '@storybook/eslint-config-storybook',
     'plugin:react/jsx-runtime',
+    'plugin:jsx-a11y/recommended',
   ],
-  plugins: ['react', '@typescript-eslint', 'jest'],
+  plugins: ['react', '@typescript-eslint', 'jest', 'import'],
   root: true,
 
   parser: '@typescript-eslint/parser',
@@ -27,6 +28,35 @@ module.exports = {
     project: './tsconfig.json',
   },
   rules: {
+    // 'react/jsx-indent': ['error', 'tab'],
+    'import/order': [
+      'error',
+      {
+        groups: [
+          ['external', 'builtin'],
+          'internal',
+          ['sibling', 'parent'],
+          'index',
+        ],
+        pathGroups: [
+          {
+            pattern: '@react',
+            group: 'external',
+            position: 'before',
+          },
+          {
+            pattern: '@src/**',
+            group: 'internal',
+          },
+        ],
+        pathGroupsExcludedImportTypes: ['internal', 'react'],
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
+        },
+      },
+    ],
     semi: 'off',
     'react/function-component-definition': [
       2,
