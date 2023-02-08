@@ -11,7 +11,7 @@ i18n
   .use(
     resourcesToBackend(
       (lng: string, ns: string) =>
-        import(`../../../../public/locales/${lng}/${ns}.json`)
+        import(`./locales/${lng}/${ns}.json`)
     )
   )
   .init({
