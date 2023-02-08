@@ -13,30 +13,44 @@ jobs:
         node-version: [17.x]
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install dependencies
         run: npm install
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Build an app (production)
         run: npm run build:prod
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Check unit tests
         run: npm run test:unit
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Start style linter
         run: npm run lint:scss
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Start typescript linter
         run: npm run lint:ts
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Build storybook
         run: npm run storybook:build
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Check regression tests
         run: npm run test:regr:ci
+        with:
+          node-version: ${{ matrix.node-version }}
