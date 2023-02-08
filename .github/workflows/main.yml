@@ -10,7 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [17.x]
+        node-version:
+          - 16
+          - '17x'
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -22,35 +24,21 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Build an app (production)
         run: npm run build:prod
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Check unit tests
         run: npm run test:unit
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Start style linter
         run: npm run lint:scss
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Start typescript linter
         run: npm run lint:ts
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Build storybook
         run: npm run storybook:build
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Check regression tests
         run: npm run test:regr:ci
-        with:
-          node-version: ${{ matrix.node-version }}
