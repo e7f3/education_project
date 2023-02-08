@@ -12,7 +12,7 @@ jobs:
       matrix:
         node-version:
           - 16
-          - '17x'
+          - 17
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
