@@ -5,15 +5,13 @@ import resourcesToBackend from 'i18next-resources-to-backend'
 import { initReactI18next } from 'react-i18next'
 
 i18n
-.use(Backend)
-.use(LanguageDetector)
+  .use(Backend)
+  .use(LanguageDetector)
   .use(initReactI18next)
-
-
   .use(
     resourcesToBackend(
       (lng: string, ns: string) =>
-        import(`./locales/${lng}/${ns}.json`)
+        import(`../../../../public/locales/${lng}/${ns}.json`)
     )
   )
   .init({

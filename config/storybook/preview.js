@@ -1,4 +1,5 @@
 import { addDecorator } from '@storybook/react'
+
 import { Theme } from 'app/providers/ThemeProvider'
 import { I18NextDecorator } from 'shared/config/storybook/I18NextDecorator/I18NextDecorator'
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator'
