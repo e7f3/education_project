@@ -18,9 +18,9 @@ i18n
     fallbackLng: 'ru',
     lng: 'ru',
     debug: true, // change to true on push
-    react: {
-      useSuspense: false,
-    },
+    // react: {
+    //   useSuspense: false,
+    // },
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
