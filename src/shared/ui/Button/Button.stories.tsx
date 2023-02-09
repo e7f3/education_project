@@ -26,7 +26,7 @@ Clean.args = {
 export const Default = Template.bind({})
 Default.args = {
   theme: ButtonTheme.DEFAULT,
-  variant: ButtonVariant.DEFAULT
+  variant: ButtonVariant.DEFAULT,
 }
 
 export const Inverted = Template.bind({})
@@ -62,5 +62,5 @@ export const SquareVariant = Template.bind({})
 SquareVariant.args = {
   theme: ButtonTheme.DEFAULT,
   variant: ButtonVariant.SQUARE,
-  children: '>'
+  children: '>',
 }

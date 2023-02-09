@@ -83,7 +83,7 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'import/no-import-module-exports': 'off',
     'no-param-reassign': 'off',
-    'max-len': [2, { ignoreComments: true, ignoreUrls: true, code: 100 }],
+    'max-len': [2, { ignoreComments: true, ignoreUrls: true, code: 110 }],
     '@typescript-eslint/no-var-requires': 'warn',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { enums: false }],
@@ -94,7 +94,13 @@ module.exports = {
         ignoreAttribute: ['data-testid', 'to'],
       },
     ],
-    'prettier/prettier': 'off',
+    // 'prettier/prettier': 'off',
+    'prettier/prettier': ['error', {
+      semi: false,
+      singleQuote: true,
+      jsxSingleQuote: true,
+      trailingComma: 'es5'
+    }],
     '@typescript-eslint/naming-convention': 'warn',
     'react/display-name': 'off',
   },

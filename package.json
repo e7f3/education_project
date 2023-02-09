@@ -16,7 +16,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:regr": "npx loki test",
     "test:regr:appr": "npx loki approve",
-    "test:regr:ci": "npx loki --requireReference --reactUri file:./storybook-static --chromeRetries 10",
+    "test:regr:ci": "npx loki update --requireReference --reactUri file:./storybook-static --chromeRetries 10",
     "storybook": "start-storybook -p 6006 -c ./config/storybook -s ./public",
     "storybook:build": "build-storybook -c ./config/storybook -s ./public"
   },

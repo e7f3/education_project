@@ -44,7 +44,7 @@ describe('classNames', () => {
     }
     const classNamesArray = ['test5', 'test6', 'test7']
     expect(classNames('test1', classNamesObj, classNamesArray)).toBe(
-      'test1 test2 test4 test5 test6 test7',
+      'test1 test2 test4 test5 test6 test7'
     )
   })
 })

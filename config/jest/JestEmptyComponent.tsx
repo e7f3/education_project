@@ -1,5 +1,3 @@
-const JestEmptyComponent = () => (
-  <div />
-)
+const JestEmptyComponent = () => <div />
 
 export default JestEmptyComponent

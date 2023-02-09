@@ -6,7 +6,6 @@
 import path from 'path'
 
 export default {
-
   // Automatically clear mock calls, instances and results before every test
   clearMocks: true,
 
@@ -39,13 +38,9 @@ export default {
   },
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  setupFilesAfterEnv: [
-    '<rootDir>/config/jest/setupTests.ts',
-  ],
+  setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
 
-  modulePaths: [
-    '<rootDir>/src',
-  ],
+  modulePaths: ['<rootDir>/src'],
 
   // All imported modules in your tests should be mocked automatically
   // automock: false,

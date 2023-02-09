@@ -10,7 +10,5 @@ export interface NavbarProps {
 
 export const Navbar: FC<NavbarProps> = (props) => {
   const { className } = props
-  return (
-    <div className={classNames(classes.Navbar, {}, [className])} />
-  )
+  return <div className={classNames(classes.Navbar, {}, [className])} />
 }

@@ -1,27 +1,17 @@
 import { fireEvent, screen } from '@testing-library/react'
-import { BrowserRouter } from 'react-router-dom'
 
-import { renderWithTranslation } 
-  from 'shared/lib/testHelpers/renderWithTranslation/renderWithTranslation'
+import { componentRender } from 'shared/lib/testHelpers/componentRender/componentRender'
 import { Sidebar } from 'widgets/Sidebar/index'
 
 describe('Sidebar.test', () => {
   test('Simple Sidebar.test', () => {
-    renderWithTranslation(
-      <BrowserRouter>
-        <Sidebar />
-      </BrowserRouter>
-    )
+    componentRender(<Sidebar />)
 
     expect(screen.getByTestId('sidebar')).toBeInTheDocument()
   })
 
   test('Collapse Sidebar.test', () => {
-    renderWithTranslation(
-      <BrowserRouter>
-        <Sidebar />
-      </BrowserRouter>
-    )
+    componentRender(<Sidebar />)
 
     const collapseButton = screen.getByTestId('sidebar-collapse-button')
 

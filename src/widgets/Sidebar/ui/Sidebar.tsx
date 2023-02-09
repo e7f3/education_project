@@ -81,7 +81,7 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       </Button>
       <div className={classes.togglers}>
         <ThemeToggler />
-        <LanguageToggler short={collapsed}/>
+        <LanguageToggler short={collapsed} />
       </div>
     </div>
   )

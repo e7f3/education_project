@@ -1,9 +1,7 @@
 import { screen } from '@testing-library/react'
 import { withTranslation } from 'react-i18next'
 
-import {
-  renderWithTranslation,
-} from 'shared/lib/testHelpers/renderWithTranslation/renderWithTranslation'
+import { renderWithTranslation } from 'shared/lib/testHelpers/renderWithTranslation/renderWithTranslation'
 import { LanguageToggler } from 'widgets/LanguageToggler/index'
 
 describe('LanguageToggler.test', () => {

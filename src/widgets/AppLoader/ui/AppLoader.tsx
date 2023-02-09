@@ -6,10 +6,10 @@ import { Loader } from 'shared/ui/Loader/Loader'
 import classes from './AppLoader.module.scss'
 
 export interface AppLoaderProps {
-    className?: string
+  className?: string
 }
 
-export const AppLoader : FC<AppLoaderProps> = (props) => {
+export const AppLoader: FC<AppLoaderProps> = (props) => {
   const { className } = props
   return (
     <div className={classNames(classes.AppLoader, {}, [className])}>

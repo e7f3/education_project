@@ -16,5 +16,5 @@ render(
       </ThemeProvider>
     </ErrorBoundary>
   </BrowserRouter>,
-  root,
+  root
 )
