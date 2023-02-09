@@ -15,8 +15,10 @@ jobs:
         node-version: 
           - 17
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
       - id: build-publish
         uses: bitovi/github-actions-react-to-ghp@v1.2.0
         with:
-          path: ../../.storybook-static
+          path: ./.storybook-static
           build_command: npm run storybook:build
