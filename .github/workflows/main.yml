@@ -24,26 +24,26 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      if: always()
       - name: Build an app (production)
         run: npm run build:prod
+        if: always()
 
-      if: always()
       - name: Check unit tests
         run: npm run test:unit
+        if: always()
 
-      if: always()
       - name: Start style linter
         run: npm run lint:scss
+        if: always()
 
-      if: always()
       - name: Start typescript linter
         run: npm run lint:ts
+        if: always()
 
-      if: always()
       - name: Build storybook
         run: npm run storybook:build
+        if: always()
 
-      if: always()
       - name: Check regression tests
         run: npm run test:regr:ci
+        if: always()

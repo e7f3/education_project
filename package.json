@@ -16,7 +16,7 @@
     "test:unit": "jest --config ./config/jest/jest.config.ts",
     "test:regr": "npx loki test",
     "test:regr:appr": "npx loki approve",
-    "test:regr:ci": "npx loki update --requireReference --reactUri file:./storybook-static --chromeRetries 10",
+    "test:regr:ci": "npx loki  --requireReference --reactUri file:./storybook-static --chromeRetries 10",
     "test:regr:json": "node scripts/generate-visual-json-report.js",
     "test:regr:html": "reg-cli --from .loki/report.json --report .loki/report.html",
     "test:regr:report": "npm run test:regr:json && npm run test:regr:html",
