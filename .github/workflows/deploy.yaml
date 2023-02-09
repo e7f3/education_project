@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: '17.x'
+        node-version: 
+          - 17
     steps:
       - id: build-publish
         uses: bitovi/github-actions-react-to-ghp@v1.2.0
