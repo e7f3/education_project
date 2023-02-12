@@ -1,8 +1,7 @@
-import './styles/index.scss'
-
-import { Suspense } from 'react'
+import { Suspense, useState } from 'react'
 
 import { classNames } from 'shared/lib/classNames/classNames'
+import { Modal } from 'shared/ui/Modal/Modal'
 import { AppLoader } from 'widgets/AppLoader/ui/AppLoader'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'

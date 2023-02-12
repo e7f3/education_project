@@ -4,11 +4,13 @@
 @import "./themes/dark";
 @import "./themes/light";
 
-.app {
-  min-height: 100vh;
-
+body {
   color: var(--secondary-color);
   font: var(--font-m);
+}
+
+.app {
+  min-height: 100vh;
 
   background-color: var(--primary-bg-color);
 }

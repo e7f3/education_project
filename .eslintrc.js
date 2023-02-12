@@ -15,7 +15,7 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:jsx-a11y/recommended',
   ],
-  plugins: ['react', '@typescript-eslint', 'jest', 'import'],
+  plugins: ['react', '@typescript-eslint', 'jest', 'import', 'react-hooks'],
   root: true,
 
   parser: '@typescript-eslint/parser',
@@ -95,23 +95,31 @@ module.exports = {
       },
     ],
     // 'prettier/prettier': 'off',
-    'prettier/prettier': ['error', {
-      semi: false,
-      singleQuote: true,
-      jsxSingleQuote: true,
-      trailingComma: 'es5'
-    }],
+    'prettier/prettier': [
+      'error',
+      {
+        semi: false,
+        singleQuote: true,
+        jsxSingleQuote: true,
+        trailingComma: 'es5',
+      },
+    ],
     '@typescript-eslint/naming-convention': 'warn',
     'react/display-name': 'off',
+    'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
+    'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
+    'jsx-a11y/click-events-have-key-events': 'warn',
+    'jsx-a11y/no-static-element-interactions': 'warn'
   },
   globals: {
     __IS_DEV__: true,
   },
   overrides: [
     {
-      files: ['**/src/**/*.test.{ts,tsx}'],
+      files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off',
+        'max-len': 'off'
       },
     },
   ],
