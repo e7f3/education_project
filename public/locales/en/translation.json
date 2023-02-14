@@ -9,5 +9,7 @@
   "Not Found Page": "Page not found :c",
   "Oops": "Oops! Something went wrong...",
   "Try again": "Try again",
-  "Auth": "Sign in"
+  "Auth": "Sign in",
+  "increment": "increment",
+  "decrement": "decrement"
 }

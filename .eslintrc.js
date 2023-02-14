@@ -82,7 +82,7 @@ module.exports = {
     'react/jsx-props-no-spreading': 'warn',
     'no-underscore-dangle': 'off',
     'import/no-import-module-exports': 'off',
-    'no-param-reassign': 'off',
+
     'max-len': [2, { ignoreComments: true, ignoreUrls: true, code: 110 }],
     '@typescript-eslint/no-var-requires': 'warn',
     'no-use-before-define': 'off',
@@ -109,7 +109,9 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error', // Checks rules of Hooks
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'jsx-a11y/click-events-have-key-events': 'warn',
-    'jsx-a11y/no-static-element-interactions': 'warn'
+    'jsx-a11y/no-static-element-interactions': 'warn',
+    // 'no-param-reassign': 'off',
+    'no-param-reassign': ['error', { props: false }],
   },
   globals: {
     __IS_DEV__: true,
@@ -119,7 +121,7 @@ module.exports = {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
       rules: {
         'i18next/no-literal-string': 'off',
-        'max-len': 'off'
+        'max-len': 'off',
       },
     },
   ],

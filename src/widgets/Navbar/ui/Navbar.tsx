@@ -27,8 +27,9 @@ export const Navbar: FC<NavbarProps> = (props) => {
         {t('Auth')}
       </Button>
       <Modal isOpen={isAuthOpen} onClose={toggleAuthModal}>
-        {/* eslint-disable-next-line */}
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti pariatur iusto, exercitationem corporis id veniam qui aspernatur accusamus molestias sint?
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+        pariatur iusto, exercitationem corporis id veniam qui aspernatur
+        accusamus molestias sint?
       </Modal>
     </div>
   )
