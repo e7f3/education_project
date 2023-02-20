@@ -11,5 +11,6 @@
   "Try again": "Попробовать снова",
   "Auth": "Войти",
   "increment": "увеличить",
-  "decrement": "уменьшить"
+  "decrement": "уменьшить",
+  "lorem": "        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti\n        pariatur iusto, exercitationem corporis id veniam qui aspernatur\n        accusamus molestias sint?"
 }

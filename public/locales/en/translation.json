@@ -11,5 +11,6 @@
   "Try again": "Try again",
   "Auth": "Sign in",
   "increment": "increment",
-  "decrement": "decrement"
+  "decrement": "decrement",
+  "lorem": "        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti\n        pariatur iusto, exercitationem corporis id veniam qui aspernatur\n        accusamus molestias sint?"
 }
