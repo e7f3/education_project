@@ -12,5 +12,8 @@
   "Auth": "Войти",
   "increment": "увеличить",
   "decrement": "уменьшить",
-  "lorem": "        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti\n        pariatur iusto, exercitationem corporis id veniam qui aspernatur\n        accusamus molestias sint?"
+  "lorem": "        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti\n        pariatur iusto, exercitationem corporis id veniam qui aspernatur\n        accusamus molestias sint?",
+  "Log in": "Войти",
+  "Username": "Имя пользователя",
+  "Password": "Пароль"
 }

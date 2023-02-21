@@ -42,15 +42,20 @@
 
   transform: rotateX(90deg);
 
-  transition: transform 0.2s ease-in;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in;
 }
 
 .Modal.opened .content {
   transform: rotateX(0);
+
+  animation-name: content-animation-open;
 }
 
 .Modal.isClosing .content {
   transform: rotateX(90deg);
+
+  animation-name: content-animation-close;
 }
 
 .Modal.opened .overlay {
@@ -94,5 +99,29 @@
     background-color: transparent;
 
     backdrop-filter: unset;
+  }
+}
+
+@keyframes content-animation-open {
+  from {
+    opacity: 0.2;
+    transform: rotateX(90deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+
+@keyframes content-animation-close {
+  from {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+
+  to {
+    opacity: 0.2;
+    transform: rotateX(90deg);
   }
 }

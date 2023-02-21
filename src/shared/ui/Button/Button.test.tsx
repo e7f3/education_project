@@ -1,7 +1,7 @@
 // import { screen } from '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
 
-import { Button } from 'shared/ui/Button/Button'
+import { Button } from './Button'
 
 describe('Button ui component', () => {
   test('Appearance on screen', () => {

@@ -1,10 +1,14 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import { counterReducer } from 'entities/Counter'
+import { userReducer } from 'entities/User'
 
 import { StateShema } from './StateShema'
 
-const rootReducer = combineReducers({ counter: counterReducer })
+const rootReducer = combineReducers({
+  counter: counterReducer,
+  user: userReducer,
+})
 
 export const createReduxStore = (initialState?: StateShema) => {
   return configureStore<StateShema>({

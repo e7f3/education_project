@@ -1,0 +1,18 @@
+.Input {
+  padding: 5px 15px;
+
+  color: var(--primary-color);
+
+  border: 1px solid var(--primary-color);
+  border-radius: 0;
+
+  background-color: var(--secondary-bg-color);
+
+  box-shadow: none;
+}
+
+.Input:focus {
+  border: 1px solid var(--action-color);
+
+  outline: 1px solid var(--action-color);
+}

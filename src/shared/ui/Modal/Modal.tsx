@@ -11,12 +11,14 @@ export interface ModalProps {
   className?: string
   isOpen: boolean
   onClose?: () => void
+  lazy?: boolean
 }
 
 export const Modal: FC<ModalProps> = (props) => {
-  const { className, isOpen, onClose, children } = props
+  const { className, isOpen, onClose, lazy = true, children } = props
 
   const [isClosing, setIsClosing] = useState(false)
+  const [wasOpened, setWasOpened] = useState(false)
   const timeoutIdRef = useRef<ReturnType<typeof setTimeout>>()
 
   const handleClose = useCallback(() => {
@@ -43,6 +45,12 @@ export const Modal: FC<ModalProps> = (props) => {
   )
 
   useEffect(() => {
+    if (isOpen && !wasOpened) {
+      setWasOpened(true)
+    }
+  }, [isOpen, wasOpened])
+
+  useEffect(() => {
     if (isOpen) {
       window.addEventListener('keydown', handleKeyDown)
     }
@@ -55,6 +63,10 @@ export const Modal: FC<ModalProps> = (props) => {
   const mods: Record<string, boolean> = {
     [classes.opened]: isOpen,
     [classes.isClosing]: isClosing,
+  }
+
+  if (!wasOpened) {
+    return null
   }
 
   return (

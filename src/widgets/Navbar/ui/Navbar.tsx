@@ -1,9 +1,9 @@
 import { FC, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 
+import { LoginModal } from 'features/AuthByUsername'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
-import { Modal } from 'shared/ui/Modal/Modal'
 
 import classes from './Navbar.module.scss'
 
@@ -26,9 +26,7 @@ export const Navbar: FC<NavbarProps> = (props) => {
       <Button theme={ButtonTheme.DEFAULT} onClick={toggleAuthModal}>
         {t('Auth')}
       </Button>
-      <Modal isOpen={isAuthOpen} onClose={toggleAuthModal}>
-        {t('lorem')}
-      </Modal>
+      <LoginModal isOpen={isAuthOpen} onClose={toggleAuthModal} />
     </div>
   )
 }
