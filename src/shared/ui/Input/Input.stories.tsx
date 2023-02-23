@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
+import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { Input } from './Input'
@@ -13,9 +14,14 @@ export default {
   },
   args: {
     value: 'Text',
+    placeholder: 'Placeholder',
   },
 } as ComponentMeta<typeof Input>
 
 const Template: ComponentStory<typeof Input> = (args) => <Input {...args} />
 
 export const Default = Template.bind({})
+Default.decorators = [FlexDecorator]
+
+export const DefaultDark = Template.bind({})
+DefaultDark.decorators = [FlexDecorator, ThemeDecorator(Theme.DARK)]
