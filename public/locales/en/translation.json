@@ -15,5 +15,8 @@
   "lorem": "        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti\n        pariatur iusto, exercitationem corporis id veniam qui aspernatur\n        accusamus molestias sint?",
   "Log in": "Log in",
   "Username": "Username",
-  "Password": "Password"
+  "Password": "Password",
+  "Auth form": "Authorization",
+  "Invalid auth": "Invalid username or password",
+  "Logout": "Sign out"
 }

@@ -1,8 +1,8 @@
 export interface User {
   id: number
-  name: string
+  username: string
 }
 
 export interface UserShema {
-  user?: User
+  userAuthData?: User
 }

@@ -1,7 +1,8 @@
-import { Suspense, useState } from 'react'
+import { Suspense, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 
+import { userActions } from 'entities/User'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Modal } from 'shared/ui/Modal/Modal'
 import { AppLoader } from 'widgets/AppLoader/ui/AppLoader'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
@@ -11,6 +12,11 @@ import { useTheme } from './providers/ThemeProvider'
 
 export const App = () => {
   const { theme } = useTheme()
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(userActions.initialAuth())
+  }, [dispatch])
 
   return (
     <Suspense fallback={<AppLoader />}>

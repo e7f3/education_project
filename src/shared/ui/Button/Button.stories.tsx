@@ -23,10 +23,22 @@ Clean.args = {
   theme: ButtonTheme.CLEAN,
 }
 
+export const CleanDisabled = Template.bind({})
+CleanDisabled.args = {
+  theme: ButtonTheme.CLEAN,
+  disabled: true,
+}
+
 export const Default = Template.bind({})
 Default.args = {
   theme: ButtonTheme.DEFAULT,
   variant: ButtonVariant.DEFAULT,
+}
+
+export const DefaultDisabled = Template.bind({})
+DefaultDisabled.args = {
+  theme: ButtonTheme.DEFAULT,
+  disabled: true,
 }
 
 export const Inverted = Template.bind({})
@@ -34,11 +46,24 @@ Inverted.args = {
   theme: ButtonTheme.INVERTED,
 }
 
+export const InvertedDisabled = Template.bind({})
+InvertedDisabled.args = {
+  theme: ButtonTheme.INVERTED,
+  disabled: true,
+}
+
 export const InvertedDark = Template.bind({})
 InvertedDark.args = {
   theme: ButtonTheme.INVERTED,
 }
 InvertedDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const DefaultDarkDisabled = Template.bind({})
+DefaultDarkDisabled.args = {
+  theme: ButtonTheme.DEFAULT,
+  disabled: true,
+}
+DefaultDarkDisabled.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const MediumSize = Template.bind({})
 MediumSize.args = {

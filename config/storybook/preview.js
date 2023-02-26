@@ -2,6 +2,7 @@ import { addDecorator } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
 import { I18NextDecorator } from 'shared/config/storybook/I18NextDecorator/I18NextDecorator'
+import { ProviderDecorator } from 'shared/config/storybook/ProviderDecorator/ProviderDecorator'
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator'
 import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator'
 import { SuspenseDecorator } from 'shared/config/storybook/SuspenseDecorator/SuspenseDecorator'
@@ -37,6 +38,15 @@ export const globalTypes = {
   },
 }
 
+addDecorator(
+  ProviderDecorator({
+    login: {
+      username: '123',
+      password: '123',
+      error: 'error',
+    },
+  })
+)
 addDecorator(RouterDecorator)
 addDecorator(StyleDecorator)
 // addDecorator(SuspenseDecorator)

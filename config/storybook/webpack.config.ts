@@ -1,5 +1,5 @@
 import path from 'path'
-import { Configuration, RuleSetRule } from 'webpack'
+import { Configuration, RuleSetRule, DefinePlugin } from 'webpack'
 
 import { buildCssLoader } from '../build/loaders/buildCssLoader'
 import { BuildPaths } from '../build/types/config'
@@ -11,6 +11,10 @@ module.exports = ({ config }: { config: Configuration }) => {
     html: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   }
+  config.resolve.modules = [
+    path.resolve(__dirname, '../../src'),
+    'node_modules',
+  ]
   config.resolve.modules.push(paths.src)
   config.resolve.extensions.push('.ts', '.tsx')
 
@@ -22,6 +26,8 @@ module.exports = ({ config }: { config: Configuration }) => {
     }
     return rule
   })
+
+  config.plugins.push(new DefinePlugin({ __IS_DEV__: true }))
 
   config.module.rules.push({
     test: /\.svg$/,
