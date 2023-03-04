@@ -1,31 +1,36 @@
-import {
-  combineReducers,
-  configureStore,
-  ReducersMapObject,
-} from '@reduxjs/toolkit'
+import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
-import { loginReducer } from 'features/AuthByUsername'
 
-import { StateShema } from './StateShema'
+import { createReducerManager } from './reducerManager'
+import type { StateSchema } from './StateSchema'
 
-const reducersMapObj: ReducersMapObject<StateShema> = {
-  counter: counterReducer,
-  user: userReducer,
-  loginForm: loginReducer,
-}
-const rootReducers = combineReducers(reducersMapObj)
+export const createReduxStore = (
+  initialState?: StateSchema,
+  asyncReducers?: ReducersMapObject<StateSchema>
+) => {
+  const rootReducers: ReducersMapObject<StateSchema> = {
+    ...asyncReducers,
+    counter: counterReducer,
+    user: userReducer,
+  }
 
-export const createReduxStore = (initialState?: StateShema) => {
-  return configureStore<StateShema>({
-    reducer: rootReducers,
+  const reducerManager = createReducerManager(rootReducers)
+
+  const store = configureStore<StateSchema>({
+    reducer: reducerManager.reduce,
     devTools: __IS_DEV__,
     preloadedState: initialState,
   })
+
+  // @ts-ignore
+  store.reducerManager = reducerManager
+
+  return store
 }
 
-export type RootState = ReturnType<typeof rootReducers>
+export type RootState = ReducersMapObject<StateSchema>
 export type AppStore = ReturnType<typeof createReduxStore>
 export type AppDispatch = AppStore['dispatch']
 

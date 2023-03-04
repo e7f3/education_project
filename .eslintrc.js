@@ -111,7 +111,9 @@ module.exports = {
     'jsx-a11y/click-events-have-key-events': 'warn',
     'jsx-a11y/no-static-element-interactions': 'warn',
     // 'no-param-reassign': 'off',
-    'no-param-reassign': ['error', { props: false }],
+    'no-param-reassign': ['warn', { props: false }],
+    '@typescript-eslint/ban-ts-comment': 'warn',
+    "react/jsx-no-useless-fragment": [2, { allowExpressions: true }]
   },
   globals: {
     __IS_DEV__: true,

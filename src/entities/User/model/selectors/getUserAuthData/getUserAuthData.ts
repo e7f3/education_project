@@ -1,3 +1,3 @@
-import { StateShema } from 'app/providers/StoreProvider'
+import type { StateSchema } from 'app/providers/StoreProvider'
 
-export const getUserAuthData = (state: StateShema) => state.user.userAuthData
+export const getUserAuthData = (state: StateSchema) => state.user.userAuthData

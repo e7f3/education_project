@@ -45,7 +45,9 @@ export const Navbar: FC<NavbarProps> = (props) => {
       <Button theme={ButtonTheme.DEFAULT} onClick={toggleAuthModal}>
         {t('Auth')}
       </Button>
-      <LoginModal isOpen={isAuthOpen} onClose={toggleAuthModal} />
+      {isAuthOpen && (
+        <LoginModal isOpen={isAuthOpen} onClose={toggleAuthModal} />
+      )}
     </div>
   )
 }

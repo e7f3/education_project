@@ -1,10 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
-import { ProviderDecorator } from 'shared/config/storybook/ProviderDecorator/ProviderDecorator'
+import { StoreProviderDecorator } from 'shared/config/storybook/StoreProviderDecorator/StoreProviderDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
-import { LoginForm } from './LoginForm'
+import LoginForm from './LoginForm'
 
 export default {
   title: 'feature/AuthByUsername/LoginForm',

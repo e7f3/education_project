@@ -10,7 +10,7 @@ const initialState: LoginShema = {
 }
 
 export const loginSlice = createSlice({
-  name: 'user',
+  name: 'loginForm',
   initialState,
   reducers: {
     setUsername: (state, action: PayloadAction<string>) => {
