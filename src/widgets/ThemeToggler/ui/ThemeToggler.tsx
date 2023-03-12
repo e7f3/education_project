@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
 import { useTheme } from 'app/providers/ThemeProvider'
 import DayNight from 'shared/assets/icons/day_night.svg'
@@ -11,7 +11,7 @@ export interface ThemeTogglerProps {
   className?: string
 }
 
-export const ThemeToggler: FC<ThemeTogglerProps> = (props) => {
+export const ThemeToggler: FC<ThemeTogglerProps> = memo((props) => {
   const { className } = props
   const { theme, toggleTheme } = useTheme()
 
@@ -26,4 +26,4 @@ export const ThemeToggler: FC<ThemeTogglerProps> = (props) => {
       />
     </Button>
   )
-}
+})

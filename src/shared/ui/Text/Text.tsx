@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 
@@ -16,7 +16,7 @@ export interface TextProps {
   title?: string
 }
 
-export const Text: FC<TextProps> = (props) => {
+export const Text: FC<TextProps> = memo((props) => {
   const { className, variant = TextVariant.DEFAULT, text, title } = props
   return (
     <div
@@ -26,4 +26,4 @@ export const Text: FC<TextProps> = (props) => {
       {text && <p className={classes.text}>{text}</p>}
     </div>
   )
-}
+})

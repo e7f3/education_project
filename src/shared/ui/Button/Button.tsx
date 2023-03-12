@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react'
+import { ButtonHTMLAttributes, FC, memo } from 'react'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 
@@ -29,7 +29,7 @@ export enum ButtonSize {
   'XL' = 'size_xl',
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+export const Button: FC<ButtonProps> = memo((props) => {
   const {
     className,
     theme = ButtonTheme.DEFAULT,
@@ -57,4 +57,4 @@ export const Button: FC<ButtonProps> = (props) => {
       {children}
     </button>
   )
-}
+})

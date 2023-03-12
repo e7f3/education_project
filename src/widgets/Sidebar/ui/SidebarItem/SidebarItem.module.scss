@@ -1,0 +1,18 @@
+.link {
+  display: flex;
+  align-items: center;
+
+  column-gap: 10px;
+}
+
+.link.collapsed > .linkText {
+  display: none;
+}
+
+.linkIcon.fill {
+  fill: var(--action-color);
+}
+
+.linkIcon.stroke {
+  stroke: var(--action-color);
+}

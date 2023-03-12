@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-import { CounterShema } from '../types/counterShema'
+import { CounterSchema } from '../types/counterSchema'
 
-const initialState: CounterShema = {
+const initialState: CounterSchema = {
   value: 0,
 }
 

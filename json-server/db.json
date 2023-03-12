@@ -1,12 +1,21 @@
 {
-  "posts": [{ "id": 1, "title": "json-server", "author": "typicode" }],
-  "comments": [{ "id": 1, "body": "some comment", "postId": 1 }],
+  "posts": [{ "id": "1", "title": "json-server", "author": "typicode" }],
+  "comments": [{ "id": "1", "body": "some comment", "postId": "1" }],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
       "password": "12345678"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "firstname": "Ilia",
+    "lastname": "Mashkov",
+    "age": 27,
+    "country": "Georgia",
+    "currency": "USD",
+    "city": "Kobuleti",
+    "username": "admin",
+    "avatar": "https://st3.depositphotos.com/5532432/17946/v/1600/depositphotos_179460800-stock-illustration-avatar-flat-vector-icon.jpg"
+  }
 }

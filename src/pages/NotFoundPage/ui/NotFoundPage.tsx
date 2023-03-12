@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -9,7 +9,7 @@ export interface NotFoundPageProps {
   className?: string
 }
 
-export const NotFoundPage: FC<NotFoundPageProps> = (props) => {
+export const NotFoundPage: FC<NotFoundPageProps> = memo((props) => {
   const { className } = props
   const { t } = useTranslation()
   return (
@@ -17,4 +17,4 @@ export const NotFoundPage: FC<NotFoundPageProps> = (props) => {
       {t('Not Found Page')}
     </div>
   )
-}
+})

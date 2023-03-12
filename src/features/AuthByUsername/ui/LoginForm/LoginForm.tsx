@@ -1,15 +1,14 @@
-import { DeepPartial } from '@reduxjs/toolkit'
 import { FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-import { StateSchemaKey } from 'app/providers/StoreProvider'
 import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
   DynamicReducerLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { Button } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
@@ -23,6 +22,7 @@ import { loginActions, loginReducer } from '../../model/slices/loginSlice'
 
 export interface LoginFormProps {
   className?: string
+  onSuccess: () => void
 }
 
 const initialReducers: ReducersList = {
@@ -30,10 +30,10 @@ const initialReducers: ReducersList = {
 }
 
 const LoginForm: FC<LoginFormProps> = memo((props) => {
-  const { className } = props
+  const { className, onSuccess } = props
   const { t } = useTranslation()
 
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   const username = useSelector(getLoginUsername)
   const password = useSelector(getLoginPassword)
@@ -54,9 +54,12 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
     [dispatch]
   )
 
-  const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }))
-  }, [dispatch, username, password])
+  const onLoginClick = useCallback(async () => {
+    const result = await dispatch(loginByUsername({ username, password }))
+    if (result.meta.requestStatus === 'fulfilled') {
+      onSuccess()
+    }
+  }, [dispatch, username, password, onSuccess])
 
   return (
     <DynamicReducerLoader reducers={initialReducers}>

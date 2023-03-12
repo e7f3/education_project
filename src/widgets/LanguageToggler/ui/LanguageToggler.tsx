@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -9,7 +9,7 @@ export interface LanguageTogglerProps {
   short?: boolean
 }
 
-export const LanguageToggler: FC<LanguageTogglerProps> = (props) => {
+export const LanguageToggler: FC<LanguageTogglerProps> = memo((props) => {
   const { className, short = false } = props
   const { t, i18n } = useTranslation()
 
@@ -29,4 +29,4 @@ export const LanguageToggler: FC<LanguageTogglerProps> = (props) => {
       {t(translateKey)}
     </Button>
   )
-}
+})

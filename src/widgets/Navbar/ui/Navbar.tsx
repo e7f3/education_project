@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from 'react'
+import { FC, memo, useCallback, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 
@@ -14,7 +14,7 @@ export interface NavbarProps {
   className?: string
 }
 
-export const Navbar: FC<NavbarProps> = (props) => {
+export const Navbar: FC<NavbarProps> = memo((props) => {
   const { className } = props
   const { t } = useTranslation()
   const userData = useSelector(getUserAuthData)
@@ -50,4 +50,4 @@ export const Navbar: FC<NavbarProps> = (props) => {
       )}
     </div>
   )
-}
+})

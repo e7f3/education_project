@@ -1,12 +1,7 @@
-import { FC, useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { FC, memo, useState } from 'react'
 
-import AboutUsIcon from 'shared/assets/icons/about-us.svg'
 import CollapseIcon from 'shared/assets/icons/collapse-left.svg'
-import MainPageIcon from 'shared/assets/icons/home.svg'
-import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 import {
   Button,
   ButtonSize,
@@ -17,21 +12,22 @@ import { LanguageToggler } from 'widgets/LanguageToggler'
 import { ThemeToggler } from 'widgets/ThemeToggler'
 
 import classes from './Sidebar.module.scss'
+import { SidebarItemsList } from '../../model/items'
+import { SidebarItem } from '../SidebarItem/SidebarItem'
 
 export interface SidebarProps {
   className?: string
 }
 
-export const Sidebar: FC<SidebarProps> = (props) => {
+export const Sidebar: FC<SidebarProps> = memo((props) => {
   const { className } = props
-
-  const { t } = useTranslation()
 
   const [collapsed, setCollapsed] = useState(false)
 
   const onToggle = () => {
     setCollapsed((prev) => !prev)
   }
+
   return (
     <div
       className={classNames(
@@ -42,26 +38,11 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       data-testid='sidebar'
     >
       <div className={classes.links}>
-        <AppLink
-          className={classes.link}
-          theme={AppLinkTheme.PRIMARY}
-          to={RoutePath.main}
-        >
-          <MainPageIcon
-            className={classNames(classes.linkIcon, {}, [classes.fill])}
-          />
-          <span className={classes.linkText}>{t('Main Page')}</span>
-        </AppLink>
-        <AppLink
-          className={classes.link}
-          theme={AppLinkTheme.PRIMARY}
-          to={RoutePath.about}
-        >
-          <AboutUsIcon
-            className={classNames(classes.linkIcon, {}, [classes.stroke])}
-          />
-          <span className={classes.linkText}>{t('About Page')}</span>
-        </AppLink>
+        {SidebarItemsList.map((item) => {
+          return (
+            <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+          )
+        })}
       </div>
       <Button
         theme={ButtonTheme.DEFAULT}
@@ -85,4 +66,4 @@ export const Sidebar: FC<SidebarProps> = (props) => {
       </div>
     </div>
   )
-}
+})

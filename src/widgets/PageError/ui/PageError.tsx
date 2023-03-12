@@ -1,5 +1,7 @@
 import { useTranslation } from 'react-i18next'
 
+import { Button } from 'shared/ui/Button/Button'
+
 import classes from './PageError.module.scss'
 
 export const PageError = () => {
@@ -11,9 +13,9 @@ export const PageError = () => {
   return (
     <div className={classes.PageError}>
       <h2>{t('Oops')}</h2>
-      <button onClick={handleReload} type='button'>
+      <Button onClick={handleReload} type='button'>
         {t('Try again')}
-      </button>
+      </Button>
     </div>
   )
 }

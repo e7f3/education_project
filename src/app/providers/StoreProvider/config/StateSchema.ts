@@ -6,14 +6,16 @@ import {
   ReducersMapObject,
 } from '@reduxjs/toolkit'
 
-import { CounterShema } from 'entities/Counter'
-import { UserShema } from 'entities/User'
-import type { LoginShema } from 'features/AuthByUsername'
+import type { CounterSchema } from 'entities/Counter'
+import type { ProfileSchema } from 'entities/Profile'
+import type { UserSchema } from 'entities/User'
+import type { LoginSchema } from 'features/AuthByUsername'
 
 export interface StateSchema {
-  counter: CounterShema
-  user: UserShema
-  loginForm?: LoginShema
+  counter: CounterSchema
+  user: UserSchema
+  loginForm?: LoginSchema
+  profile?: ProfileSchema
 }
 
 export interface ReducerManager {
