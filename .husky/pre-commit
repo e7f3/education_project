@@ -5,4 +5,6 @@ npm run build:prod
 npm run test:unit
 npm run lint:scss
 npm run lint:ts
-npm run test:regr
+
+# Из-за обновления Chrome ошибка при Fetch stories
+# npm run test:regr
