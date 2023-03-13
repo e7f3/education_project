@@ -1,3 +1,7 @@
 {
-  "Profile page": "Страница профиля"
+  "Profile page": "Страница профиля",
+  "Fetch error": "Ошибка при запросе!",
+  "Edit profile": "Редактировать",
+  "Firstname": "Имя",
+  "Lastname": "Фамилия"
 }

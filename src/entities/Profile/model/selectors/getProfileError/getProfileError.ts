@@ -2,7 +2,7 @@ import { createSelector } from '@reduxjs/toolkit'
 
 import { getProfileState } from '../getProfileState/getProfileState'
 
-export const getProfileData = createSelector(
+export const getProfileError = createSelector(
   getProfileState,
-  (profile) => profile?.data || null
+  (profile) => profile?.error || ''
 )

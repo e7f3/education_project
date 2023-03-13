@@ -11,25 +11,26 @@ module.exports = ({ config }: { config: Configuration }) => {
     html: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   }
-  config.resolve.modules = [
+  config.resolve!.modules = [
     path.resolve(__dirname, '../../src'),
     'node_modules',
   ]
-  config.resolve.modules.push(paths.src)
-  config.resolve.extensions.push('.ts', '.tsx')
+  config.resolve!.modules!.push(paths.src)
+  config.resolve!.extensions!.push('.ts', '.tsx')
 
-  config.module.rules.push(buildCssLoader(true))
+  config.module!.rules!.push(buildCssLoader(true))
 
-  config.module.rules = config.module.rules.map((rule: RuleSetRule) => {
+  // @ts-ignore
+  config.module!.rules = config.module!.rules!.map((rule: RuleSetRule) => {
     if (/svg/.test(rule.test as string)) {
       return { ...rule, exclude: /\.svg$/i }
     }
     return rule
   })
 
-  config.plugins.push(new DefinePlugin({ __IS_DEV__: true }))
+  config.plugins!.push(new DefinePlugin({ __IS_DEV__: true, __API__: true }))
 
-  config.module.rules.push({
+  config.module!.rules!.push({
     test: /\.svg$/,
     use: ['@svgr/webpack'],
   })

@@ -1,5 +1,3 @@
-import { ObjectValues } from 'shared/model/types'
-
 export enum AppRoutes {
   MAIN = 'main',
   ABOUT = 'about',

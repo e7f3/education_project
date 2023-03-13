@@ -30,7 +30,7 @@ const initialReducers: ReducersList = {
 }
 
 const LoginForm: FC<LoginFormProps> = memo((props) => {
-  const { className, onSuccess } = props
+  const { className = '', onSuccess } = props
   const { t } = useTranslation()
 
   const dispatch = useAppDispatch()

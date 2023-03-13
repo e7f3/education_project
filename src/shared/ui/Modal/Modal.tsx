@@ -1,4 +1,12 @@
-import { FC, MouseEvent, useCallback, useEffect, useRef, useState } from 'react'
+import {
+  FC,
+  MouseEvent,
+  MutableRefObject,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 
 import { classNames } from 'shared/lib/classNames/classNames'
 import { Portal } from 'shared/ui/Portal/Portal'
@@ -19,13 +27,17 @@ export const Modal: FC<ModalProps> = (props) => {
 
   const [isClosing, setIsClosing] = useState(false)
   const [wasOpened, setWasOpened] = useState(false)
-  const timeoutIdRef = useRef<ReturnType<typeof setTimeout>>()
+  const timeoutIdRef = useRef() as MutableRefObject<
+    ReturnType<typeof setTimeout>
+  >
 
   const handleClose = useCallback(() => {
     if (isOpen) {
       setIsClosing(true)
       timeoutIdRef.current = setTimeout(() => {
-        onClose()
+        if (onClose) {
+          onClose()
+        }
         setIsClosing(false)
       }, CLOSE_DELAY)
     }
@@ -55,7 +67,7 @@ export const Modal: FC<ModalProps> = (props) => {
       window.addEventListener('keydown', handleKeyDown)
     }
     return () => {
-      clearTimeout(timeoutIdRef.current)
+      clearTimeout(timeoutIdRef?.current)
       window.removeEventListener('keydown', handleKeyDown)
     }
   }, [isOpen, handleKeyDown])

@@ -1,9 +1,9 @@
 type Mods = Record<string, string | boolean>
 
 export function classNames(
-  baseClass: string,
+  baseClass = '',
   mods: Mods = {},
-  additionalClasses: string[] = []
+  additionalClasses: Array<string | undefined> = []
 ): string {
   return [
     baseClass,
