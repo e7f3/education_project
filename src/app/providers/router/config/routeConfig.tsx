@@ -6,7 +6,11 @@ import { NotFoundPage } from 'pages/NotFoundPage'
 import { ProfilePage } from 'pages/ProfilePage'
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
 
-export const routeConfig: Record<AppRoutes, RouteProps> = {
+export type AppRouteProps = RouteProps & {
+  authOnly?: boolean
+}
+
+export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.MAIN]: {
     path: RoutePath[AppRoutes.MAIN],
     element: <MainPage />,
@@ -18,6 +22,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.PROFILE]: {
     path: RoutePath[AppRoutes.PROFILE],
     element: <ProfilePage />,
+    authOnly: true,
   },
   // Rest
   [AppRoutes.NOT_FOUND]: {

@@ -9,7 +9,9 @@
   height: calc(100vh - var(--navbar-height));
   padding: 5px;
 
-  background-color: var(--secondary-bg-color);
+  border-right: 1px solid var(--action-color);
+
+  background-color: var(--primary-bg-color);
 
   transition: width 0.2s ease-out;
 }

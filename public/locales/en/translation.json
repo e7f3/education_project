@@ -18,6 +18,5 @@
   "Password": "Password",
   "Auth form": "Authorization",
   "Invalid auth": "Invalid username or password",
-  "Logout": "Sign out",
-  "Profile": "Profile"
+  "Logout": "Sign out"
 }

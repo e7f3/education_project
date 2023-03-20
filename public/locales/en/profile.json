@@ -3,5 +3,15 @@
   "Fetch error": "Cannot fetch!",
   "Edit profile": "Edit",
   "Firstname": "Firstname",
-  "Lastname": "Lastname"
+  "Lastname": "Lastname",
+  "Profile error": "Oops, something went wrong while loading your profile!",
+  "Try to reload": "Try to reload page.",
+  "Cancel": "Cancel",
+  "Profile": "Profile",
+  "Save": "Save",
+  "Age": "Age",
+  "City": "City",
+  "Country": "Country",
+  "Currency": "Currency",
+  "Avatar": "Avatar"
 }

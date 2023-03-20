@@ -1,11 +1,12 @@
 import { ButtonHTMLAttributes, FC, memo } from 'react'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/classNames/classNames'
 
 import classes from './Button.module.scss'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   theme?: ButtonTheme
+  colorScheme?: ButtonColorScheme
   size?: ButtonSize
   variant?: ButtonVariant
   className?: string
@@ -13,14 +14,20 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export enum ButtonTheme {
-  'CLEAN' = 'clean',
-  'DEFAULT' = 'default',
-  'INVERTED' = 'inverted',
+  'CLEAN' = 'cleanTheme',
+  'DEFAULT' = 'defaultTheme',
+  'INVERTED' = 'invertedTheme',
+}
+
+export enum ButtonColorScheme {
+  'DEFAULT' = 'defaultColorScheme',
+  'ACTION' = 'actionColorScheme',
+  'WARNING' = 'warningColorScheme',
 }
 
 export enum ButtonVariant {
-  'DEFAULT' = 'default',
-  'SQUARE' = 'square',
+  'DEFAULT' = 'defaultVariant',
+  'SQUARE' = 'squareVariant',
 }
 
 export enum ButtonSize {
@@ -33,6 +40,7 @@ export const Button: FC<ButtonProps> = memo((props) => {
   const {
     className,
     theme = ButtonTheme.DEFAULT,
+    colorScheme = ButtonColorScheme.DEFAULT,
     size = ButtonSize.M,
     variant = ButtonVariant.DEFAULT,
     children,
@@ -40,8 +48,9 @@ export const Button: FC<ButtonProps> = memo((props) => {
     ...restProps
   } = props
 
-  const mods: Record<string, boolean> = {
+  const mods: Mods = {
     [classes[theme]]: Boolean(theme),
+    [classes[colorScheme]]: Boolean(colorScheme),
     [classes[size]]: Boolean(size),
     [classes[variant]]: Boolean(variant),
     [classes.disabled]: disabled,

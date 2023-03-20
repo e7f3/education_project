@@ -2,7 +2,7 @@ import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { Button, ButtonColorScheme, ButtonTheme } from 'shared/ui/Button/Button'
 
 export interface LanguageTogglerProps {
   className?: string
@@ -21,7 +21,8 @@ export const LanguageToggler: FC<LanguageTogglerProps> = memo((props) => {
 
   return (
     <Button
-      theme={ButtonTheme.DEFAULT}
+      theme={ButtonTheme.CLEAN}
+      colorScheme={ButtonColorScheme.ACTION}
       className={classNames('', {}, [className])}
       onClick={toggleLanguage}
       data-testid='language-toggler'

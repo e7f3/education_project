@@ -1,0 +1,13 @@
+.ProfilePageHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+
+  padding: 15px;
+}
+
+.control {
+  display: flex;
+  gap: 5px;
+}

@@ -5,11 +5,11 @@
 
   width: 142px;
   height: 40px;
-  margin: -20px 0 0 -71px;
 
   background: transparent;
 
   filter: contrast(20);
+  transform: translateX(-50%) translateY(-50%);
 }
 
 .Loader .dot {

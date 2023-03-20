@@ -4,5 +4,5 @@ import { getProfileState } from '../getProfileState/getProfileState'
 
 export const getProfileData = createSelector(
   getProfileState,
-  (profile) => profile?.data || null
+  (profile) => profile?.data || undefined
 )

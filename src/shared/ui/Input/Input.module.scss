@@ -16,3 +16,17 @@
 
   outline: 1px solid var(--action-color);
 }
+
+.Input:read-only {
+  border: 1px solid var(--primary-color);
+
+  outline: none;
+}
+
+.inputWrapper {
+  transition: opacity 0.2s ease-in;
+}
+
+.readonly {
+  opacity: 0.5;
+}

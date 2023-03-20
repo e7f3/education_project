@@ -1,0 +1,36 @@
+.Wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.Select {
+  padding: 5px 15px;
+
+  color: var(--primary-color);
+
+  border: 1px solid var(--primary-color);
+  border-radius: 0;
+
+  background-color: var(--secondary-bg-color);
+
+  box-shadow: none;
+}
+
+.option {
+  padding: 5px 15px;
+
+  color: var(--primary-color);
+
+  background-color: var(--secondary-bg-color);
+}
+
+.label {
+  color: var(--secondary-color);
+}
+
+.readonly {
+  opacity: 0.5;
+
+  pointer-events: none;
+}
