@@ -13,5 +13,15 @@
   "City": "City",
   "Country": "Country",
   "Currency": "Currency",
-  "Avatar": "Avatar"
+  "Avatar": "Avatar",
+  "Validation error": "Validation error",
+  "FETCH_VALIDATION_ERROR": "Cannot fetch validation server",
+  "NO_DATA": "There is no data in profile",
+  "INVALID_USERNAME": "Invalid username",
+  "INVALID_FIRSTNAME": "Invalid firstname",
+  "INVALID_LASTNAME": "Invalid lastname",
+  "INVALID_AGE": "Invalid age",
+  "INVALID_COUNTRY": "Invalid country",
+  "INVALID_CITY": "Invalid city",
+  "INVALID_CURRENCY": "Invalid currency"
 }

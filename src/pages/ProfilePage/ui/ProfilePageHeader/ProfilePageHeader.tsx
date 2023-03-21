@@ -35,7 +35,6 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
 
   const saveChanges = useCallback(() => {
     dispatch(updateProfileData())
-    dispatch(profileActions.cancelEdit())
   }, [dispatch])
 
   return (

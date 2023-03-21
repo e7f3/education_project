@@ -10,3 +10,4 @@ export { getProfileState } from './model/selectors/getProfileState/getProfileSta
 export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly'
 export { getProfileIsLoading } from './model/selectors/getProfileIsLoading/getProfileIsLoading'
 export { getProfileFormData } from './model/selectors/getProfileFormData/getProfileFormData'
+export { getProfileValidateErrors } from './model/selectors/getProfileValidateErrors/getProfileValidateErrors'

@@ -1,10 +1,14 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
-import { LOCALSTORAGE_USER_KEY } from 'shared/const/localstorage'
-
 import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
-import { Profile, ProfileSchema } from '../types/profileSchema'
+import {
+  Profile,
+  ProfileSchema,
+  ValidateProfileError,
+  FetchProfileError,
+  UpdateProfileError,
+} from '../types/profileSchema'
 
 const initialState: ProfileSchema = {
   data: undefined,
@@ -12,6 +16,7 @@ const initialState: ProfileSchema = {
   isLoading: false,
   error: undefined,
   readonly: true,
+  validateErrors: undefined,
 }
 
 export const profileSlice = createSlice({
@@ -26,6 +31,7 @@ export const profileSlice = createSlice({
     },
     cancelEdit: (state) => {
       state.formData = state.data
+      state.validateErrors = undefined
       state.readonly = true
     },
   },
@@ -45,13 +51,18 @@ export const profileSlice = createSlice({
           state.formData = action.payload
         }
       )
-      .addCase(fetchProfileData.rejected, (state, action) => {
-        state.isLoading = false
-        state.error = action.payload
-      })
+      .addCase(
+        fetchProfileData.rejected,
+        (state, action: PayloadAction<FetchProfileError | undefined>) => {
+          state.isLoading = false
+          state.error = action.payload
+        }
+      )
+
       // updateProfileData
       .addCase(updateProfileData.pending, (state) => {
         state.error = undefined
+        state.validateErrors = undefined
         state.isLoading = true
       })
       .addCase(
@@ -60,11 +71,23 @@ export const profileSlice = createSlice({
           state.isLoading = false
           state.data = action.payload
           state.formData = action.payload
+          state.validateErrors = undefined
+          state.readonly = true
         }
       )
       .addCase(updateProfileData.rejected, (state, action) => {
         state.isLoading = false
-        state.error = action.payload
+        if (
+          Object.values(UpdateProfileError).includes(
+            action.payload as UpdateProfileError
+          )
+        ) {
+          state.error = action.payload as UpdateProfileError
+        } else {
+          state.validateErrors = action.payload as
+            | ValidateProfileError[]
+            | undefined
+        }
       })
   },
 })

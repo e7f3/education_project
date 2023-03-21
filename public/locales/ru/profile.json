@@ -13,5 +13,15 @@
   "City": "Город",
   "Country": "Страна",
   "Currency": "Валюта",
-  "Avatar": "Аватар"
+  "Avatar": "Аватар",
+  "Validation error": "Ошибка валидации",
+  "FETCH_VALIDATION_ERROR": "Ошибка запроса на валидацию",
+  "NO_DATA": "Профиль пуст!",
+  "INVALID_USERNAME": "Невалидный username",
+  "INVALID_FIRSTNAME": "Имя пользователя не валидно",
+  "INVALID_LASTNAME": "Фамилия пользователя не валидна",
+  "INVALID_AGE": "Возраст пользователя не валиден",
+  "INVALID_COUNTRY": "Страна пользователя не валидна",
+  "INVALID_CITY": "Город пользователя не валиден",
+  "INVALID_CURRENCY": "Валюта пользователя не валидна"
 }
