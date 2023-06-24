@@ -15,7 +15,7 @@ export interface CurrencySelectProps {
 export type CurrencyOption = SelectOption
 
 const selectOptions: CurrencyOption[] = Object.entries(Currency).map(
-  ([value, content]) => ({ value, content })
+  ([_, content]) => ({ value: content, content })
 )
 
 export const CurrencySelect: FC<CurrencySelectProps> = memo((props) => {

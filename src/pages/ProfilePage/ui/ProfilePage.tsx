@@ -48,7 +48,9 @@ const ProfilePage: FC<ProfilePageProps> = memo((props) => {
   const validateErrors = useSelector(getProfileValidateErrors)
 
   useEffect(() => {
-    dispatch(fetchProfileData())
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchProfileData())
+    }
   }, [dispatch])
 
   const changeFirstname = useCallback(

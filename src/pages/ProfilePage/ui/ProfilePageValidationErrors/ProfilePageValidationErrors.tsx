@@ -27,7 +27,7 @@ export const ProfilePageValidationErrors: FC<ProfilePageValidationErrorsProps> =
       })
     }, [validateErrors, t])
 
-    if (!validateErrors || !validateErrors.length) {
+    if (!errors) {
       return null
     }
 

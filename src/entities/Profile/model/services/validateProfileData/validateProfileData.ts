@@ -30,7 +30,11 @@ export const validateProfileData = (data?: Profile) => {
     validationErrors.push(ValidateProfileError.INVALID_AGE)
   }
 
-  if (!city || city.length <= 2 || !/^[a-zA-Z\s]*$/.test(city)) {
+  if (
+    !city ||
+    city.length <= 2 ||
+    !/^[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ\s]*$/.test(city)
+  ) {
     validationErrors.push(ValidateProfileError.INVALID_CITY)
   }
 

@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
+import StorybookAvatar from 'shared/assets/test/storybook-avatar.jpg'
 import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 
 import { Avatar } from './Avatar'
-import StorybookAvatar from './storybook-avatar.jpg'
 
 export default {
   title: 'shared/Avatar',

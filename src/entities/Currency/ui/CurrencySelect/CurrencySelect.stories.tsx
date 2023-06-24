@@ -29,6 +29,10 @@ const Template: ComponentStory<typeof CurrencySelect> = (args) => (
   <CurrencySelect {...args} />
 )
 
+export const Empty = Template.bind({})
+Empty.args = { value: undefined }
+Empty.decorators = [FlexDecorator]
+
 export const Default = Template.bind({})
 Default.decorators = [FlexDecorator]
 

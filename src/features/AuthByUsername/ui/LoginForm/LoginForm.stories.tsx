@@ -20,5 +20,26 @@ const Template: ComponentStory<typeof LoginForm> = (args) => (
 
 export const Default = Template.bind({})
 
+export const Filled = Template.bind({})
+Filled.decorators = [
+  StoreProviderDecorator({
+    loginForm: {
+      username: '123',
+      password: '123',
+    },
+  }),
+]
+
+export const FilledWithError = Template.bind({})
+FilledWithError.decorators = [
+  StoreProviderDecorator({
+    loginForm: {
+      username: '123',
+      password: '123',
+      error: 'error',
+    },
+  }),
+]
+
 export const DefaultDark = Template.bind({})
 DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]

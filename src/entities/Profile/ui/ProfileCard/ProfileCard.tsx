@@ -117,7 +117,6 @@ export const ProfileCard: FC<ProifleCardProps> = memo((props) => {
 
         <CurrencySelect
           value={data?.currency}
-          // placeholder={t('Currency')}
           readonly={readonly}
           onChange={changeCurrency}
         />

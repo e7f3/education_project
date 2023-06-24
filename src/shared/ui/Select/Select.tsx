@@ -1,4 +1,4 @@
-import { FC, SelectHTMLAttributes, useMemo, useRef } from 'react'
+import { FC, memo, SelectHTMLAttributes, useMemo } from 'react'
 
 import { classNames, Mods } from 'shared/lib/classNames/classNames'
 
@@ -23,15 +23,15 @@ export interface SelectProps extends SelectAttributes {
   readonly?: boolean
 }
 
-export const Select: FC<SelectProps> = (props) => {
+export const Select: FC<SelectProps> = memo((props) => {
   const { className, label, value, onChange, options, readonly = false } = props
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     onChange?.(event.target.value)
   }
 
   const optionsList = useMemo(() => {
-    return options?.map(({ value, content }) => (
-      <option className={classes.option} value={value} key={value}>
+    return options?.map(({ value: optionValue, content }) => (
+      <option className={classes.option} value={optionValue} key={optionValue}>
         {content}
       </option>
     ))
@@ -42,15 +42,20 @@ export const Select: FC<SelectProps> = (props) => {
   }
   return (
     <div className={classNames(classes.Wrapper, mods, [className])}>
-      {label && <span className={classes.label}>{label}</span>}
+      {label && value && <span className={classes.label}>{label}</span>}
       <select
         className={classNames(classes.Select, {}, [])}
         value={value}
         onChange={handleChange}
         disabled={readonly}
       >
+        {label && !value && (
+          <option className={classes.option} selected disabled hidden>
+            {label}
+          </option>
+        )}
         {optionsList}
       </select>
     </div>
   )
-}
+})

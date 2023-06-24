@@ -1,6 +1,7 @@
 import { addDecorator } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
+import { ValidateProfileError } from 'entities/Profile/model/types/profileSchema'
 import { I18NextDecorator } from 'shared/config/storybook/I18NextDecorator/I18NextDecorator'
 import { RouterDecorator } from 'shared/config/storybook/RouterDecorator/RouterDecorator'
 import { StoreProviderDecorator } from 'shared/config/storybook/StoreProviderDecorator/StoreProviderDecorator'
@@ -40,11 +41,9 @@ export const globalTypes = {
 
 addDecorator(
   StoreProviderDecorator({
-    login: {
-      username: '123',
-      password: '123',
-      error: 'error',
-    },
+    profile: {},
+    loginForm: {},
+    user: {},
   })
 )
 addDecorator(RouterDecorator)

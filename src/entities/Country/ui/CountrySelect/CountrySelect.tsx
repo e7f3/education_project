@@ -15,9 +15,8 @@ export interface CountrySelectProps {
 export type CountryOption = SelectOption
 
 const selectOptions: CountryOption[] = Object.entries(Country).map(
-  ([value, content]) => ({ value, content })
+  ([_, content]) => ({ value: content, content })
 )
-
 export const CountrySelect: FC<CountrySelectProps> = memo((props) => {
   const { className, value, onChange, readonly } = props
   const { t } = useTranslation()

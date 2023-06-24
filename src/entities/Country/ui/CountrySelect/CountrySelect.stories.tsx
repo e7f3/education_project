@@ -29,6 +29,10 @@ const Template: ComponentStory<typeof CountrySelect> = (args) => (
   <CountrySelect {...args} />
 )
 
+export const Empty = Template.bind({})
+Empty.args = { value: undefined }
+Empty.decorators = [FlexDecorator]
+
 export const Default = Template.bind({})
 Default.decorators = [FlexDecorator]
 
