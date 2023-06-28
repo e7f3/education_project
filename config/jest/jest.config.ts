@@ -15,6 +15,9 @@ export default {
   // An array of regexp pattern strings used to skip coverage collection
   coveragePathIgnorePatterns: ['/node_modules/'],
 
+  // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
+  testPathIgnorePatterns: ['/node_modules/', '<rootDir>/.fttemplates/'],
+
   // An array of directory names to be searched recursively up from the requiring module's location
   moduleDirectories: ['node_modules'],
 
@@ -151,11 +154,6 @@ export default {
 
   // Adds a location field to test results
   // testLocationInResults: false,
-
-  // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],
