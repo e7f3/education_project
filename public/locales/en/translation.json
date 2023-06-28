@@ -3,6 +3,7 @@
   "Lang": "Eng",
   "Main Page": "Main",
   "About Page": "About us",
+  "Profile Page": "Profile",
   "Expand": "Expand",
   "Collapse": "Collapse",
   "Loading": "Loading...",
@@ -18,5 +19,7 @@
   "Password": "Password",
   "Auth form": "Authorization",
   "Invalid auth": "Invalid username or password",
-  "Logout": "Sign out"
+  "Logout": "Sign out",
+  "Country": "Country",
+  "Currency": "Currency"
 }

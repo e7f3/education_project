@@ -3,6 +3,7 @@
   "Lang": "Рус",
   "Main Page": "Главная",
   "About Page": "О нас",
+  "Profile Page": "Профиль",
   "Expand": "Развернуть",
   "Collapse": "Свернуть",
   "Loading": "Загрузка...",
@@ -18,5 +19,7 @@
   "Password": "Пароль",
   "Auth form": "Авторизация",
   "Invalid auth": "Неверное имя пользователя или пароль",
-  "Logout": "Выйти"
+  "Logout": "Выйти",
+  "Country": "Страна",
+  "Currency": "Валюта"
 }

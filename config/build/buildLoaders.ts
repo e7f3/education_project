@@ -1,42 +1,22 @@
-import MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import webpack from 'webpack'
 
+import { buildBabelLoader } from './loaders/buildBabelLoader'
 import { buildCssLoader } from './loaders/buildCssLoader'
+import { buildFileLoader } from './loaders/buildFileLoader'
+import { buildSvgrLoader } from './loaders/buildSvgrLoader'
+import { buildTypescriptLoader } from './loaders/buildTypescriptLoader'
 import { BuildOptions } from './types/config'
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
-  const babelLoader = {
-    test: /\.(js|jsx|tsx)$/,
-    exclude: /node_modules/,
-    use: {
-      loader: 'babel-loader',
-      options: {
-        presets: ['@babel/preset-env'],
-      },
-    },
-  }
+  const babelLoader = buildBabelLoader(isDev)
 
-  const fileLoader = {
-    test: /\.(png|jpe?g|gif|woff|woff2)$/i,
-    use: [
-      {
-        loader: 'file-loader',
-      },
-    ],
-  }
+  const fileLoader = buildFileLoader()
 
-  const svgrLoader = {
-    test: /\.svg$/,
-    use: ['@svgr/webpack'],
-  }
+  const svgrLoader = buildSvgrLoader()
 
-  const typescriptLoader = {
-    test: /\.tsx?$/,
-    use: 'ts-loader',
-    exclude: '/node-modules/',
-  }
+  const typescriptLoader = buildTypescriptLoader()
 
-  const cssLoader = buildCssLoader(true)
+  const cssLoader = buildCssLoader(isDev)
 
   return [fileLoader, svgrLoader, babelLoader, typescriptLoader, cssLoader]
 }

@@ -13,5 +13,10 @@ export interface SidebarItemType {
 export const SidebarItemsList: SidebarItemType[] = [
   { path: '/', text: 'Main Page', icon: MainPageIcon },
   { path: '/about', text: 'About Page', icon: AboutUsPageIcon },
-  { path: '/profile', text: 'Profile', icon: ProfilePageIcon, authOnly: true },
+  {
+    path: '/profile',
+    text: 'Profile Page',
+    icon: ProfilePageIcon,
+    authOnly: true,
+  },
 ]
