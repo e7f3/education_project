@@ -17,6 +17,7 @@ import {
   profileReducer,
 } from 'entities/Profile'
 import { ProfileError } from 'entities/Profile/model/types/profileSchema'
+import { getUserAuthData } from 'entities/User'
 import { classNames } from 'shared/lib/classNames/classNames'
 import {
   DynamicReducerLoader,
@@ -45,13 +46,14 @@ const ProfilePage: FC<ProfilePageProps> = memo((props) => {
   const error = useSelector(getProfileError)
   const isLoading = useSelector(getProfileIsLoading)
   const readonly = useSelector(getProfileReadonly)
+  const isAuth = useSelector(getUserAuthData)
   const validateErrors = useSelector(getProfileValidateErrors)
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook') {
+    if (__PROJECT__ !== 'storybook' && isAuth) {
       dispatch(fetchProfileData())
     }
-  }, [dispatch])
+  }, [dispatch, isAuth])
 
   const changeFirstname = useCallback(
     (value?: string) => {

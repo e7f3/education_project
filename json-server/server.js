@@ -26,7 +26,9 @@ server.use(async (req, res, next) => {
 
 server.post('/login', (req, res) => {
   try {
-    const { username, password } = req.body
+    const username = req.body?.username
+    const password = req.body?.password
+
     const db = JSON.parse(
       fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8')
     )
