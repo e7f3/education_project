@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 import { getProfileValidateErrors } from 'entities/Profile'
 import { classNames } from 'shared/lib/classNames/classNames'
-import { Text, TextVariant } from 'shared/ui/Text/Text'
+import { Text, TextMode, TextVariant } from 'shared/ui/Text/Text'
 
 import classes from './ProfilePageValidationErrors.module.scss'
 
@@ -23,7 +23,7 @@ export const ProfilePageValidationErrors: FC<ProfilePageValidationErrorsProps> =
         return null
       }
       return validateErrors.map((error) => {
-        return <Text text={t(error)} variant={TextVariant.ERROR} key={error} />
+        return <Text content={t(error)} mode={TextMode.ERROR} key={error} />
       })
     }, [validateErrors, t])
 

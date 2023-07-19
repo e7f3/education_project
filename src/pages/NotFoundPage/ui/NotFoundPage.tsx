@@ -2,6 +2,7 @@ import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from 'shared/lib/classNames/classNames'
+import { Container } from 'shared/ui/Container/Container'
 
 import classes from './NotFoundPage.module.scss'
 
@@ -14,7 +15,7 @@ export const NotFoundPage: FC<NotFoundPageProps> = memo((props) => {
   const { t } = useTranslation()
   return (
     <div className={classNames(classes.NotFoundPage, {}, [className])}>
-      {t('Not Found Page')}
+      <Container>{t('Not Found Page')}</Container>
     </div>
   )
 })

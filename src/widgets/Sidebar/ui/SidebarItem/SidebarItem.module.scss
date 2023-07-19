@@ -1,3 +1,13 @@
+.linkWrapper {
+  padding: 5px;
+
+  cursor: pointer;
+}
+
+.linkWrapper.highlited {
+  outline: 1px solid var(--action-color);
+}
+
 .link {
   display: flex;
   align-items: center;
@@ -5,8 +15,13 @@
   column-gap: 10px;
 }
 
+.link.collapsed {
+  flex-direction: column;
+  row-gap: 5px;
+}
+
 .link.collapsed > .linkText {
-  display: none;
+  font: var(--font-s);
 }
 
 .linkIcon.fill {

@@ -1,0 +1,21 @@
+.ArticleTextBlock {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  row-gap: 1rem;
+}
+
+.Title {
+  text-indent: 3rem;
+}
+
+.Paragraphs {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+
+  max-width: 75rem;
+}
+
+.Paragraph {
+  text-indent: 3rem;
+}

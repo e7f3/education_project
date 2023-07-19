@@ -32,7 +32,11 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
   if (userData) {
     return (
       <div className={classNames(classes.Navbar, {}, [className])}>
-        <Button theme={ButtonTheme.DEFAULT} onClick={onLogout}>
+        <Button
+          className={classes.NavbarAuthButton}
+          theme={ButtonTheme.DEFAULT}
+          onClick={onLogout}
+        >
           {t('Logout')}
         </Button>
       </div>
@@ -41,7 +45,11 @@ export const Navbar: FC<NavbarProps> = memo((props) => {
 
   return (
     <div className={classNames(classes.Navbar, {}, [className])}>
-      <Button theme={ButtonTheme.DEFAULT} onClick={toggleAuthModal}>
+      <Button
+        className={classes.NavbarAuthButton}
+        theme={ButtonTheme.DEFAULT}
+        onClick={toggleAuthModal}
+      >
         {t('Auth')}
       </Button>
       {isAuthOpen && (

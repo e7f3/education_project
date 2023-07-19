@@ -8,6 +8,7 @@ import {
 import { AxiosInstance } from 'axios'
 import { NavigateOptions, To } from 'react-router-dom'
 
+import type { SpecificArticleSchema } from 'entities/Article'
 import type { CounterSchema } from 'entities/Counter'
 import type { ProfileSchema } from 'entities/Profile'
 import type { UserSchema } from 'entities/User'
@@ -18,6 +19,7 @@ export interface StateSchema {
   user: UserSchema
   loginForm?: LoginSchema
   profile?: ProfileSchema
+  specificArticle?: SpecificArticleSchema
 }
 
 export interface ReducerManager {

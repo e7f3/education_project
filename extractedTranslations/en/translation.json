@@ -1,6 +1,8 @@
 {
   "About us": "About us",
   "Age": "Age",
+  "Article not found": "Article not found",
+  "Articles Page": "Articles Page",
   "Auth": "Auth",
   "Auth form": "Auth form",
   "Avatar": "Avatar",
@@ -20,9 +22,14 @@
   "Profile": "Profile",
   "Profile error": "Profile error",
   "Save": "Save",
+  "Specific Article Page": "Specific Article Page",
   "Try again": "Try again",
   "Try to reload": "Try to reload",
   "Username": "Username",
+  "article header background": "article header background",
+  "article header image": "article header image",
+  "article header image ": "article header image ",
+  "article header image alt": "article header image alt",
   "decrement": "decrement",
   "increment": "increment"
 }

@@ -24,6 +24,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { Container } from 'shared/ui/Container/Container'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
@@ -111,22 +112,24 @@ const ProfilePage: FC<ProfilePageProps> = memo((props) => {
 
   return (
     <DynamicReducerLoader reducers={initialReducers} removeAfterUnmount>
-      <ProfilePageHeader />
-      <ProfilePageValidationErrors />
-      <ProfileCard
-        data={formData}
-        error={error as string}
-        isLoading={isLoading}
-        readonly={readonly}
-        changeFirstname={changeFirstname}
-        changeLastname={changeLastname}
-        changeAge={changeAge}
-        changeCountry={changeCountry}
-        changeCity={changeCity}
-        changeCurrency={changeCurrency}
-        changeUsername={changeUsername}
-        changeAvatar={changeAvatar}
-      />
+      <Container>
+        <ProfilePageHeader />
+        <ProfilePageValidationErrors />
+        <ProfileCard
+          data={formData}
+          error={error as string}
+          isLoading={isLoading}
+          readonly={readonly}
+          changeFirstname={changeFirstname}
+          changeLastname={changeLastname}
+          changeAge={changeAge}
+          changeCountry={changeCountry}
+          changeCity={changeCity}
+          changeCurrency={changeCurrency}
+          changeUsername={changeUsername}
+          changeAvatar={changeAvatar}
+        />
+      </Container>
     </DynamicReducerLoader>
   )
 })

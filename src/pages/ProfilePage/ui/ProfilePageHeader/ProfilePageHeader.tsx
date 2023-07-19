@@ -10,7 +10,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { Button, ButtonColorScheme, ButtonTheme } from 'shared/ui/Button/Button'
-import { Text } from 'shared/ui/Text/Text'
+import { Text, TextVariant } from 'shared/ui/Text/Text'
 
 import classes from './ProfilePageHeader.module.scss'
 
@@ -39,7 +39,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
 
   return (
     <div className={classNames(classes.ProfilePageHeader, {}, [className])}>
-      <Text title={t('Profile')} />
+      <Text content={t('Profile')} variant={TextVariant.TITLE} />
       <div className={classes.control}>
         {readonly ? (
           <Button theme={ButtonTheme.CLEAN} onClick={enableEditMode}>

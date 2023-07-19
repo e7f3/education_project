@@ -7,7 +7,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Input } from 'shared/ui/Input/Input'
 import { Loader } from 'shared/ui/Loader/Loader'
-import { Text, TextVariant } from 'shared/ui/Text/Text'
+import { Text, TextMode, TextVariant } from 'shared/ui/Text/Text'
 
 import classes from './ProfileCard.module.scss'
 import { Profile } from '../../model/types/profileSchema'
@@ -68,10 +68,12 @@ export const ProfileCard: FC<ProifleCardProps> = memo((props) => {
         ])}
       >
         <Text
-          variant={TextVariant.ERROR}
-          title={t('Profile error')}
+          mode={TextMode.ERROR}
+          variant={TextVariant.TITLE}
+          content={t('Profile error')}
           text={t('Try to reload')}
         />
+        <Text mode={TextMode.ERROR} content={t('Try to reload')} />
       </div>
     )
   }

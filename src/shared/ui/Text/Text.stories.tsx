@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 import { Theme } from 'app/providers/ThemeProvider'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
-import { Text, TextVariant } from './Text'
+import { Text, TextMode, TextVariant } from './Text'
 
 export default {
   title: 'shared/Text',
@@ -16,30 +16,44 @@ export default {
 
 const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />
 
-export const Default = Template.bind({})
-Default.args = {
-  title: 'Lorem ipsum dolor sit amet.',
-  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quia.',
+export const DefaultParagraph = Template.bind({})
+DefaultParagraph.args = {
+  content:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quia.',
 }
 
-export const DefaultDark = Template.bind({})
-DefaultDark.args = {
-  title: 'Lorem ipsum dolor sit amet.',
-  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quia.',
-}
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
-
-export const Error = Template.bind({})
-Error.args = {
-  title: 'Lorem ipsum dolor sit amet.',
-  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, enim.',
-  variant: TextVariant.ERROR,
+export const DefaultTitle = Template.bind({})
+DefaultTitle.args = {
+  content:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quia.',
+  variant: TextVariant.TITLE,
 }
 
-export const ErrorDark = Template.bind({})
-ErrorDark.args = {
-  title: 'Lorem ipsum dolor sit amet.',
-  text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, enim.',
-  variant: TextVariant.ERROR,
+export const DefaultSubtitle = Template.bind({})
+DefaultSubtitle.args = {
+  content:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quia.',
+  variant: TextVariant.SUBTITLE,
 }
-ErrorDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const DefaultParagraphDark = Template.bind({})
+DefaultParagraphDark.args = {
+  content:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, quia.',
+}
+DefaultParagraphDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const ErrorParagraph = Template.bind({})
+ErrorParagraph.args = {
+  content:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, enim.',
+  mode: TextMode.ERROR,
+}
+
+export const ErrorParagraphDark = Template.bind({})
+ErrorParagraphDark.args = {
+  content:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, enim.',
+  mode: TextMode.ERROR,
+}
+ErrorParagraphDark.decorators = [ThemeDecorator(Theme.DARK)]

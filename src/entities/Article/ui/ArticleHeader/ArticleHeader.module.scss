@@ -1,0 +1,63 @@
+.ArticleHeader {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.ArticleHeaderImage {
+  width: auto;
+  height: var(--article-header-image-height);
+  aspect-ratio: 1 / 1;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+  object-position: center;
+}
+
+.ArticleHeaderInfo {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-self: center;
+
+  list-style: none;
+}
+
+.ArticleHeaderViews,
+.ArticleHeaderDate {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.ArticleHeaderIcon {
+  width: 12px;
+  height: 12px;
+  aspect-ratio: 1 / 1;
+}
+
+.ArticleHeaderTags {
+  display: flex;
+
+  color: var(--secondary-color);
+
+  list-style: none;
+}
+
+.Tag {
+  padding: 0 5px;
+}
+
+.Tag:first-of-type {
+  padding-left: 0;
+}
+
+.Tag:last-of-type {
+  padding-right: 0;
+}
+
+.Tag:not(:first-of-type) {
+  border-left: 1px solid var(--secondary-color);
+}

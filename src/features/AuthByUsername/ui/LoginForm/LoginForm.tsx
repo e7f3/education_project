@@ -11,7 +11,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { Button } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
-import { Text, TextVariant } from 'shared/ui/Text/Text'
+import { Text, TextMode, TextVariant } from 'shared/ui/Text/Text'
 
 import classes from './LoginForm.module.scss'
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
@@ -64,8 +64,8 @@ const LoginForm: FC<LoginFormProps> = memo((props) => {
   return (
     <DynamicReducerLoader reducers={initialReducers}>
       <form className={classNames(classes.LoginForm, {}, [className])}>
-        <Text title={t('Auth form')} />
-        {error && <Text variant={TextVariant.ERROR} text={error} />}
+        <Text content={t('Auth form')} variant={TextVariant.TITLE} />
+        {error && <Text mode={TextMode.ERROR} content={error} />}
         <Input
           placeholder={t('Username')}
           type='text'

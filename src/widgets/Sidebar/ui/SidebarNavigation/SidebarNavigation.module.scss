@@ -1,0 +1,16 @@
+.SidebarNavigation {
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+
+  width: fit-content;
+  padding: 10px;
+}
+
+.SidebarNavigation.collapsed {
+  align-self: center;
+
+  padding: 10px 0;
+
+  column-gap: none;
+}

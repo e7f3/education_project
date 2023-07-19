@@ -1,0 +1,7 @@
+.ArticleDetails {
+  display: grid;
+  grid-template-rows: max-content 1fr;
+  row-gap: 100px;
+
+  padding: 100px 15px;
+}

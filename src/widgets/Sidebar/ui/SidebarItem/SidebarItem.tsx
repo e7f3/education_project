@@ -12,10 +12,11 @@ import { SidebarItemType } from '../../model/items'
 export interface SidebarItemProps {
   item: SidebarItemType
   collapsed: boolean
+  highlited: boolean
 }
 
 export const SidebarItem: FC<SidebarItemProps> = memo((props) => {
-  const { item, collapsed } = props
+  const { item, collapsed, highlited } = props
   const { t } = useTranslation()
   const isAuth = useSelector(getUserAuthData)
 
@@ -24,22 +25,30 @@ export const SidebarItem: FC<SidebarItemProps> = memo((props) => {
   }
 
   return (
-    <AppLink
+    <div
       className={classNames(
-        classes.link,
-        { [classes.collapsed]: collapsed },
+        classes.linkWrapper,
+        { [classes.highlited]: highlited },
         []
       )}
-      theme={AppLinkTheme.PRIMARY}
-      to={item.path}
     >
-      <item.icon
-        className={classNames(classes.linkIcon, {}, [
-          classes.stroke,
-          classes.fill,
-        ])}
-      />
-      <span className={classes.linkText}>{t(item.text)}</span>
-    </AppLink>
+      <AppLink
+        className={classNames(
+          classes.link,
+          { [classes.collapsed]: collapsed, [classes.highlited]: highlited },
+          []
+        )}
+        theme={AppLinkTheme.PRIMARY}
+        to={item.path}
+      >
+        <item.icon
+          className={classNames(classes.linkIcon, {}, [
+            classes.stroke,
+            classes.fill,
+          ])}
+        />
+        <span className={classes.linkText}>{t(item.text)}</span>
+      </AppLink>
+    </div>
   )
 })

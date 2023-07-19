@@ -1,9 +1,11 @@
 import { RouteProps } from 'react-router-dom'
 
 import { AboutPage } from 'pages/AboutPage'
+import { ArticlesPage } from 'pages/ArticlesPage'
 import { MainPage } from 'pages/MainPage'
 import { NotFoundPage } from 'pages/NotFoundPage'
 import { ProfilePage } from 'pages/ProfilePage'
+import { SpecificArticlePage } from 'pages/SpecificArticlePage'
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 export type AppRouteProps = RouteProps & {
@@ -22,6 +24,16 @@ export const routeConfig: Record<AppRoutes, AppRouteProps> = {
   [AppRoutes.PROFILE]: {
     path: RoutePath[AppRoutes.PROFILE],
     element: <ProfilePage />,
+    authOnly: true,
+  },
+  [AppRoutes.ARTICLES]: {
+    path: RoutePath[AppRoutes.ARTICLES],
+    element: <ArticlesPage />,
+    authOnly: true,
+  },
+  [AppRoutes.SPECIFIC_ARTICLE]: {
+    path: RoutePath[AppRoutes.SPECIFIC_ARTICLE],
+    element: <SpecificArticlePage />,
     authOnly: true,
   },
   // Rest
