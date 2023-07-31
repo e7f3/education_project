@@ -11,22 +11,30 @@ import {
 } from '../../types/profileSchema'
 import { validateProfileData } from '../validateProfileData/validateProfileData'
 
+interface UpdateProfileDataArgs {
+  userId: string
+}
+
 export const updateProfileData = createAsyncThunk<
   Profile,
-  void,
+  UpdateProfileDataArgs,
   ThunkApiConfig<ValidateProfileError[] | UpdateProfileError>
->('profile/updateProfileData', async (_, thunkApi) => {
+>('profile/updateProfileData', async (updateData, thunkApi) => {
   const { extra, rejectWithValue, getState } = thunkApi
   const formData = getProfileFormData(getState())
 
   const validationErrors = validateProfileData(formData)
 
   if (validationErrors && validationErrors.length) {
-    console.log('inside if')
     return rejectWithValue(validationErrors)
   }
   try {
-    const response = await extra.api.put<Profile>('/profile', formData)
+    const data = {
+      formData,
+      userId: updateData.userId,
+    }
+
+    const response = await extra.api.put<Profile>('/setUserProfile', data)
 
     if (!response?.data) {
       throw new Error()

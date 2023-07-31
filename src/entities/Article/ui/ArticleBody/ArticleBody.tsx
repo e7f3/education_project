@@ -2,6 +2,7 @@ import { FC, memo, useMemo } from 'react'
 
 import classes from './ArticleBody.module.scss'
 import { Article, ArticleBlockType } from '../../model/types/article'
+import { ArticleCodeBlock } from '../ArticleCodeBlock/ArticleCodeBlock'
 import { ArticleImageBlock } from '../ArticleImageBlock/ArticleImageBlock'
 import { ArticleTextBlock } from '../ArticleTextBlock/ArticleTextBlock'
 
@@ -17,21 +18,11 @@ export const ArticleBody: FC<ArticleBodyProps> = memo((props) => {
     return blocks.map((block) => {
       switch (block.type) {
         case ArticleBlockType.TEXT:
-          return (
-            <ArticleTextBlock
-              title={block.title}
-              paragraphs={block.paragraphs}
-              key={block.id}
-            />
-          )
+          return <ArticleTextBlock block={block} key={block.id} />
         case ArticleBlockType.IMAGE:
-          return (
-            <ArticleImageBlock
-              title={block.title}
-              src={block.src}
-              key={block.id}
-            />
-          )
+          return <ArticleImageBlock block={block} key={block.id} />
+        case ArticleBlockType.CODE:
+          return <ArticleCodeBlock block={block} key={block.id} />
         default:
           return null
       }

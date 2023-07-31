@@ -10,10 +10,10 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 
 import classes from './SpecificArticle.module.scss'
-import { getSpecificArticleData } from '../../model/selectors/getSpecificArticleData/getSpecificArticleData'
-import { getSpecificArticleError } from '../../model/selectors/getSpecificArticleError/getSpecificArticleError'
-import { getSpecificArticleIsLoading } from '../../model/selectors/getSpecificArticleIsLoading/getSpecificArticleIsLoading'
-import { specificArticleReducer } from '../../model/slices/specificArticleSlice'
+import { getArticleData } from '../../model/selectors/getArticleData/getArticleData'
+import { getArticleError } from '../../model/selectors/getArticleError/getArticleError'
+import { getArticleIsLoading } from '../../model/selectors/getArticleIsLoading/getArticleIsLoading'
+import { articleReducer } from '../../model/slices/articleSlice'
 import { ArticleDetails } from '../ArticleDetails/ArticleDetails'
 
 interface SpecificArticleProps {
@@ -21,18 +21,20 @@ interface SpecificArticleProps {
 }
 
 const reducers: ReducersList = {
-  specificArticle: specificArticleReducer,
+  article: articleReducer,
 }
 
 export const SpecificArticle: FC<SpecificArticleProps> = memo((props) => {
   const { id: articleId } = props
   const dispatch = useAppDispatch()
-  const isLoading = useSelector(getSpecificArticleIsLoading)
-  const error = useSelector(getSpecificArticleError)
-  const data = useSelector(getSpecificArticleData)
+  const isLoading = useSelector(getArticleIsLoading)
+  const error = useSelector(getArticleError)
+  const data = useSelector(getArticleData)
 
   useEffect(() => {
-    dispatch(fetchArticleById(articleId))
+    if (__PROJECT__ !== 'storybook') {
+      dispatch(fetchArticleById(articleId))
+    }
   }, [dispatch, articleId])
 
   let content

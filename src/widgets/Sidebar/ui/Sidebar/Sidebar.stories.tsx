@@ -9,7 +9,7 @@ import { Sidebar } from './Sidebar'
 const SidebarWithTranslation = withTranslation()(Sidebar)
 
 export default {
-  title: 'widgets/Sidebar',
+  title: 'widgets/Sidebar/Sidebar',
   component: Sidebar,
   argTypes: {
     backgroundColor: { control: 'color' },

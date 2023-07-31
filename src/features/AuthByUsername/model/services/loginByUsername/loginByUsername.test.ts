@@ -11,7 +11,11 @@ const mockedAxios = jest.mocked(axios, true)
 
 describe('loginByUsername.test', () => {
   test('Successed auth loginByUsername.test', async () => {
-    const userData = { username: 'admin', id: '1' }
+    const userData = {
+      username: 'admin',
+      id: '1',
+      avatar: 'https://www.cdu-langerwehe.de/assets/images/team.jpg',
+    }
 
     const thunk = new TestAsyncThunk(loginByUsername)
 

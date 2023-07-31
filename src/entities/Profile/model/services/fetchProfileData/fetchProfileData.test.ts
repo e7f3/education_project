@@ -23,33 +23,26 @@ const data = {
 }
 
 describe('fetchProfileData.test', () => {
-  test('Successed auth fetchProfileData.test', async () => {
-    // const userData = { username: 'admin', id: '1' }
-    // const profile: Profile = {
-    //   firstname: 'John',
-    //   lastname: 'Smith',
-    //   age: 27,
-    // }
-
+  test('Successed fetch fetchProfileData.test', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData)
 
-    thunk.api.get.mockReturnValue(Promise.resolve({ data }))
+    thunk.api.post.mockReturnValue(Promise.resolve({ data }))
 
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk({ userId: '1' })
 
-    expect(thunk.api.get).toHaveBeenCalled()
+    expect(thunk.api.post).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('fulfilled')
     expect(result.payload).toBe(data)
   })
 
-  test('Auth with error fetchProfileData.test', async () => {
+  test('Fetch with error fetchProfileData.test', async () => {
     const thunk = new TestAsyncThunk(fetchProfileData)
 
-    thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }))
+    thunk.api.post.mockReturnValue(Promise.resolve({ status: 403 }))
 
-    const result = await thunk.callThunk()
+    const result = await thunk.callThunk({ userId: '1' })
 
-    expect(thunk.api.get).toHaveBeenCalled()
+    expect(thunk.api.post).toHaveBeenCalled()
     expect(result.meta.requestStatus).toBe('rejected')
     expect(result.payload).toBe(FetchProfileError.FETCH_SERVER_ERROR)
   })

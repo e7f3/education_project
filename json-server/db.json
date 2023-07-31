@@ -1,22 +1,16 @@
 {
-  "posts": [
-    {
-      "id": "1",
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
-    {
-      "id": "1",
-      "body": "some comment",
-      "postId": "1"
-    }
-  ],
+  "posts": [{ "id": "1", "title": "json-server", "author": "typicode" }],
   "users": [
     {
       "id": "1",
       "username": "admin",
+      "avatar": "https://www.cdu-langerwehe.de/assets/images/team.jpg",
+      "password": "12345678"
+    },
+    {
+      "id": "2",
+      "username": "user",
+      "avatar": "https://www.cdu-langerwehe.de/assets/images/team.jpg",
       "password": "12345678"
     }
   ],
@@ -133,36 +127,49 @@
       ]
     }
   ],
-
   "comments": [
     {
       "id": "1",
       "text": "some comment",
       "articleId": "1",
-      "userId": "1"
+      "userId": "1",
+      "date": "01.01.1970"
     },
     {
       "id": "2",
       "text": "some comment",
       "articleId": "1",
-      "userId": "1"
+      "userId": "1",
+      "date": "01.01.1970"
     },
     {
       "id": "3",
       "text": "some comment",
       "articleId": "1",
-      "userId": "1"
+      "userId": "1",
+      "date": "01.01.1970"
     }
   ],
-
-  "profile": {
-    "firstname": "Ilia",
-    "lastname": "Mashkov",
-    "age": 27,
-    "country": "Georgia",
-    "currency": "USD",
-    "city": "Kobuleti",
-    "username": "admin",
-    "avatar": "https://www.cdu-langerwehe.de/assets/images/team.jpg"
+  "profiles": {
+    "1": {
+      "firstname": "Ilia",
+      "lastname": "Mashkov",
+      "age": 28,
+      "country": "Georgia",
+      "currency": "USD",
+      "city": "Kobuleti",
+      "username": "admin",
+      "avatar": "https://www.cdu-langerwehe.de/assets/images/team.jpg"
+    },
+    "2": {
+      "firstname": "Ivan",
+      "lastname": "Ivanov",
+      "age": 22,
+      "country": "USA",
+      "currency": "USD",
+      "city": "New York",
+      "username": "user",
+      "avatar": "https://www.cdu-langerwehe.de/assets/images/team.jpg"
+    }
   }
 }

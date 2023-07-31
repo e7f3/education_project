@@ -2,11 +2,11 @@
   width: 100%;
   max-width: var(--page-content-width);
   margin: 0 auto;
-  padding: 0 var(--page-content-padding);
+  padding: 0 30px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 992px) {
   .Container {
-    padding: 0 30px;
+    padding: 0 var(--page-content-padding);
   }
 }

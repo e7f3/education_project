@@ -5,7 +5,7 @@ import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorat
 import { SidebarNavigation } from './SidebarNavigation'
 
 export default {
-  title: 'shared/SidebarNavigation',
+  title: 'widgets/Sidebar/SidebarNavigation',
   component: SidebarNavigation,
   argTypes: {},
 } as ComponentMeta<typeof SidebarNavigation>

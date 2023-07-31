@@ -6,7 +6,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { ProfilePageHeader } from './ProfilePageHeader'
 
 export default {
-  title: 'pages/ProfilePageHeader',
+  title: 'pages/Profile/ProfilePageHeader',
   component: ProfilePageHeader,
   argTypes: {
     backgroundColor: { control: 'color' },

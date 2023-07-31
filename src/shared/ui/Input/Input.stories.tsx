@@ -25,3 +25,6 @@ Default.decorators = [FlexDecorator]
 
 export const DefaultDark = Template.bind({})
 DefaultDark.decorators = [FlexDecorator, ThemeDecorator(Theme.DARK)]
+
+export const DefaultColorful = Template.bind({})
+DefaultColorful.decorators = [FlexDecorator, ThemeDecorator(Theme.COLORFUL)]

@@ -47,14 +47,14 @@ const ProfilePage: FC<ProfilePageProps> = memo((props) => {
   const error = useSelector(getProfileError)
   const isLoading = useSelector(getProfileIsLoading)
   const readonly = useSelector(getProfileReadonly)
-  const isAuth = useSelector(getUserAuthData)
+  const userData = useSelector(getUserAuthData)
   const validateErrors = useSelector(getProfileValidateErrors)
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook' && isAuth) {
-      dispatch(fetchProfileData())
+    if (__PROJECT__ !== 'storybook' && userData) {
+      dispatch(fetchProfileData({ userId: userData.id }))
     }
-  }, [dispatch, isAuth])
+  }, [dispatch, userData])
 
   const changeFirstname = useCallback(
     (value?: string) => {

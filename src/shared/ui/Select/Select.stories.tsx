@@ -34,3 +34,10 @@ DefaultReadonly.args = { readonly: true }
 
 export const DefaultDark = Template.bind({})
 DefaultDark.decorators = [FlexDecorator, ThemeDecorator(Theme.DARK)]
+
+export const DefaultDarkReadonly = Template.bind({})
+DefaultDarkReadonly.decorators = [FlexDecorator, ThemeDecorator(Theme.DARK)]
+DefaultDarkReadonly.args = { readonly: true }
+
+export const DefaultColorful = Template.bind({})
+DefaultColorful.decorators = [FlexDecorator, ThemeDecorator(Theme.COLORFUL)]

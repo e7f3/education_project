@@ -6,12 +6,12 @@ import { Text } from 'shared/ui/Text/Text'
 import classes from './ArticleImageBlock.module.scss'
 
 interface ArticleImageBlockProps {
-  src: string
-  title?: string
+  block: ArticleBlockImage
 }
 
 export const ArticleImageBlock: FC<ArticleImageBlockProps> = memo((props) => {
-  const { src, title } = props
+  const { block } = props
+  const { src, title } = block
   return (
     <section className={classes.ArticleImageBlock}>
       <img className={classes.Image} src={src} alt={title} />

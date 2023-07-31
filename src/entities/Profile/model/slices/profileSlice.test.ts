@@ -74,7 +74,7 @@ describe('profileSlice.test', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        fetchProfileData.fulfilled(data, '')
+        fetchProfileData.fulfilled(data, '', { userId: '1' })
       )
     ).toEqual({ isLoading: false, data, formData: data })
   })
@@ -87,7 +87,7 @@ describe('profileSlice.test', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        fetchProfileData.rejected(new Error(), '')
+        fetchProfileData.rejected(new Error(), '', { userId: '1' })
       )
     ).toEqual({ isLoading: false })
   })
@@ -110,7 +110,7 @@ describe('profileSlice.test', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        updateProfileData.fulfilled(data, '')
+        updateProfileData.fulfilled(data, '', { userId: '1' })
       )
     ).toEqual({ isLoading: false, data, formData: data, readonly: true })
   })
@@ -123,7 +123,7 @@ describe('profileSlice.test', () => {
     expect(
       profileReducer(
         state as ProfileSchema,
-        updateProfileData.rejected(new Error(), '')
+        updateProfileData.rejected(new Error(), '', { userId: '1' })
       )
     ).toEqual({ isLoading: false })
   })

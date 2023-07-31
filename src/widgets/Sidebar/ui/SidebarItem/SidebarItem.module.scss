@@ -1,18 +1,16 @@
-.linkWrapper {
-  padding: 5px;
-
-  cursor: pointer;
-}
-
-.linkWrapper.highlited {
-  outline: 1px solid var(--action-color);
-}
-
 .link {
   display: flex;
   align-items: center;
 
+  padding: 5px 15px;
+
   column-gap: 10px;
+
+  cursor: pointer;
+}
+
+.link.highlited {
+  outline: 1px solid var(--action-color);
 }
 
 .link.collapsed {

@@ -25,30 +25,22 @@ export const SidebarItem: FC<SidebarItemProps> = memo((props) => {
   }
 
   return (
-    <div
+    <AppLink
       className={classNames(
-        classes.linkWrapper,
-        { [classes.highlited]: highlited },
+        classes.link,
+        { [classes.collapsed]: collapsed, [classes.highlited]: highlited },
         []
       )}
+      theme={AppLinkTheme.PRIMARY}
+      to={item.path}
     >
-      <AppLink
-        className={classNames(
-          classes.link,
-          { [classes.collapsed]: collapsed, [classes.highlited]: highlited },
-          []
-        )}
-        theme={AppLinkTheme.PRIMARY}
-        to={item.path}
-      >
-        <item.icon
-          className={classNames(classes.linkIcon, {}, [
-            classes.stroke,
-            classes.fill,
-          ])}
-        />
-        <span className={classes.linkText}>{t(item.text)}</span>
-      </AppLink>
-    </div>
+      <item.icon
+        className={classNames(classes.linkIcon, {}, [
+          classes.stroke,
+          classes.fill,
+        ])}
+      />
+      <span className={classes.linkText}>{t(item.text)}</span>
+    </AppLink>
   )
 })

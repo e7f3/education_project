@@ -7,7 +7,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { ProfilePageValidationErrors } from './ProfilePageValidationErrors'
 
 export default {
-  title: 'pages/ProfilePageValidationErrors',
+  title: 'pages/Profile/ProfilePageValidationErrors',
   component: ProfilePageValidationErrors,
   argTypes: {
     backgroundColor: { control: 'color' },

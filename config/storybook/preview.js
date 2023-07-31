@@ -1,4 +1,5 @@
 import { addDecorator } from '@storybook/react'
+import { withRouter } from 'storybook-addon-react-router-v6'
 
 import { Theme } from 'app/providers/ThemeProvider'
 import { ValidateProfileError } from 'entities/Profile/model/types/profileSchema'
@@ -46,7 +47,8 @@ addDecorator(
     user: {},
   })
 )
-addDecorator(RouterDecorator)
+// addDecorator(RouterDecorator)
+addDecorator(withRouter)
 addDecorator(StyleDecorator)
 // addDecorator(SuspenseDecorator)
 addDecorator(I18NextDecorator)

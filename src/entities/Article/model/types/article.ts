@@ -17,7 +17,10 @@ export enum ArticleType {
   'HISTORY' = 'HISTORY',
   'TRAVEL' = 'TRAVEL',
 }
-export type ArticleBlock = ArticleBlockText | ArticleBlockImage
+export type ArticleBlock =
+  | ArticleBlockText
+  | ArticleBlockImage
+  | ArticleBlockCode
 
 export interface ArticleBlockText extends ArticleBlockBase {
   type: ArticleBlockType.TEXT
@@ -31,6 +34,12 @@ export interface ArticleBlockImage extends ArticleBlockBase {
   src: string
 }
 
+export interface ArticleBlockCode extends ArticleBlockBase {
+  type: ArticleBlockType.CODE
+  title?: string
+  code: string
+}
+
 export interface ArticleBlockBase {
   id: string
   type: ArticleBlockType
@@ -39,4 +48,5 @@ export interface ArticleBlockBase {
 export enum ArticleBlockType {
   'TEXT' = 'TEXT',
   'IMAGE' = 'IMAGE',
+  'CODE' = 'CODE',
 }

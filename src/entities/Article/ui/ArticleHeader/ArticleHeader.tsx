@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 
 import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import ViewsIcon from 'shared/assets/icons/views.svg'
+import { ColoredWith, Icon } from 'shared/ui/Icon/Icon'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
 
 import classes from './ArticleHeader.module.scss'
@@ -46,11 +47,19 @@ export const ArticleHeader: FC<ArticleHeaderProps> = memo((props) => {
 
         <li className={classes.ArticleHeaderInfoSection}>
           <div className={classes.ArticleHeaderViews}>
-            <ViewsIcon className={classes.ArticleHeaderIcon} />
+            <Icon
+              className={classes.ArticleHeaderIcon}
+              icon={ViewsIcon}
+              coloredWith={ColoredWith.FILL}
+            />
             <Text content={views} variant={TextVariant.CAPTION} />
           </div>
           <div className={classes.ArticleHeaderDate}>
-            <CalendarIcon className={classes.ArticleHeaderIcon} />
+            <Icon
+              className={classes.ArticleHeaderIcon}
+              icon={CalendarIcon}
+              coloredWith={ColoredWith.STROKE}
+            />
             <Text content={createdAt} variant={TextVariant.CAPTION} />
           </div>
         </li>

@@ -30,6 +30,12 @@ PrimaryDark.args = {
 }
 PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)]
 
+export const PrimaryColorful = Template.bind({})
+PrimaryColorful.args = {
+  theme: AppLinkTheme.PRIMARY,
+}
+PrimaryColorful.decorators = [ThemeDecorator(Theme.COLORFUL)]
+
 export const Secondary = Template.bind({})
 Secondary.args = {
   theme: AppLinkTheme.SECONDARY,
@@ -40,3 +46,9 @@ SecondaryDark.args = {
   theme: AppLinkTheme.SECONDARY,
 }
 SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const SecondaryColorful = Template.bind({})
+SecondaryColorful.args = {
+  theme: AppLinkTheme.SECONDARY,
+}
+SecondaryColorful.decorators = [ThemeDecorator(Theme.COLORFUL)]

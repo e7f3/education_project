@@ -52,11 +52,24 @@ InvertedDisabled.args = {
   disabled: true,
 }
 
-export const InvertedDark = Template.bind({})
-InvertedDark.args = {
-  theme: ButtonTheme.INVERTED,
+export const CleanDark = Template.bind({})
+CleanDark.args = {
+  theme: ButtonTheme.CLEAN,
 }
-InvertedDark.decorators = [ThemeDecorator(Theme.DARK)]
+CleanDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const CleanDarkDisabled = Template.bind({})
+CleanDarkDisabled.args = {
+  theme: ButtonTheme.CLEAN,
+  disabled: true,
+}
+CleanDarkDisabled.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const DefaultDark = Template.bind({})
+DefaultDark.args = {
+  theme: ButtonTheme.DEFAULT,
+}
+DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const DefaultDarkDisabled = Template.bind({})
 DefaultDarkDisabled.args = {
@@ -64,6 +77,58 @@ DefaultDarkDisabled.args = {
   disabled: true,
 }
 DefaultDarkDisabled.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const InvertedDark = Template.bind({})
+InvertedDark.args = {
+  theme: ButtonTheme.INVERTED,
+}
+InvertedDark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const InvertedDarkDisabled = Template.bind({})
+InvertedDarkDisabled.args = {
+  theme: ButtonTheme.INVERTED,
+  disabled: true,
+}
+InvertedDarkDisabled.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const CleanColorful = Template.bind({})
+CleanColorful.args = {
+  theme: ButtonTheme.CLEAN,
+}
+CleanColorful.decorators = [ThemeDecorator(Theme.COLORFUL)]
+
+export const CleanColorfulDisabled = Template.bind({})
+CleanColorfulDisabled.args = {
+  theme: ButtonTheme.CLEAN,
+  disabled: true,
+}
+CleanColorfulDisabled.decorators = [ThemeDecorator(Theme.COLORFUL)]
+
+export const DefaultColorful = Template.bind({})
+DefaultColorful.args = {
+  theme: ButtonTheme.DEFAULT,
+}
+DefaultColorful.decorators = [ThemeDecorator(Theme.COLORFUL)]
+
+export const DefaultColorfulDisabled = Template.bind({})
+DefaultColorfulDisabled.args = {
+  theme: ButtonTheme.DEFAULT,
+  disabled: true,
+}
+DefaultColorfulDisabled.decorators = [ThemeDecorator(Theme.COLORFUL)]
+
+export const InvertedColorful = Template.bind({})
+InvertedColorful.args = {
+  theme: ButtonTheme.INVERTED,
+}
+InvertedColorful.decorators = [ThemeDecorator(Theme.COLORFUL)]
+
+export const InvertedColorfulDisabled = Template.bind({})
+InvertedColorfulDisabled.args = {
+  theme: ButtonTheme.INVERTED,
+  disabled: true,
+}
+InvertedColorfulDisabled.decorators = [ThemeDecorator(Theme.COLORFUL)]
 
 export const MediumSize = Template.bind({})
 MediumSize.args = {

@@ -23,13 +23,13 @@ const data = {
 }
 
 describe('validateProfileData.test', () => {
-  test('Successed auth validateProfileData.test', async () => {
+  test('Successed validation validateProfileData.test', async () => {
     const result = validateProfileData(data)
 
     expect(result).toEqual([])
   })
 
-  test('incorrect firstaname and lastname validateProfileData.test', async () => {
+  test('Incorrect firstname and lastname validateProfileData.test', async () => {
     const result = validateProfileData({ ...data, firstname: '', lastname: '' })
     expect(result).toEqual([
       ValidateProfileError.INVALID_FIRSTNAME,
@@ -37,17 +37,17 @@ describe('validateProfileData.test', () => {
     ])
   })
 
-  test('incorrect age validateProfileData.test', async () => {
+  test('Incorrect age validateProfileData.test', async () => {
     const result = validateProfileData({ ...data, age: undefined })
     expect(result).toEqual([ValidateProfileError.INVALID_AGE])
   })
 
-  test('incorrect country validateProfileData.test', async () => {
+  test('Incorrect country validateProfileData.test', async () => {
     const result = validateProfileData({ ...data, country: undefined })
     expect(result).toEqual([ValidateProfileError.INVALID_COUNTRY])
   })
 
-  test('empty data validateProfileData.test', async () => {
+  test('Empty data validateProfileData.test', async () => {
     const result = validateProfileData({})
     expect(result).toEqual([
       ValidateProfileError.INVALID_FIRSTNAME,

@@ -4,14 +4,21 @@ import type { ThunkApiConfig } from 'app/providers/StoreProvider'
 
 import { FetchProfileError, Profile } from '../../types/profileSchema'
 
+interface FetchProfileDataArgs {
+  userId: string
+}
+
 export const fetchProfileData = createAsyncThunk<
   Profile,
-  void,
+  FetchProfileDataArgs,
   ThunkApiConfig<FetchProfileError>
->('profile/fetchProfileData', async (_, thunkApi) => {
+>('profile/fetchProfileData', async (fetchData, thunkApi) => {
   const { extra, rejectWithValue } = thunkApi
   try {
-    const response = await extra.api.get<Profile>('/profile')
+    const response = await extra.api.post<Profile>(
+      '/getUserProfileById',
+      fetchData
+    )
 
     if (!response?.data) {
       throw new Error()

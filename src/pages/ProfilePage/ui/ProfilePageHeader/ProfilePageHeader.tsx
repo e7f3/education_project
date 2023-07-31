@@ -7,6 +7,7 @@ import {
   profileActions,
   updateProfileData,
 } from 'entities/Profile'
+import { getUserAuthData } from 'entities/User'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { Button, ButtonColorScheme, ButtonTheme } from 'shared/ui/Button/Button'
@@ -24,6 +25,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
   const dispatch = useAppDispatch()
 
   const readonly = useSelector(getProfileReadonly)
+  const userData = useSelector(getUserAuthData)
 
   const enableEditMode = useCallback(() => {
     dispatch(profileActions.setReadonlyMode(false))
@@ -34,8 +36,14 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
   }, [dispatch])
 
   const saveChanges = useCallback(() => {
-    dispatch(updateProfileData())
-  }, [dispatch])
+    if (userData && userData.id) {
+      dispatch(
+        updateProfileData({
+          userId: userData.id,
+        })
+      )
+    }
+  }, [dispatch, userData])
 
   return (
     <div className={classNames(classes.ProfilePageHeader, {}, [className])}>

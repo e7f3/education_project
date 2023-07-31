@@ -13,7 +13,7 @@ const selectOptions: CountryOption[] = Object.entries(Country).map(
 )
 
 export default {
-  title: 'enteties/CountrySelect',
+  title: 'enteties/Country/CountrySelect',
   component: CountrySelect,
   argTypes: {
     backgroundColor: { control: 'color' },

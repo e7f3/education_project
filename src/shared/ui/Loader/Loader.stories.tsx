@@ -18,6 +18,10 @@ const Template: ComponentStory<typeof Loader> = (args) => <Loader {...args} />
 export const Default = Template.bind({})
 Default.args = {}
 
-export const DefaultDark = Template.bind({})
-DefaultDark.args = {}
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
+export const Dark = Template.bind({})
+Dark.args = {}
+Dark.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const Colorful = Template.bind({})
+Colorful.args = {}
+Colorful.decorators = [ThemeDecorator(Theme.COLORFUL)]
