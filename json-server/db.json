@@ -1,5 +1,11 @@
 {
-  "posts": [{ "id": "1", "title": "json-server", "author": "typicode" }],
+  "posts": [
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
   "users": [
     {
       "id": "1",
@@ -19,7 +25,11 @@
       "id": "1",
       "title": "Nicks boots.",
       "subtitle": "Why do I love them.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": [
+        "STYLE",
+        "HISTORY",
+        "CRAFTSMANSHIP"
+      ],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
       "views": "100",
       "createdAt": "09.07.2023",
@@ -56,7 +66,11 @@
       "id": "2",
       "title": "Nicks boots.",
       "subtitle": "Why I love them.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": [
+        "STYLE",
+        "HISTORY",
+        "CRAFTSMANSHIP"
+      ],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
       "views": "100",
       "createdAt": "09.07.2023",
@@ -93,7 +107,11 @@
       "id": "3",
       "title": "Nicks boots.",
       "subtitle": "Why I love them.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": [
+        "STYLE",
+        "HISTORY",
+        "CRAFTSMANSHIP"
+      ],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
       "views": "100",
       "createdAt": "09.07.2023",
@@ -150,18 +168,20 @@
       "date": "01.01.1970"
     }
   ],
-  "profiles": {
-    "1": {
+  "profiles": [
+    {
+      "id": "1",
       "firstname": "Ilia",
       "lastname": "Mashkov",
       "age": 28,
       "country": "Georgia",
       "currency": "USD",
-      "city": "Kobuleti",
+      "city": "Kutaisi",
       "username": "admin",
       "avatar": "https://www.cdu-langerwehe.de/assets/images/team.jpg"
     },
-    "2": {
+    {
+      "id": "2",
       "firstname": "Ivan",
       "lastname": "Ivanov",
       "age": 22,
@@ -171,5 +191,5 @@
       "username": "user",
       "avatar": "https://www.cdu-langerwehe.de/assets/images/team.jpg"
     }
-  }
+  ]
 }

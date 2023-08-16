@@ -4,6 +4,10 @@ import { Theme } from 'app/providers/ThemeProvider'
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import avatar from 'shared/assets/test/storybook-avatar.jpg'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { StoreProviderDecorator } from 'shared/config/storybook/StoreProviderDecorator/StoreProviderDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
@@ -14,6 +18,19 @@ export default {
   component: ProfileCard,
   argTypes: {
     backgroundColor: { control: 'color' },
+  },
+  args: {
+    data: {
+      firstname: 'John',
+      lastname: 'Smith',
+      username: 'user',
+      age: 22,
+
+      country: Country.POLAND,
+      city: 'Wrocław',
+      avatar,
+    },
+    readonly: false,
   },
 } as ComponentMeta<typeof ProfileCard>
 
@@ -27,19 +44,6 @@ Empty.args = {
 }
 
 export const Default = Template.bind({})
-Default.args = {
-  data: {
-    firstname: 'John',
-    lastname: 'Smith',
-    username: 'user',
-    age: 22,
-
-    country: Country.POLAND,
-    city: 'Wrocław',
-    avatar,
-  },
-  readonly: false,
-}
 
 export const Readonly = Template.bind({})
 Readonly.args = {
@@ -56,21 +60,17 @@ Readonly.args = {
   readonly: true,
 }
 
-export const DefaultDark = Template.bind({})
-DefaultDark.args = {
-  data: {
-    firstname: 'John',
-    lastname: 'Smith',
-    username: 'user',
-    age: 22,
+export const DarkTheme = Template.bind({})
+DarkTheme.decorators = [
+  ThemeDecorator(Theme.DARK),
+  FlexDecorator(FlexDecoratorVariant.CENTERED),
+]
 
-    country: Country.POLAND,
-    city: 'Wrocław',
-    avatar,
-  },
-  readonly: false,
-}
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
+export const ColorfulTheme = Template.bind({})
+ColorfulTheme.decorators = [
+  ThemeDecorator(Theme.COLORFUL),
+  FlexDecorator(FlexDecoratorVariant.CENTERED),
+]
 
 export const Loading = Template.bind({})
 Loading.args = {

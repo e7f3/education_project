@@ -1,0 +1,15 @@
+.AddCommentForm {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  padding: 0 15px 50px;
+}
+
+.Textarea {
+  width: 100%;
+}
+
+.Button {
+  width: 200px;
+}

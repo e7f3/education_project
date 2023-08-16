@@ -2,7 +2,7 @@ import { FC, memo, useCallback } from 'react'
 
 import { ArticleBlockCode } from 'entities/Article/model/types/article'
 import CopyIcon from 'shared/assets/icons/copy.svg'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Button, ButtonTheme, ButtonVariant } from 'shared/ui/Button/Button'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
 

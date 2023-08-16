@@ -6,7 +6,10 @@ import {
   ArticleBlockType,
   ArticleType,
 } from 'entities/Article/model/types/article'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { ArticleHeader } from './ArticleHeader'
@@ -64,10 +67,19 @@ const Template: ComponentStory<typeof ArticleHeader> = (args) => (
 )
 
 export const Default = Template.bind({})
-Default.decorators = [FlexDecorator]
+Default.decorators = [
+  ThemeDecorator(Theme.LIGHT),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]
 
 export const DarkTheme = Template.bind({})
-DarkTheme.decorators = [ThemeDecorator(Theme.DARK), FlexDecorator]
+DarkTheme.decorators = [
+  ThemeDecorator(Theme.DARK),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]
 
 export const AltTheme = Template.bind({})
-AltTheme.decorators = [ThemeDecorator(Theme.COLORFUL), FlexDecorator]
+AltTheme.decorators = [
+  ThemeDecorator(Theme.COLORFUL),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]

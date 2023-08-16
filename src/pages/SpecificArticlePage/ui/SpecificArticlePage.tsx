@@ -1,21 +1,13 @@
-import { FC, memo } from 'react'
+import { FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 
 import { SpecificArticle } from 'entities/Article'
-import {
-  ArticleComments,
-  articleCommentsReducer,
-} from 'features/ArticleComments'
-import {
-  DynamicReducerLoader,
-  ReducersList,
-} from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { Container } from 'shared/ui/Container/Container'
+import { CommentsSection } from 'widgets/CommentsSection'
 
-const reducers: ReducersList = {
-  articleComments: articleCommentsReducer,
-}
+import { addCommentToArticle } from '../model/services/addCommentToArticle/addCommentToArticle'
+import { getFetcher } from '../model/services/fetchArticleComments/fetchArticleComments'
 
 const SpecificArticlePage: FC = memo(() => {
   const { t } = useTranslation('articles')
@@ -25,13 +17,16 @@ const SpecificArticlePage: FC = memo(() => {
     return <div>{t('Article not found')}</div>
   }
 
+  const fetchComments = getFetcher(id)
+
   return (
-    <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
-      <Container>
-        <SpecificArticle id={id} />
-        <ArticleComments id={id} />
-      </Container>
-    </DynamicReducerLoader>
+    <Container>
+      <SpecificArticle id={id} />
+      <CommentsSection
+        fetchComments={fetchComments}
+        sendNewComment={addCommentToArticle}
+      />
+    </Container>
   )
 })
 

@@ -2,7 +2,7 @@ import { FC, memo } from 'react'
 
 import { useTheme } from 'app/providers/ThemeProvider'
 import DayNight from 'shared/assets/icons/day_night.svg'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
 import classes from './ThemeToggler.module.scss'

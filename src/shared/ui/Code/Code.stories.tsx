@@ -1,7 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { Code } from './Code'
@@ -21,7 +24,7 @@ Default.args = {
     console.log(i)
   }`,
 }
-Default.decorators = [FlexDecorator]
+Default.decorators = [FlexDecorator(FlexDecoratorVariant.CENTERED)]
 
 export const Dark = Template.bind({})
 Dark.args = {
@@ -30,7 +33,10 @@ Dark.args = {
     console.log(i)
   }`,
 }
-Dark.decorators = [ThemeDecorator(Theme.DARK), FlexDecorator]
+Dark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  FlexDecorator(FlexDecoratorVariant.CENTERED),
+]
 
 export const Colorful = Template.bind({})
 Colorful.args = {
@@ -39,4 +45,7 @@ Colorful.args = {
     console.log(i)
   }`,
 }
-Colorful.decorators = [ThemeDecorator(Theme.COLORFUL), FlexDecorator]
+Colorful.decorators = [
+  ThemeDecorator(Theme.COLORFUL),
+  FlexDecorator(FlexDecoratorVariant.CENTERED),
+]

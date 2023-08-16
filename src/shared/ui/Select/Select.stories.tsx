@@ -1,7 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { Select } from './Select'
@@ -26,18 +29,27 @@ export default {
 const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />
 
 export const Default = Template.bind({})
-Default.decorators = [FlexDecorator]
+Default.decorators = [FlexDecorator(FlexDecoratorVariant.CENTERED)]
 
 export const DefaultReadonly = Template.bind({})
-DefaultReadonly.decorators = [FlexDecorator]
+DefaultReadonly.decorators = [FlexDecorator(FlexDecoratorVariant.CENTERED)]
 DefaultReadonly.args = { readonly: true }
 
 export const DefaultDark = Template.bind({})
-DefaultDark.decorators = [FlexDecorator, ThemeDecorator(Theme.DARK)]
+DefaultDark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  FlexDecorator(FlexDecoratorVariant.CENTERED),
+]
 
 export const DefaultDarkReadonly = Template.bind({})
-DefaultDarkReadonly.decorators = [FlexDecorator, ThemeDecorator(Theme.DARK)]
+DefaultDarkReadonly.decorators = [
+  ThemeDecorator(Theme.DARK),
+  FlexDecorator(FlexDecoratorVariant.CENTERED),
+]
 DefaultDarkReadonly.args = { readonly: true }
 
 export const DefaultColorful = Template.bind({})
-DefaultColorful.decorators = [FlexDecorator, ThemeDecorator(Theme.COLORFUL)]
+DefaultColorful.decorators = [
+  ThemeDecorator(Theme.COLORFUL),
+  FlexDecorator(FlexDecoratorVariant.CENTERED),
+]

@@ -1,7 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { Modal } from './Modal'
@@ -27,7 +30,13 @@ export default {
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />
 
 export const Default = Template.bind({})
-Default.decorators = [ThemeDecorator(Theme.LIGHT), FlexDecorator]
+Default.decorators = [
+  ThemeDecorator(Theme.LIGHT),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]
 
 export const Dark = Template.bind({})
-Dark.decorators = [ThemeDecorator(Theme.DARK), FlexDecorator]
+Dark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]

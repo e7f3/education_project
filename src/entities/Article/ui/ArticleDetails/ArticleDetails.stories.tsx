@@ -6,7 +6,10 @@ import {
   ArticleBlockType,
   ArticleType,
 } from 'entities/Article/model/types/article'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { ArticleDetails } from './ArticleDetails'
@@ -54,6 +57,9 @@ export default {
   title: 'enteties/Article/ArticleDetails',
   component: ArticleDetails,
   argTypes: {},
+  args: {
+    data,
+  },
 } as ComponentMeta<typeof ArticleDetails>
 
 const Template: ComponentStory<typeof ArticleDetails> = (args) => (
@@ -61,19 +67,16 @@ const Template: ComponentStory<typeof ArticleDetails> = (args) => (
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  data,
-}
-Default.decorators = [FlexDecorator]
+Default.decorators = [FlexDecorator(FlexDecoratorVariant.DEFAULT)]
 
 export const DarkTheme = Template.bind({})
-DarkTheme.args = {
-  data,
-}
-DarkTheme.decorators = [ThemeDecorator(Theme.DARK), FlexDecorator]
+DarkTheme.decorators = [
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+  ThemeDecorator(Theme.DARK),
+]
 
 export const ColorfulTheme = Template.bind({})
-ColorfulTheme.args = {
-  data,
-}
-ColorfulTheme.decorators = [ThemeDecorator(Theme.COLORFUL), FlexDecorator]
+ColorfulTheme.decorators = [
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+  ThemeDecorator(Theme.COLORFUL),
+]

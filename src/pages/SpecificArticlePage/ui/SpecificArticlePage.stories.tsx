@@ -6,7 +6,10 @@ import {
   ArticleBlockType,
   ArticleType,
 } from 'entities/Article/model/types/article'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { StoreProviderDecorator } from 'shared/config/storybook/StoreProviderDecorator/StoreProviderDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
@@ -77,7 +80,7 @@ Default.decorators = [
       isLoading: false,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const DefaultLoading = Template.bind({})
@@ -87,7 +90,7 @@ DefaultLoading.decorators = [
       isLoading: true,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const DefaultError = Template.bind({})
@@ -97,7 +100,7 @@ DefaultError.decorators = [
       error: 'Error',
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const Dark = Template.bind({})
@@ -108,7 +111,7 @@ Dark.decorators = [
       isLoading: false,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
   ThemeDecorator(Theme.DARK),
 ]
 
@@ -119,7 +122,7 @@ DarkLoading.decorators = [
       isLoading: true,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
   ThemeDecorator(Theme.DARK),
 ]
 
@@ -130,7 +133,7 @@ DarkError.decorators = [
       error: 'Error',
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
   ThemeDecorator(Theme.DARK),
 ]
 
@@ -142,7 +145,7 @@ Colorful.decorators = [
       isLoading: false,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
   ThemeDecorator(Theme.COLORFUL),
 ]
 
@@ -153,7 +156,7 @@ ColorfulLoading.decorators = [
       isLoading: true,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
   ThemeDecorator(Theme.COLORFUL),
 ]
 
@@ -164,6 +167,6 @@ ColorfulError.decorators = [
       error: 'Error',
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
   ThemeDecorator(Theme.COLORFUL),
 ]

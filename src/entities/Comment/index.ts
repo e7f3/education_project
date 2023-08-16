@@ -1,3 +1,2 @@
-export { Comment, CommentSchema } from './model/types/commentSchema'
+export { Comment } from './model/types/comment'
 export { CommentList } from './ui/CommentList/CommentList'
-export { commentReducer, commentActions } from './model/slices/commentSlice'

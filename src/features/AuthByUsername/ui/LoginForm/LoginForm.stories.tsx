@@ -7,7 +7,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import LoginForm from './LoginForm'
 
 export default {
-  title: 'feature/AuthByUsername/LoginForm',
+  title: 'features/AuthByUsername/LoginForm',
   component: LoginForm,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -41,5 +41,8 @@ FilledWithError.decorators = [
   }),
 ]
 
-export const DefaultDark = Template.bind({})
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK)]
+export const DarkTheme = Template.bind({})
+DarkTheme.decorators = [ThemeDecorator(Theme.DARK)]
+
+export const ColorfulTheme = Template.bind({})
+ColorfulTheme.decorators = [ThemeDecorator(Theme.COLORFUL)]

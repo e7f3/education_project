@@ -1,7 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { StyleDecorator } from 'shared/config/storybook/StyleDecorator/StyleDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
@@ -31,18 +34,18 @@ const Template: ComponentStory<typeof CurrencySelect> = (args) => (
 
 export const Empty = Template.bind({})
 Empty.args = { value: undefined }
-Empty.decorators = [FlexDecorator]
+Empty.decorators = [FlexDecorator(FlexDecoratorVariant.DEFAULT)]
 
 export const Default = Template.bind({})
-Default.decorators = [FlexDecorator]
+Default.decorators = [FlexDecorator(FlexDecoratorVariant.DEFAULT)]
 
 export const DefaultReadonly = Template.bind({})
-DefaultReadonly.decorators = [FlexDecorator]
+DefaultReadonly.decorators = [FlexDecorator(FlexDecoratorVariant.DEFAULT)]
 DefaultReadonly.args = { readonly: true }
 
 export const DefaultDark = Template.bind({})
 DefaultDark.decorators = [
   StyleDecorator,
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
   ThemeDecorator(Theme.DARK),
 ]

@@ -1,7 +1,7 @@
 import { FC, memo, useCallback, useState } from 'react'
 
 import CollapseIcon from 'shared/assets/icons/collapse-left.svg'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import {
   Button,
   ButtonSize,
@@ -21,7 +21,7 @@ export interface SidebarProps {
 export const Sidebar: FC<SidebarProps> = memo((props) => {
   const { className } = props
 
-  const [collapsed, setCollapsed] = useState(false)
+  const [collapsed, setCollapsed] = useState(true)
 
   const onToggle = useCallback(() => {
     setCollapsed((prev) => !prev)

@@ -15,9 +15,8 @@ export const fetchProfileData = createAsyncThunk<
 >('profile/fetchProfileData', async (fetchData, thunkApi) => {
   const { extra, rejectWithValue } = thunkApi
   try {
-    const response = await extra.api.post<Profile>(
-      '/getUserProfileById',
-      fetchData
+    const response = await extra.api.get<Profile>(
+      `/profiles/${fetchData.userId}`
     )
 
     if (!response?.data) {

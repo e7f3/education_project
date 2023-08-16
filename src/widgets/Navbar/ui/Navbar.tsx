@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { userActions, getUserAuthData } from 'entities/User'
 import { LoginModal } from 'features/AuthByUsername'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 
 import classes from './Navbar.module.scss'

@@ -1,7 +1,7 @@
 import { FC, memo, useMemo } from 'react'
 
 import classes from './CommentList.module.scss'
-import { Comment } from '../../model/types/commentSchema'
+import { Comment } from '../../model/types/comment'
 import { CommentCard } from '../CommentCard/CommentCard'
 
 interface CommentListProps {

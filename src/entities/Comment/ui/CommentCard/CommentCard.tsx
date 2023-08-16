@@ -1,11 +1,13 @@
 import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
+import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
 
 import classes from './CommentCard.module.scss'
-import { Comment } from '../../model/types/commentSchema'
+import { Comment } from '../../model/types/comment'
 
 interface CommentCardProps {
   className?: string
@@ -21,14 +23,16 @@ export const CommentCard: FC<CommentCardProps> = memo((props) => {
       className={classNames(classes.CommentCard, {}, [className])}
       data-testid='comment-card'
     >
-      <div className={classes.CommentHead}>
-        <img
-          className={classes.AuthorAvatar}
-          src={user.avatar}
-          alt={t('Avatar')}
-        />
-        <Text content={user.username} variant={TextVariant.CAPTION} />
-      </div>
+      <AppLink to={`${RoutePath[AppRoutes.PROFILE]}${user.id}`}>
+        <div className={classes.CommentHead}>
+          <img
+            className={classes.AuthorAvatar}
+            src={user.avatar}
+            alt={t('Avatar')}
+          />
+          <Text content={user.username} variant={TextVariant.CAPTION} />
+        </div>
+      </AppLink>
       <div className={classes.CommentBody}>
         <Text content={text} />
         <div className={classes.CommentDate}>

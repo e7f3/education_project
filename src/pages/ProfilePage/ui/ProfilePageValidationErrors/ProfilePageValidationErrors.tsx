@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { getProfileValidateErrors } from 'entities/Profile'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Text, TextMode, TextVariant } from 'shared/ui/Text/Text'
 
 import classes from './ProfilePageValidationErrors.module.scss'

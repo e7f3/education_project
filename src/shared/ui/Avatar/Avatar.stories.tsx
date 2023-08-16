@@ -1,7 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import StorybookAvatar from 'shared/assets/test/storybook-avatar.jpg'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 
 import { Avatar } from './Avatar'
 
@@ -21,10 +24,10 @@ export default {
 const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />
 
 export const Default = Template.bind({})
-Default.decorators = [FlexDecorator]
+Default.decorators = [FlexDecorator(FlexDecoratorVariant.CENTERED)]
 
 export const SmallSize = Template.bind({})
 SmallSize.args = {
   size: 50,
 }
-SmallSize.decorators = [FlexDecorator]
+SmallSize.decorators = [FlexDecorator(FlexDecoratorVariant.CENTERED)]

@@ -1,6 +1,6 @@
 import React, { FC, InputHTMLAttributes, memo } from 'react'
 
-import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/utils/classNames/classNames'
 
 import classes from './Input.module.scss'
 

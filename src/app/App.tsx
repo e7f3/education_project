@@ -2,7 +2,7 @@ import { Suspense, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 import { getUserInitialized, userActions } from 'entities/User'
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { AppLoader } from 'widgets/AppLoader/ui/AppLoader'
 import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'

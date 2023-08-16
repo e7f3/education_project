@@ -11,13 +11,13 @@ describe('Sidebar.test', () => {
     expect(screen.getByTestId('sidebar')).toBeInTheDocument()
   })
 
-  test('Collapse Sidebar.test', () => {
+  test('Uncollapse Sidebar.test', () => {
     componentRender(<Sidebar />)
 
     const collapseButton = screen.getByTestId('sidebar-collapse-button')
 
     fireEvent.click(collapseButton)
 
-    expect(screen.getByTestId('sidebar')).toHaveClass('collapsed')
+    expect(screen.getByTestId('sidebar')).not.toHaveClass('collapsed')
   })
 })

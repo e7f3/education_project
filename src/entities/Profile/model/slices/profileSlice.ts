@@ -48,7 +48,7 @@ export const profileSlice = createSlice({
         fetchProfileData.fulfilled,
         (state, action: PayloadAction<Profile>) => {
           console.log('fulfilled')
-
+          console.log(action.payload)
           state.isLoading = false
           state.data = action.payload
           state.formData = action.payload
@@ -73,6 +73,7 @@ export const profileSlice = createSlice({
       .addCase(
         updateProfileData.fulfilled,
         (state, action: PayloadAction<Profile>) => {
+          console.log(action.payload)
           state.isLoading = false
           state.data = action.payload
           state.formData = action.payload

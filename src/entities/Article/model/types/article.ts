@@ -8,6 +8,7 @@ export interface Article {
   createdAt: string
   blocks: ArticleBlock[]
 }
+
 export enum ArticleType {
   'NEWS' = 'NEWS',
   'STYLE' = 'STYLE',
@@ -17,6 +18,7 @@ export enum ArticleType {
   'HISTORY' = 'HISTORY',
   'TRAVEL' = 'TRAVEL',
 }
+
 export type ArticleBlock =
   | ArticleBlockText
   | ArticleBlockImage

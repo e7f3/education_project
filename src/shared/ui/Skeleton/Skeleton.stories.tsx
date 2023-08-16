@@ -1,7 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { Skeleton } from './Skeleton'
@@ -17,10 +20,16 @@ const Template: ComponentStory<typeof Skeleton> = (args) => (
 )
 
 export const Default = Template.bind({})
-Default.decorators = [FlexDecorator]
+Default.decorators = [FlexDecorator(FlexDecoratorVariant.DEFAULT)]
 
 export const DefaultDark = Template.bind({})
-DefaultDark.decorators = [ThemeDecorator(Theme.DARK), FlexDecorator]
+DefaultDark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]
 
 export const DefaultColorful = Template.bind({})
-DefaultColorful.decorators = [ThemeDecorator(Theme.COLORFUL), FlexDecorator]
+DefaultColorful.decorators = [
+  ThemeDecorator(Theme.COLORFUL),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]

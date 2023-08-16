@@ -1,6 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 
 import { Container } from './Container'
 
@@ -8,6 +11,9 @@ export default {
   title: 'shared/Container',
   component: Container,
   argTypes: {},
+  args: {
+    children: 'Container',
+  },
 } as ComponentMeta<typeof Container>
 
 const Template: ComponentStory<typeof Container> = (args) => (
@@ -15,4 +21,4 @@ const Template: ComponentStory<typeof Container> = (args) => (
 )
 
 export const Default = Template.bind({})
-Default.decorators = [FlexDecorator]
+Default.decorators = [FlexDecorator(FlexDecoratorVariant.DEFAULT)]

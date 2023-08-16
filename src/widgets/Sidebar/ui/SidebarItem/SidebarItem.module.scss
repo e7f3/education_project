@@ -16,6 +16,8 @@
 .link.collapsed {
   flex-direction: column;
   row-gap: 5px;
+
+  padding: 5px;
 }
 
 .link.collapsed > .linkText {

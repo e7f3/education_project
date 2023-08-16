@@ -1,7 +1,10 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { ProfilePageValidationErrors } from './ProfilePageValidationErrors'
@@ -20,8 +23,11 @@ const Template: ComponentStory<typeof ProfilePageValidationErrors> = () => (
 
 export const Default = Template.bind({})
 Default.args = {}
-Default.decorators = [FlexDecorator]
+Default.decorators = [FlexDecorator(FlexDecoratorVariant.DEFAULT)]
 
 export const DefaultDark = Template.bind({})
 DefaultDark.args = {}
-DefaultDark.decorators = [FlexDecorator, ThemeDecorator(Theme.DARK)]
+DefaultDark.decorators = [
+  ThemeDecorator(Theme.DARK),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]

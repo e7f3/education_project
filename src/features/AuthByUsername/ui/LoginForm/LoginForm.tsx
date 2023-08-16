@@ -3,12 +3,12 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import { getLoginError } from 'features/AuthByUsername/model/selectors/getLoginError/getLoginError'
-import { classNames } from 'shared/lib/classNames/classNames'
 import {
   DynamicReducerLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Button } from 'shared/ui/Button/Button'
 import { Input } from 'shared/ui/Input/Input'
 import { Text, TextMode, TextVariant } from 'shared/ui/Text/Text'

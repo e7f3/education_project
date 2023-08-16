@@ -1,6 +1,7 @@
 import { FC, memo, useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 
 import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
@@ -18,12 +19,12 @@ import {
 } from 'entities/Profile'
 import { ProfileError } from 'entities/Profile/model/types/profileSchema'
 import { getUserAuthData } from 'entities/User'
-import { classNames } from 'shared/lib/classNames/classNames'
 import {
   DynamicReducerLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Container } from 'shared/ui/Container/Container'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
 
@@ -41,6 +42,8 @@ const initialReducers: ReducersList = {
 const ProfilePage: FC<ProfilePageProps> = memo((props) => {
   const { className } = props
   const { t } = useTranslation('profile')
+  const { id } = useParams<{ id: string }>()
+
   const dispatch = useAppDispatch()
 
   const formData = useSelector(getProfileFormData)
@@ -51,10 +54,14 @@ const ProfilePage: FC<ProfilePageProps> = memo((props) => {
   const validateErrors = useSelector(getProfileValidateErrors)
 
   useEffect(() => {
-    if (__PROJECT__ !== 'storybook' && userData) {
-      dispatch(fetchProfileData({ userId: userData.id }))
+    if (__PROJECT__ !== 'storybook') {
+      if (id) {
+        dispatch(fetchProfileData({ userId: id }))
+      } else if (userData) {
+        dispatch(fetchProfileData({ userId: userData.id }))
+      }
     }
-  }, [dispatch, userData])
+  }, [dispatch, userData, id])
 
   const changeFirstname = useCallback(
     (value?: string) => {

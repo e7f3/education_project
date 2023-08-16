@@ -8,7 +8,7 @@ import {
   useState,
 } from 'react'
 
-import { classNames, Mods } from 'shared/lib/classNames/classNames'
+import { classNames, Mods } from 'shared/lib/utils/classNames/classNames'
 import { Portal } from 'shared/ui/Portal/Portal'
 
 import classes from './Modal.module.scss'

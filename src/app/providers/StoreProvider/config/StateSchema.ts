@@ -9,12 +9,12 @@ import { AxiosInstance } from 'axios'
 import { NavigateOptions, To } from 'react-router-dom'
 
 import type { ArticleSchema } from 'entities/Article'
-import type { CommentSchema } from 'entities/Comment'
 import type { CounterSchema } from 'entities/Counter'
 import type { ProfileSchema } from 'entities/Profile'
 import type { UserSchema } from 'entities/User'
-import type { ArticleCommentsSchema } from 'features/ArticleComments'
+import type { NewCommentSchema } from 'features/AddComment'
 import type { LoginSchema } from 'features/AuthByUsername'
+import type { CommentsSchema } from 'features/FetchComments'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -22,8 +22,8 @@ export interface StateSchema {
   loginForm?: LoginSchema
   profile?: ProfileSchema
   article?: ArticleSchema
-  articleComments?: ArticleCommentsSchema
-  comment?: CommentSchema
+  comments?: CommentsSchema
+  newComment?: NewCommentSchema
 }
 
 export interface ReducerManager {

@@ -1,6 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 
 import ArticlesPage from './ArticlesPage'
 
@@ -15,4 +18,4 @@ const Template: ComponentStory<typeof ArticlesPage> = (args) => (
 )
 
 export const Default = Template.bind({})
-Default.decorators = [FlexDecorator]
+Default.decorators = [FlexDecorator(FlexDecoratorVariant.DEFAULT)]

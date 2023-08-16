@@ -2,7 +2,10 @@ import { ComponentStory, ComponentMeta } from '@storybook/react'
 
 import { Theme } from 'app/providers/ThemeProvider'
 import { ArticleBlockType } from 'entities/Article/model/types/article'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
 import { ArticleCodeBlock } from './ArticleCodeBlock'
@@ -11,6 +14,16 @@ export default {
   title: 'enteties/Article/ArticleCodeBlock',
   component: ArticleCodeBlock,
   argTypes: {},
+  args: {
+    block: {
+      code: `import { ComponentStory, ComponentMeta } from '@storybook/react'
+              const Template: ComponentStory<typeof ArticleCodeBlock> = (args) => (
+                <ArticleCodeBlock {...args} />
+              )`,
+      type: ArticleBlockType.CODE,
+      id: '1',
+    },
+  },
 } as ComponentMeta<typeof ArticleCodeBlock>
 
 const Template: ComponentStory<typeof ArticleCodeBlock> = (args) => (
@@ -18,41 +31,21 @@ const Template: ComponentStory<typeof ArticleCodeBlock> = (args) => (
 )
 
 export const Default = Template.bind({})
-Default.args = {
-  block: {
-    code: `import { ComponentStory, ComponentMeta } from '@storybook/react'
-            const Template: ComponentStory<typeof ArticleCodeBlock> = (args) => (
-              <ArticleCodeBlock {...args} />
-            )`,
-    type: ArticleBlockType.CODE,
-    id: '1',
-  },
-}
-Default.decorators = [FlexDecorator]
+
+Default.decorators = [
+  ThemeDecorator(Theme.LIGHT),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]
 
 export const DarkTheme = Template.bind({})
-DarkTheme.args = {
-  block: {
-    code: `import { ComponentStory, ComponentMeta } from '@storybook/react'
-            const Template: ComponentStory<typeof ArticleCodeBlock> = (args) => (
-              <ArticleCodeBlock {...args} />
-            )`,
-    type: ArticleBlockType.CODE,
-    id: '1',
-  },
-}
-
-DarkTheme.decorators = [ThemeDecorator(Theme.DARK), FlexDecorator]
+DarkTheme.decorators = [
+  ThemeDecorator(Theme.DARK),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]
 
 export const ColorfulTheme = Template.bind({})
-ColorfulTheme.args = {
-  block: {
-    code: `import { ComponentStory, ComponentMeta } from '@storybook/react'
-            const Template: ComponentStory<typeof ArticleCodeBlock> = (args) => (
-              <ArticleCodeBlock {...args} />
-            )`,
-    type: ArticleBlockType.CODE,
-    id: '1',
-  },
-}
-ColorfulTheme.decorators = [ThemeDecorator(Theme.COLORFUL), FlexDecorator]
+
+ColorfulTheme.decorators = [
+  ThemeDecorator(Theme.COLORFUL),
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
+]

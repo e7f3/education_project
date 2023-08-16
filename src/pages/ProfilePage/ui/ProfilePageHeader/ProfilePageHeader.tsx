@@ -3,13 +3,14 @@ import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 
 import {
+  getProfileData,
   getProfileReadonly,
   profileActions,
   updateProfileData,
 } from 'entities/Profile'
 import { getUserAuthData } from 'entities/User'
-import { classNames } from 'shared/lib/classNames/classNames'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Button, ButtonColorScheme, ButtonTheme } from 'shared/ui/Button/Button'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
 
@@ -26,6 +27,7 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
 
   const readonly = useSelector(getProfileReadonly)
   const userData = useSelector(getUserAuthData)
+  const profileData = useSelector(getProfileData)
 
   const enableEditMode = useCallback(() => {
     dispatch(profileActions.setReadonlyMode(false))
@@ -44,6 +46,17 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = memo((props) => {
       )
     }
   }, [dispatch, userData])
+
+  const canEdit = userData && profileData && userData.id === profileData.id
+
+  if (!canEdit) {
+    return (
+      <div className={classNames(classes.ProfilePageHeader, {}, [className])}>
+        <Text content={t('Profile')} variant={TextVariant.TITLE} />
+        <div className={classes.control} />
+      </div>
+    )
+  }
 
   return (
     <div className={classNames(classes.ProfilePageHeader, {}, [className])}>

@@ -1,7 +1,7 @@
 import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { classNames } from 'shared/lib/classNames/classNames'
+import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Button, ButtonColorScheme, ButtonTheme } from 'shared/ui/Button/Button'
 
 export interface LanguageTogglerProps {

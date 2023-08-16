@@ -6,7 +6,10 @@ import {
   ArticleBlockType,
   ArticleType,
 } from 'entities/Article/model/types/article'
-import { FlexDecorator } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
+import {
+  FlexDecorator,
+  FlexDecoratorVariant,
+} from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { StoreProviderDecorator } from 'shared/config/storybook/StoreProviderDecorator/StoreProviderDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 
@@ -72,7 +75,7 @@ Default.decorators = [
       data,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const DefaultLoading = Template.bind({})
@@ -82,7 +85,7 @@ DefaultLoading.decorators = [
       isLoading: true,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const DefaultError = Template.bind({})
@@ -94,7 +97,7 @@ DefaultError.decorators = [
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, numquam!',
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const DarkTheme = Template.bind({})
@@ -106,7 +109,7 @@ DarkTheme.decorators = [
     },
   }),
   ThemeDecorator(Theme.DARK),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const DarkLoading = Template.bind({})
@@ -116,7 +119,7 @@ DarkLoading.decorators = [
       isLoading: true,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const DarkError = Template.bind({})
@@ -128,7 +131,7 @@ DarkError.decorators = [
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, numquam!',
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const ColorfulTheme = Template.bind({})
@@ -140,7 +143,7 @@ ColorfulTheme.decorators = [
     },
   }),
   ThemeDecorator(Theme.COLORFUL),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const ColorfulLoading = Template.bind({})
@@ -150,7 +153,7 @@ ColorfulLoading.decorators = [
       isLoading: true,
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
 
 export const ColorfulError = Template.bind({})
@@ -162,5 +165,5 @@ ColorfulError.decorators = [
         'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ducimus, numquam!',
     },
   }),
-  FlexDecorator,
+  FlexDecorator(FlexDecoratorVariant.DEFAULT),
 ]
