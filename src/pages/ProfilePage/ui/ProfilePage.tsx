@@ -1,4 +1,4 @@
-import { FC, memo, useCallback, useEffect, useMemo } from 'react'
+import { FC, memo, useCallback, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -7,26 +7,20 @@ import { Country } from 'entities/Country'
 import { Currency } from 'entities/Currency'
 import {
   fetchProfileData,
-  getProfileData,
   getProfileError,
   getProfileFormData,
   getProfileIsLoading,
   getProfileReadonly,
-  getProfileValidateErrors,
   profileActions,
   ProfileCard,
   profileReducer,
 } from 'entities/Profile'
-import { ProfileError } from 'entities/Profile/model/types/profileSchema'
-import { getUserAuthData } from 'entities/User'
 import {
   DynamicReducerLoader,
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Container } from 'shared/ui/Container/Container'
-import { Text, TextVariant } from 'shared/ui/Text/Text'
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import { ProfilePageValidationErrors } from './ProfilePageValidationErrors/ProfilePageValidationErrors'
@@ -50,18 +44,14 @@ const ProfilePage: FC<ProfilePageProps> = memo((props) => {
   const error = useSelector(getProfileError)
   const isLoading = useSelector(getProfileIsLoading)
   const readonly = useSelector(getProfileReadonly)
-  const userData = useSelector(getUserAuthData)
-  const validateErrors = useSelector(getProfileValidateErrors)
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
       if (id) {
         dispatch(fetchProfileData({ userId: id }))
-      } else if (userData) {
-        dispatch(fetchProfileData({ userId: userData.id }))
       }
     }
-  }, [dispatch, userData, id])
+  }, [dispatch, id])
 
   const changeFirstname = useCallback(
     (value?: string) => {

@@ -7,7 +7,7 @@ import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink'
 
 import classes from './SidebarItem.module.scss'
-import { SidebarItemType } from '../../model/items'
+import { SidebarItem as SidebarItemType } from '../../model/types/items'
 
 export interface SidebarItemProps {
   item: SidebarItemType
