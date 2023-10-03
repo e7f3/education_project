@@ -25,7 +25,7 @@ const block: ArticleBlockText = {
 }
 
 export default {
-  title: 'enteties/Article/ArticleTextBlock',
+  title: 'entities/Article/ArticleTextBlock',
   component: ArticleTextBlock,
   argTypes: {},
   args: {

@@ -1,0 +1,23 @@
+.Tags {
+  display: flex;
+
+  color: var(--secondary-color);
+
+  list-style: none;
+}
+
+.Tag {
+  padding: 0 5px;
+}
+
+.Tag:first-of-type {
+  padding-left: 0;
+}
+
+.Tag:last-of-type {
+  padding-right: 0;
+}
+
+.Tag:not(:first-of-type) {
+  border-left: 1px solid var(--secondary-color);
+}

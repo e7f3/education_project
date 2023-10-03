@@ -11,11 +11,19 @@
 
   color: var(--primary-color);
 
-  border: 1px solid var(--primary-color);
+  border: 2px solid var(--primary-color);
   border-radius: 0;
 
   background-color: var(--secondary-bg-color);
 
+  box-shadow: 4px 4px var(--primary-color);
+
+  cursor: pointer;
+
+  transition: box-shadow 0.2s ease-in;
+}
+
+.Select:not(:disabled):hover {
   box-shadow: none;
 }
 

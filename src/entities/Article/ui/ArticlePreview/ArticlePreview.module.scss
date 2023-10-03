@@ -1,0 +1,94 @@
+.ArticlePreviewCard {
+  background-color: transparent;
+
+  transition-property: background-color;
+  transition-timing-function: ease-in;
+  transition-duration: 0.2s;
+}
+
+// .ArticlePreviewCard:hover {
+//   background-color: var(--secondary-bg-color);
+
+//   cursor: pointer;
+// }
+
+.ArticlePreview {
+  position: relative;
+
+  display: grid;
+
+  width: 100%;
+}
+
+.ArticlePreview.grid {
+  grid-template-rows: max-content 1fr;
+  row-gap: 20px;
+
+  padding: 20px;
+}
+
+.ArticlePreview.list {
+  grid-template-rows: max-content;
+  grid-template-columns: 1fr;
+  row-gap: 20px;
+
+  padding: 20px 40px;
+
+  column-gap: 40px;
+}
+
+.ArticlePreview.grid > .ArticlePreviewHead {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+}
+
+.ArticlePreview.list > .ArticlePreviewHead {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+
+  display: grid;
+  grid-template-columns: 1fr max-content;
+}
+
+.ArticlePreview.list > .ArticlePreviewBody {
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+
+  display: grid;
+  grid-auto-rows: max-content;
+  grid-auto-flow: row;
+  row-gap: 10px;
+}
+
+.ArticlePreviewImage {
+  object-fit: cover;
+  object-position: center;
+}
+
+.ArticlePreview.list .ArticlePreviewImage {
+  width: auto;
+  height: 250px;
+}
+
+.ArticlePreviewButton {
+  grid-column: 1 / -1;
+
+  z-index: 2;
+
+  margin: 0 auto;
+}
+
+// .ArticlePreview.list::after {
+//   position: absolute;
+//   inset: 0;
+//   content: "";
+
+//   background-image:
+//     linear-gradient(
+//       to bottom,
+//       transparent 60%,
+//       var(--secondary-bg-color) 100%
+//     );
+
+//   pointer-events: none;
+// }

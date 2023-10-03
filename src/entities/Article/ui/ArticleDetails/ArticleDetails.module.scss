@@ -1,7 +1,32 @@
 .ArticleDetails {
+  position: relative;
+
   display: grid;
   grid-template-rows: max-content 1fr;
   row-gap: 100px;
 
   padding: 100px 15px;
+}
+
+.GoBack {
+  position: absolute;
+  top: 50px;
+  left: 15px;
+
+  display: flex;
+
+  width: fit-content;
+
+  column-gap: 10px;
+
+  transform: translateY(-50%);
+}
+
+.GoBackIcon {
+  width: 24px;
+  height: 24px;
+
+  fill: var(--primary-color);
+
+  // stroke: var(--primary-color);
 }

@@ -54,7 +54,7 @@ const data: Article = {
 }
 
 export default {
-  title: 'enteties/Article/ArticleBody',
+  title: 'entities/Article/ArticleBody',
   component: ArticleBody,
   argTypes: {},
   arg: {

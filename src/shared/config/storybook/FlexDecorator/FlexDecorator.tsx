@@ -5,6 +5,7 @@ import { classNames } from 'shared/lib/utils/classNames/classNames'
 import classes from './FlexDecorator.module.scss'
 
 export enum FlexDecoratorVariant {
+  NO_FLEX = 'no-flex',
   CENTERED = 'centered',
   DEFAULT = 'default',
 }

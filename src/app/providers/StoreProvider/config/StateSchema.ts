@@ -15,6 +15,7 @@ import type { UserSchema } from 'entities/User'
 import type { NewCommentSchema } from 'features/AddComment'
 import type { LoginSchema } from 'features/AuthByUsername'
 import type { CommentsSchema } from 'features/FetchComments'
+import type { ArticlesPageSchema } from 'pages/ArticlesPage/'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -22,6 +23,7 @@ export interface StateSchema {
   loginForm?: LoginSchema
   profile?: ProfileSchema
   article?: ArticleSchema
+  articlesList?: ArticlesPageSchema
   comments?: CommentsSchema
   newComment?: NewCommentSchema
 }

@@ -5,6 +5,7 @@ import CalendarIcon from 'shared/assets/icons/calendar.svg'
 import ViewsIcon from 'shared/assets/icons/views.svg'
 import { ColoredWith, Icon } from 'shared/ui/Icon/Icon'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
+import { Tags, TagSize } from 'widgets/Tags'
 
 import classes from './ArticleHeader.module.scss'
 import { Article } from '../../model/types/article'
@@ -18,15 +19,7 @@ export const ArticleHeader: FC<ArticleHeaderProps> = memo((props) => {
   const { image, title, subtitle, views, createdAt, type } = data
   const { t } = useTranslation('article')
 
-  const tags = useMemo(() => {
-    return type.map((tag) => {
-      return (
-        <li className={classes.Tag} key={tag}>
-          <Text content={t(tag)} variant={TextVariant.CAPTION} />
-        </li>
-      )
-    })
-  }, [type, t])
+  const tags = useMemo(() => type.map((tag) => t(tag)), [type, t])
 
   return (
     <div className={classes.ArticleHeader}>
@@ -65,7 +58,7 @@ export const ArticleHeader: FC<ArticleHeaderProps> = memo((props) => {
         </li>
 
         <li className={classes.ArticleHeaderInfoSection}>
-          <ul className={classes.ArticleHeaderTags}>{tags}</ul>
+          <Tags tags={tags} size={TagSize.SMALL} />
         </li>
       </ul>
     </div>

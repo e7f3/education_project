@@ -21,7 +21,7 @@ const block: ArticleBlockImage = {
 }
 
 export default {
-  title: 'enteties/Article/ArticleImageBlock',
+  title: 'entities/Article/ArticleImageBlock',
   component: ArticleImageBlock,
   argTypes: {},
   args: {

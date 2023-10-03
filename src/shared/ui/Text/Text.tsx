@@ -21,8 +21,6 @@ export interface TextProps {
   variant?: TextVariant
   mode?: TextMode
   content?: string | number
-  text?: string
-  title?: string
 }
 
 export const Text: FC<TextProps> = memo((props) => {

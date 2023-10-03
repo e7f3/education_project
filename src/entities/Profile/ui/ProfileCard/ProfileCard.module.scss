@@ -1,4 +1,8 @@
 .ProfileCard {
+  width: fit-content;
+}
+
+.ProfileCardContent {
   position: relative;
 
   display: flex;
@@ -10,13 +14,13 @@
   margin: 0 15px;
   padding: 30px;
 
-  border: 1px solid var(--primary-color);
+  // border: 1px solid var(--primary-color);
 }
 
 .profileInfo {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 }
 
 .loading,

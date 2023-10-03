@@ -6,6 +6,7 @@
   "Auth": "Auth",
   "Auth form": "Auth form",
   "Avatar": "Avatar",
+  "Back": "Back",
   "Cancel": "Cancel",
   "City": "City",
   "Country": "Country",
@@ -16,6 +17,7 @@
   "Log in": "Log in",
   "Logout": "Logout",
   "Main Page": "Main Page",
+  "More": "More",
   "Not Found Page": "Not Found Page",
   "Oops": "Oops",
   "Password": "Password",
@@ -32,5 +34,6 @@
   "article header image ": "article header image ",
   "article header image alt": "article header image alt",
   "decrement": "decrement",
-  "increment": "increment"
+  "increment": "increment",
+  "more": "more"
 }

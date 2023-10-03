@@ -5,6 +5,7 @@ import { Country, CountrySelect } from 'entities/Country'
 import { Currency, CurrencySelect } from 'entities/Currency'
 import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
+import { Card } from 'shared/ui/Card/Card'
 import { Input } from 'shared/ui/Input/Input'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { Text, TextMode, TextVariant } from 'shared/ui/Text/Text'
@@ -71,7 +72,6 @@ export const ProfileCard: FC<ProifleCardProps> = memo((props) => {
           mode={TextMode.ERROR}
           variant={TextVariant.TITLE}
           content={t('Profile error')}
-          text={t('Try to reload')}
         />
         <Text mode={TextMode.ERROR} content={t('Try to reload')} />
       </div>
@@ -79,62 +79,64 @@ export const ProfileCard: FC<ProifleCardProps> = memo((props) => {
   }
 
   return (
-    <div className={classNames(classes.ProfileCard, {}, [className])}>
-      {data?.avatar && (
-        <div className={classes.avatarWrapper}>
-          <Avatar src={data?.avatar} alt={t('Avatar')} size={100} />
-        </div>
-      )}
-      <div className={classes.profileInfo}>
-        <Input
-          value={data?.firstname}
-          placeholder={t('Firstname')}
-          readonly={readonly}
-          onChange={changeFirstname}
-        />
-        <Input
-          value={data?.lastname}
-          placeholder={t('Lastname')}
-          readonly={readonly}
-          onChange={changeLastname}
-        />
-        <Input
-          value={data?.age}
-          placeholder={t('Age')}
-          readonly={readonly}
-          onChange={changeAge}
-          type='number'
-        />
-        <CountrySelect
-          value={data?.country}
-          readonly={readonly}
-          onChange={changeCountry}
-        />
-        <Input
-          value={data?.city}
-          placeholder={t('City')}
-          readonly={readonly}
-          onChange={changeCity}
-        />
+    <Card className={classes.ProfileCard}>
+      <div className={classNames(classes.ProfileCardContent, {}, [className])}>
+        {data?.avatar && (
+          <div className={classes.avatarWrapper}>
+            <Avatar src={data?.avatar} alt={t('Avatar')} size={100} />
+          </div>
+        )}
+        <div className={classes.profileInfo}>
+          <Input
+            value={data?.firstname}
+            placeholder={t('Firstname')}
+            readonly={readonly}
+            onChange={changeFirstname}
+          />
+          <Input
+            value={data?.lastname}
+            placeholder={t('Lastname')}
+            readonly={readonly}
+            onChange={changeLastname}
+          />
+          <Input
+            value={data?.age}
+            placeholder={t('Age')}
+            readonly={readonly}
+            onChange={changeAge}
+            type='number'
+          />
+          <CountrySelect
+            value={data?.country}
+            readonly={readonly}
+            onChange={changeCountry}
+          />
+          <Input
+            value={data?.city}
+            placeholder={t('City')}
+            readonly={readonly}
+            onChange={changeCity}
+          />
 
-        <CurrencySelect
-          value={data?.currency}
-          readonly={readonly}
-          onChange={changeCurrency}
-        />
-        <Input
-          value={data?.username}
-          placeholder={t('Username')}
-          readonly={readonly}
-          onChange={changeUsername}
-        />
-        <Input
-          value={data?.avatar}
-          placeholder={t('Avatar')}
-          readonly={readonly}
-          onChange={changeAvatar}
-        />
+          <CurrencySelect
+            value={data?.currency}
+            readonly={readonly}
+            onChange={changeCurrency}
+          />
+          <Input
+            value={data?.username}
+            placeholder={t('Username')}
+            readonly={readonly}
+            onChange={changeUsername}
+          />
+          <Input
+            value={data?.avatar}
+            placeholder={t('Avatar')}
+            readonly={readonly}
+            onChange={changeAvatar}
+          />
+        </div>
       </div>
-    </div>
+    </Card>
   )
 })

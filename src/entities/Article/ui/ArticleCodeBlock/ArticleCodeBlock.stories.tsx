@@ -11,7 +11,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { ArticleCodeBlock } from './ArticleCodeBlock'
 
 export default {
-  title: 'enteties/Article/ArticleCodeBlock',
+  title: 'entities/Article/ArticleCodeBlock',
   component: ArticleCodeBlock,
   argTypes: {},
   args: {

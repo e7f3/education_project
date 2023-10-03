@@ -22,5 +22,6 @@
   "Invalid auth": "Invalid username or password",
   "Logout": "Sign out",
   "Country": "Country",
-  "Currency": "Currency"
+  "Currency": "Currency",
+  "Back": "Back"
 }

@@ -59,7 +59,7 @@ const esRules = {
     'error',
     {
       markupOnly: true,
-      ignoreAttribute: ['data-testid', 'to'],
+      ignoreAttribute: ['data-testid', 'to', 'role'],
     },
   ],
   // 'prettier/prettier': 'off',

@@ -16,7 +16,7 @@ const selectOptions: CurrencyOption[] = Object.entries(Currency).map(
 )
 
 export default {
-  title: 'enteties/Currency/CurrencySelect',
+  title: 'entities/Currency/CurrencySelect',
   component: CurrencySelect,
   argTypes: {
     backgroundColor: { control: 'color' },

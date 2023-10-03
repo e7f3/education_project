@@ -48,7 +48,7 @@ const comments: Comment[] = [
 ]
 
 export default {
-  title: 'enteties/Comment/CommentList',
+  title: 'entities/Comment/CommentList',
   component: CommentList,
   argTypes: {},
   args: {

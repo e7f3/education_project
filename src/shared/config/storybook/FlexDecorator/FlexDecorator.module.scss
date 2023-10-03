@@ -13,3 +13,9 @@
 .centered {
   height: fit-content;
 }
+
+.no-flex {
+  display: block;
+  justify-content: unset;
+  align-items: unset;
+}

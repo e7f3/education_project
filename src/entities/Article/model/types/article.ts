@@ -1,3 +1,5 @@
+import { User } from 'entities/User'
+
 export interface Article {
   id: string
   title: string
@@ -7,6 +9,12 @@ export interface Article {
   views: number
   createdAt: string
   blocks: ArticleBlock[]
+  user?: User
+}
+
+export enum ArticleView {
+  'LIST' = 'list',
+  'GRID' = 'grid',
 }
 
 export enum ArticleType {

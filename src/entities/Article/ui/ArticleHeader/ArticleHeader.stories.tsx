@@ -54,7 +54,7 @@ const data: Article = {
 }
 
 export default {
-  title: 'enteties/Article/ArticleHeader',
+  title: 'entities/Article/ArticleHeader',
   component: ArticleHeader,
   argTypes: {},
   args: {
