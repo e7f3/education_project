@@ -5,13 +5,13 @@ import {
   Article,
   ArticleBlockType,
   ArticleType,
-  ArticleView,
 } from 'entities/Article/model/types/article'
 import {
   FlexDecorator,
   FlexDecoratorVariant,
 } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { View } from 'shared/const/common'
 
 import { ArticlesList } from './ArticlesList'
 
@@ -147,7 +147,7 @@ const Template: ComponentStory<typeof ArticlesList> = (args) => (
 
 export const DefaultGrid = Template.bind({})
 DefaultGrid.args = {
-  view: ArticleView.GRID,
+  view: View.GRID,
   isLoading: false,
 }
 DefaultGrid.decorators = [
@@ -157,7 +157,7 @@ DefaultGrid.decorators = [
 
 export const LoadingGrid = Template.bind({})
 LoadingGrid.args = {
-  view: ArticleView.GRID,
+  view: View.GRID,
   isLoading: true,
 }
 LoadingGrid.decorators = [
@@ -167,7 +167,7 @@ LoadingGrid.decorators = [
 
 export const DefaultList = Template.bind({})
 DefaultList.args = {
-  view: ArticleView.LIST,
+  view: View.LIST,
   isLoading: false,
 }
 DefaultList.decorators = [
@@ -177,7 +177,7 @@ DefaultList.decorators = [
 
 export const LoadingList = Template.bind({})
 LoadingList.args = {
-  view: ArticleView.LIST,
+  view: View.LIST,
   isLoading: true,
 }
 LoadingList.decorators = [
@@ -187,7 +187,7 @@ LoadingList.decorators = [
 
 export const DarkThemeGrid = Template.bind({})
 DarkThemeGrid.args = {
-  view: ArticleView.GRID,
+  view: View.GRID,
   isLoading: false,
 }
 DarkThemeGrid.decorators = [
@@ -197,7 +197,7 @@ DarkThemeGrid.decorators = [
 
 export const DarkThemeLoadingGrid = Template.bind({})
 DarkThemeLoadingGrid.args = {
-  view: ArticleView.GRID,
+  view: View.GRID,
   isLoading: true,
 }
 DarkThemeLoadingGrid.decorators = [
@@ -207,7 +207,7 @@ DarkThemeLoadingGrid.decorators = [
 
 export const DarkThemeList = Template.bind({})
 DarkThemeList.args = {
-  view: ArticleView.LIST,
+  view: View.LIST,
   isLoading: false,
 }
 DarkThemeList.decorators = [
@@ -217,7 +217,7 @@ DarkThemeList.decorators = [
 
 export const DarkThemeLoadingList = Template.bind({})
 DarkThemeLoadingList.args = {
-  view: ArticleView.LIST,
+  view: View.LIST,
   isLoading: true,
 }
 DarkThemeLoadingList.decorators = [
@@ -227,7 +227,7 @@ DarkThemeLoadingList.decorators = [
 
 export const ColorfulThemeGrid = Template.bind({})
 ColorfulThemeGrid.args = {
-  view: ArticleView.GRID,
+  view: View.GRID,
   isLoading: false,
 }
 ColorfulThemeGrid.decorators = [
@@ -237,7 +237,7 @@ ColorfulThemeGrid.decorators = [
 
 export const ColorfulThemeLoadingGrid = Template.bind({})
 ColorfulThemeLoadingGrid.args = {
-  view: ArticleView.GRID,
+  view: View.GRID,
   isLoading: true,
 }
 ColorfulThemeLoadingGrid.decorators = [
@@ -247,7 +247,7 @@ ColorfulThemeLoadingGrid.decorators = [
 
 export const ColorfulThemeList = Template.bind({})
 ColorfulThemeList.args = {
-  view: ArticleView.LIST,
+  view: View.LIST,
   isLoading: false,
 }
 ColorfulThemeList.decorators = [
@@ -257,7 +257,7 @@ ColorfulThemeList.decorators = [
 
 export const ColorfulThemeLoadingList = Template.bind({})
 ColorfulThemeLoadingList.args = {
-  view: ArticleView.LIST,
+  view: View.LIST,
   isLoading: true,
 }
 ColorfulThemeLoadingList.decorators = [

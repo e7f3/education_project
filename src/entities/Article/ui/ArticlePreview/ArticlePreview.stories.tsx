@@ -5,13 +5,13 @@ import {
   Article,
   ArticleBlockType,
   ArticleType,
-  ArticleView,
 } from 'entities/Article/model/types/article'
 import {
   FlexDecorator,
   FlexDecoratorVariant,
 } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
+import { View } from 'shared/const/common'
 
 import { ArticlePreview } from './ArticlePreview'
 
@@ -69,19 +69,19 @@ const Template: ComponentStory<typeof ArticlePreview> = (args) => (
 
 export const DefaultGrid = Template.bind({})
 DefaultGrid.args = {
-  view: ArticleView.GRID,
+  view: View.GRID,
 }
 DefaultGrid.decorators = [FlexDecorator(FlexDecoratorVariant.CENTERED)]
 
 export const DefaultList = Template.bind({})
 DefaultList.args = {
-  view: ArticleView.LIST,
+  view: View.LIST,
 }
 DefaultList.decorators = [FlexDecorator(FlexDecoratorVariant.CENTERED)]
 
 export const DarkThemeGrid = Template.bind({})
 DarkThemeGrid.args = {
-  view: ArticleView.GRID,
+  view: View.GRID,
 }
 DarkThemeGrid.decorators = [
   FlexDecorator(FlexDecoratorVariant.CENTERED),
@@ -90,7 +90,7 @@ DarkThemeGrid.decorators = [
 
 export const DarkThemeList = Template.bind({})
 DarkThemeList.args = {
-  view: ArticleView.LIST,
+  view: View.LIST,
 }
 DarkThemeList.decorators = [
   FlexDecorator(FlexDecoratorVariant.CENTERED),
@@ -99,7 +99,7 @@ DarkThemeList.decorators = [
 
 export const ColorfulThemeGrid = Template.bind({})
 ColorfulThemeGrid.args = {
-  view: ArticleView.GRID,
+  view: View.GRID,
 }
 ColorfulThemeGrid.decorators = [
   FlexDecorator(FlexDecoratorVariant.CENTERED),
@@ -108,7 +108,7 @@ ColorfulThemeGrid.decorators = [
 
 export const ColorfulThemeList = Template.bind({})
 ColorfulThemeList.args = {
-  view: ArticleView.LIST,
+  view: View.LIST,
 }
 ColorfulThemeList.decorators = [
   FlexDecorator(FlexDecoratorVariant.CENTERED),

@@ -4,7 +4,7 @@
   list-style: none;
 }
 
-.ArticlesList.grid {
+.ArticlesList.Grid {
   display: grid;
   grid-auto-rows: max-content;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -12,11 +12,11 @@
   justify-items: left;
 }
 
-.ArticlesList.grid > .ArticlesListItem {
+.ArticlesList.Grid > .ArticlesListItem {
   width: 100%;
 }
 
-.ArticlesList.list {
+.ArticlesList.List {
   display: flex;
   flex-direction: column;
   row-gap: 20px;

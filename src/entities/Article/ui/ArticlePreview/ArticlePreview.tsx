@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { Link, useLocation, useNavigate, useNavigation } from 'react-router-dom'
 
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
+import { View } from 'shared/const/common'
 import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
@@ -16,16 +17,15 @@ import {
   ArticleBlockText,
   ArticleBlockType,
   ArticleType,
-  ArticleView,
 } from '../../model/types/article'
 
 interface ArticlePreviewProps {
-  view?: ArticleView
+  view?: View
   article?: Article
 }
 
 export const ArticlePreview: FC<ArticlePreviewProps> = memo((props) => {
-  const { article, view = ArticleView.GRID } = props
+  const { article, view = View.GRID } = props
   const navigate = useNavigate()
   const { t } = useTranslation('articles')
 
@@ -63,7 +63,7 @@ export const ArticlePreview: FC<ArticlePreviewProps> = memo((props) => {
         <div className={classes.ArticlePreviewBody}>
           <Text content={article.title} variant={TextVariant.TITLE} />
           <Text content={article.subtitle} variant={TextVariant.SUBTITLE} />
-          {view === ArticleView.LIST && (
+          {view === View.LIST && (
             <>
               <img
                 className={classes.ArticlePreviewImage}

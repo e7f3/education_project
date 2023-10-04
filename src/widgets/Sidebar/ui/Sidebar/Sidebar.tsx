@@ -38,11 +38,11 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
     >
       <div className={classes.SidebarContent}>
         <Button
+          className={classes.collapseButton}
           theme={ButtonTheme.DEFAULT}
           variant={ButtonVariant.SQUARE}
           size={ButtonSize.L}
           onClick={onToggle}
-          className={classes.collapseButton}
           data-testid='sidebar-collapse-button'
         >
           <CollapseIcon

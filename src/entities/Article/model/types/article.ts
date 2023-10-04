@@ -12,11 +12,6 @@ export interface Article {
   user?: User
 }
 
-export enum ArticleView {
-  'LIST' = 'list',
-  'GRID' = 'grid',
-}
-
 export enum ArticleType {
   'NEWS' = 'NEWS',
   'STYLE' = 'STYLE',

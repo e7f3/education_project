@@ -1,20 +1,21 @@
 import { FC, memo, useMemo } from 'react'
 
+import { View } from 'shared/const/common'
 import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Skeleton, SkeletonPurpose } from 'shared/ui/Skeleton/Skeleton'
 
 import classes from './ArticlesList.module.scss'
-import { Article, ArticleView } from '../../model/types/article'
+import { Article } from '../../model/types/article'
 import { ArticlePreview } from '../ArticlePreview/ArticlePreview'
 
 interface ArticlesListProps {
   articles: Article[]
-  view?: ArticleView
+  view?: View
   isLoading?: boolean
 }
 
 export const ArticlesList: FC<ArticlesListProps> = memo((props) => {
-  const { articles, view = ArticleView.GRID, isLoading = true } = props
+  const { articles, view = View.GRID, isLoading = true } = props
 
   const articlesListItems = useMemo(
     () =>
@@ -29,10 +30,10 @@ export const ArticlesList: FC<ArticlesListProps> = memo((props) => {
 
   let purpuse
   switch (view) {
-    case ArticleView.GRID:
+    case View.GRID:
       purpuse = SkeletonPurpose.GRID_ARTICLES
       break
-    case ArticleView.LIST:
+    case View.LIST:
       purpuse = SkeletonPurpose.LIST_ARTICLES
       break
     default:

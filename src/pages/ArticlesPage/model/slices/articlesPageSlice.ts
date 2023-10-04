@@ -6,6 +6,8 @@ import {
 
 import { StateSchema } from 'app/providers/StoreProvider'
 import { Article } from 'entities/Article'
+import { View } from 'shared/const/common'
+import { LOCALSTORAGE_ARTICLE_VIEW_KEY } from 'shared/const/localstorage'
 
 import { fetchArticlesList } from '../services/fetchArticlesList/fetchArticlesList'
 import { ArticlesPageSchema } from '../types/articlesPageSchema'
@@ -17,13 +19,6 @@ const articlesAdapter = createEntityAdapter<Article>({
   sortComparer: (a, b) => a.id.localeCompare(b.id),
 })
 
-const a = articlesAdapter.getInitialState<ArticlesPageSchema>({
-  isLoading: false,
-  error: undefined,
-  ids: [],
-  entities: {},
-})
-
 const articlesPageSlice = createSlice({
   name: 'articlesList',
   initialState: articlesAdapter.getInitialState<ArticlesPageSchema>({
@@ -31,6 +26,7 @@ const articlesPageSlice = createSlice({
     error: undefined,
     ids: [],
     entities: {},
+    view: View.LIST,
   }),
   reducers: {
     // Can pass adapter functions directly as case reducers.  Because we're passing this
@@ -39,6 +35,15 @@ const articlesPageSlice = createSlice({
     articlesReceived(state, action: PayloadAction<Article[]>) {
       // Or, call them as 'mutating' helpers in a case reducer
       articlesAdapter.setAll(state, action.payload)
+    },
+    setView: (state, action: PayloadAction<View>) => {
+      state.view = action.payload
+      localStorage.setItem(LOCALSTORAGE_ARTICLE_VIEW_KEY, action.payload)
+    },
+    initState: (state) => {
+      state.view =
+        (localStorage.getItem(LOCALSTORAGE_ARTICLE_VIEW_KEY) as View) ||
+        View.LIST
     },
   },
   extraReducers: (builder) => {

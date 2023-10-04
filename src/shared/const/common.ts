@@ -5,3 +5,8 @@ export enum Country {
   'POLAND' = 'Poland',
   'GB' = 'United Kingdom',
 }
+
+export enum View {
+  'LIST' = 'List',
+  'GRID' = 'Grid',
+}
