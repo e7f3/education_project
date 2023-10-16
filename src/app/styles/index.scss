@@ -19,6 +19,10 @@ body {
 
 .page-content {
   display: flex;
+
+  max-height: calc(100vh - var(--navbar-height));
+
+  overflow: hidden;
 }
 
 .page {

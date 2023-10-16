@@ -4,6 +4,7 @@ import { useTheme } from 'app/providers/ThemeProvider'
 import DayNight from 'shared/assets/icons/day_night.svg'
 import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { Icon } from 'shared/ui/Icon/Icon'
 
 import classes from './ThemeToggler.module.scss'
 
@@ -21,8 +22,9 @@ export const ThemeToggler: FC<ThemeTogglerProps> = memo((props) => {
       theme={ButtonTheme.CLEAN}
       onClick={toggleTheme}
     >
-      <DayNight
+      <Icon
         className={classNames(classes.ToggleThemeIcon, {}, [classes[theme]])}
+        icon={DayNight}
       />
     </Button>
   )

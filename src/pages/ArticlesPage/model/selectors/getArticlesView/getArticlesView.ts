@@ -1,5 +1,10 @@
-import { StateSchema } from 'app/providers/StoreProvider'
+import { createSelector } from '@reduxjs/toolkit'
+
 import { View } from 'shared/const/common'
 
-export const getArticlesView = (state: StateSchema) =>
-  state.articlesList?.view || View.LIST
+import { getArticlesData } from '../getArticlesData/getArticlesData'
+
+export const getArticlesView = createSelector(
+  getArticlesData,
+  (articlesData) => articlesData?.view || View.LIST
+)

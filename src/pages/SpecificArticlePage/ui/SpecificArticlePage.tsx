@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 
 import { SpecificArticle } from 'entities/Article'
-import { Container } from 'shared/ui/Container/Container'
+import { PageContainer } from 'shared/ui/PageContainer/PageContainer'
 import { CommentsSection } from 'widgets/CommentsSection'
 
 import { addCommentToArticle } from '../model/services/addCommentToArticle/addCommentToArticle'
@@ -20,13 +20,13 @@ const SpecificArticlePage: FC = memo(() => {
   const fetchComments = getFetcher(id)
 
   return (
-    <Container>
+    <PageContainer>
       <SpecificArticle id={id} />
       <CommentsSection
         fetchComments={fetchComments}
         sendNewComment={addCommentToArticle}
       />
-    </Container>
+    </PageContainer>
   )
 })
 

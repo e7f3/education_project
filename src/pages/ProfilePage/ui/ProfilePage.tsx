@@ -20,7 +20,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { Container } from 'shared/ui/Container/Container'
+import { PageContainer } from 'shared/ui/PageContainer/PageContainer'
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import { ProfilePageValidationErrors } from './ProfilePageValidationErrors/ProfilePageValidationErrors'
@@ -109,7 +109,7 @@ const ProfilePage: FC<ProfilePageProps> = memo((props) => {
 
   return (
     <DynamicReducerLoader reducers={initialReducers} removeAfterUnmount>
-      <Container>
+      <PageContainer>
         <ProfilePageHeader />
         <ProfilePageValidationErrors />
         <ProfileCard
@@ -126,7 +126,7 @@ const ProfilePage: FC<ProfilePageProps> = memo((props) => {
           changeUsername={changeUsername}
           changeAvatar={changeAvatar}
         />
-      </Container>
+      </PageContainer>
     </DynamicReducerLoader>
   )
 })

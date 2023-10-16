@@ -8,6 +8,7 @@ import {
   ButtonTheme,
   ButtonVariant,
 } from 'shared/ui/Button/Button'
+import { Icon } from 'shared/ui/Icon/Icon'
 import { LanguageToggler } from 'widgets/LanguageToggler'
 import { ThemeToggler } from 'widgets/ThemeToggler'
 
@@ -28,7 +29,7 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
   }, [])
 
   return (
-    <div
+    <aside
       className={classNames(
         classes.Sidebar,
         { [classes.collapsed]: collapsed },
@@ -45,13 +46,15 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
           onClick={onToggle}
           data-testid='sidebar-collapse-button'
         >
-          <CollapseIcon
+          <Icon
             className={classNames(
               classes.collapseIcon,
               { [classes.rotate]: collapsed },
               []
             )}
+            icon={CollapseIcon}
           />
+          {/* <CollapseIcon /> */}
         </Button>
         <SidebarNavigation
           className={classes.navigation}
@@ -62,6 +65,6 @@ export const Sidebar: FC<SidebarProps> = memo((props) => {
           <LanguageToggler short={collapsed} />
         </div>
       </div>
-    </div>
+    </aside>
   )
 })

@@ -33,7 +33,7 @@ export const SidebarNavigation: FC<SidebarNavigationProps> = memo((props) => {
   }, [collapsed, pathname, sidebarItems])
 
   return (
-    <div
+    <nav
       className={classNames(
         classes.SidebarNavigation,
         { [classes.collapsed]: collapsed },
@@ -42,6 +42,6 @@ export const SidebarNavigation: FC<SidebarNavigationProps> = memo((props) => {
       data-testid='sidebar-navigation'
     >
       {navigationLinks}
-    </div>
+    </nav>
   )
 })

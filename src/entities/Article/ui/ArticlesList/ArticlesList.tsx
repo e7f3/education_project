@@ -44,14 +44,16 @@ export const ArticlesList: FC<ArticlesListProps> = memo((props) => {
   let content
 
   if (isLoading) {
-    content = <Skeleton purpose={purpuse} />
+    // content = <Skeleton purpose={purpuse} />
   } else {
     content = articlesListItems
+    // content = <Skeleton purpose={purpuse} />
   }
 
   return (
     <ul className={classNames(classes.ArticlesList, {}, [classes[view]])}>
       {content}
+      {isLoading && <Skeleton purpose={purpuse} />}
     </ul>
   )
 })

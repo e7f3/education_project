@@ -5,19 +5,19 @@ import {
   FlexDecoratorVariant,
 } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 
-import { Container } from './Container'
+import { PageContainer } from './PageContainer'
 
 export default {
-  title: 'shared/Container',
-  component: Container,
+  title: 'shared/PageContainer',
+  component: PageContainer,
   argTypes: {},
   args: {
-    children: 'Container',
+    children: 'PageContainer',
   },
-} as ComponentMeta<typeof Container>
+} as ComponentMeta<typeof PageContainer>
 
-const Template: ComponentStory<typeof Container> = (args) => (
-  <Container {...args} />
+const Template: ComponentStory<typeof PageContainer> = (args) => (
+  <PageContainer {...args} />
 )
 
 export const Default = Template.bind({})

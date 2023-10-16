@@ -8,13 +8,13 @@
   align-items: center;
 
   width: 100%;
+  height: calc(100vh - var(--navbar-height));
   height:
     minmax(
       calc(100vh - var(--navbar-height)),
       calc(100% - var(--navbar-height))
     );
   max-width: var(--sidebar-width);
-  min-height: calc(100vh - var(--navbar-height));
   padding: var(--padding-v-size) var(--padding-h-size);
   box-sizing: border-box;
 

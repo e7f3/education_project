@@ -14,17 +14,9 @@ const RouteLink: FC = (data: ReactNode) => {
 export const AppRouter = memo(() => {
   const renderWithWrapper = useCallback((route: AppRouteProps) => {
     const { path, element, authOnly = false, name } = route
-    const wrapper = authOnly ? (
-      <RequireAuth>
-        <Suspense fallback={<PageLoader />}>
-          <div className='page'>{element}</div>
-        </Suspense>
-      </RequireAuth>
-    ) : (
-      <Suspense fallback={<PageLoader />}>
-        <div className='page'>{element}</div>
-      </Suspense>
-    )
+    const content = <Suspense fallback={<PageLoader />}>{element}</Suspense>
+    const wrapper = authOnly ? <RequireAuth>{content}</RequireAuth> : content
+
     return (
       <Route
         key={path}

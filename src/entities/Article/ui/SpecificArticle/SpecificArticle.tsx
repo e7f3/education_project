@@ -49,7 +49,7 @@ export const SpecificArticle: FC<SpecificArticleProps> = memo((props) => {
 
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
-      <div className={classes.SpecificArticle}>{content}</div>
+      <article className={classes.SpecificArticle}>{content}</article>
     </DynamicReducerLoader>
   )
 })

@@ -29,5 +29,5 @@ export const ArticleBody: FC<ArticleBodyProps> = memo((props) => {
     })
   }, [blocks])
 
-  return <article className={classes.ArticleBody}>{articleBody}</article>
+  return <div className={classes.ArticleBody}>{articleBody}</div>
 })

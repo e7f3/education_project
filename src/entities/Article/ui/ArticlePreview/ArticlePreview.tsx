@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate, useNavigation } from 'react-router-dom'
 
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { View } from 'shared/const/common'
-import { classNames } from 'shared/lib/utils/classNames/classNames'
+import { Mods, classNames } from 'shared/lib/utils/classNames/classNames'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
 import { Button, ButtonVariant } from 'shared/ui/Button/Button'
 import { Card, CardTheme } from 'shared/ui/Card/Card'
@@ -16,7 +16,6 @@ import {
   Article,
   ArticleBlockText,
   ArticleBlockType,
-  ArticleType,
 } from '../../model/types/article'
 
 interface ArticlePreviewProps {
@@ -35,6 +34,11 @@ export const ArticlePreview: FC<ArticlePreviewProps> = memo((props) => {
     }
   }, [navigate, article])
 
+  const mods: Mods = useMemo(
+    () => ({ [classes.navigate]: view === View.GRID }),
+    [view]
+  )
+
   if (!article) {
     return null
   }
@@ -43,14 +47,13 @@ export const ArticlePreview: FC<ArticlePreviewProps> = memo((props) => {
     (block) => block.type === ArticleBlockType.TEXT
   ) as ArticleBlockText | undefined
 
-  // const tags = article.type as ArticleType[]
   const tags = article.type.map((tag) => t(tag))
 
   return (
     <Card
-      className={classes.ArticlePreviewCard}
+      className={classNames(classes.ArticlePreviewCard, mods, [])}
       theme={CardTheme.DEFAULT}
-      // onClick={onCardClick}
+      onClick={view === View.GRID ? onCardClick : undefined}
       role='link'
     >
       <div className={classNames(classes.ArticlePreview, {}, [classes[view]])}>

@@ -4,6 +4,7 @@ import { ArticleBlockCode } from 'entities/Article/model/types/article'
 import CopyIcon from 'shared/assets/icons/copy.svg'
 import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Button, ButtonTheme, ButtonVariant } from 'shared/ui/Button/Button'
+import { Icon } from 'shared/ui/Icon/Icon'
 import { Text, TextVariant } from 'shared/ui/Text/Text'
 
 import classes from './ArticleCodeBlock.module.scss'
@@ -44,7 +45,7 @@ export const ArticleCodeBlock: FC<ArticleCodeBlockProps> = memo((props) => {
         theme={ButtonTheme.CLEAN}
         onClick={onClick}
       >
-        <CopyIcon className={classes.ButtonIcon} />
+        <Icon className={classes.ButtonIcon} icon={CopyIcon} />
       </Button>
     </div>
   )

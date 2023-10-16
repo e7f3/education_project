@@ -470,6 +470,154 @@ export const Skeleton: FC<SkeletonProps> = memo((props) => {
               ])}
             />
           </Card>
+          <Card className={classes.SkeletonCard}>
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardTitle,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardSubtitle,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardImage,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardButton,
+              ])}
+            />
+          </Card>
+          <Card className={classes.SkeletonCard}>
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardTitle,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardSubtitle,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardImage,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardButton,
+              ])}
+            />
+          </Card>
+          <Card className={classes.SkeletonCard}>
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardTitle,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardSubtitle,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardImage,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardButton,
+              ])}
+            />
+          </Card>
+          <Card className={classes.SkeletonCard}>
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardTitle,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardSubtitle,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardImage,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardText,
+              ])}
+            />
+            <div
+              className={classNames(classes.SkeletonElement, {}, [
+                classes.SkeletonCardButton,
+              ])}
+            />
+          </Card>
         </div>
       )
     case SkeletonPurpose.PROFILE:

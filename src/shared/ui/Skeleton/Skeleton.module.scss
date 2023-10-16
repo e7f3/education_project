@@ -1,11 +1,19 @@
-.Skeleton,
-.Skeleton.listArticles {
+.Skeleton {
   display: flex;
   flex-direction: column;
   gap: 100px;
   align-items: center;
 
   padding: 100px 0;
+}
+
+.Skeleton.listArticles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+
+  padding: 0;
 }
 
 .Skeleton.gridArticles {

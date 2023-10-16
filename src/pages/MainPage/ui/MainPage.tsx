@@ -1,12 +1,12 @@
 import { memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
-import { Container } from 'shared/ui/Container/Container'
+import { PageContainer } from 'shared/ui/PageContainer/PageContainer'
 
 const MainPage = memo(() => {
   const { t } = useTranslation('main')
 
-  return <Container>{t('Main Page')}</Container>
+  return <PageContainer>{t('Main Page')}</PageContainer>
 })
 
 export default MainPage
