@@ -15,11 +15,13 @@ import type { UserSchema } from 'entities/User'
 import type { NewCommentSchema } from 'features/AddComment'
 import type { LoginSchema } from 'features/AuthByUsername'
 import type { CommentsSchema } from 'features/FetchComments'
+import { ScrollPositionSchema } from 'features/SaveScrollPosition'
 import type { ArticlesPageSchema } from 'pages/ArticlesPage/'
 
 export interface StateSchema {
   counter: CounterSchema
   user: UserSchema
+  scrollPosition: ScrollPositionSchema
   loginForm?: LoginSchema
   profile?: ProfileSchema
   article?: ArticleSchema
@@ -43,7 +45,6 @@ export type StateSchemaKey = keyof StateSchema
 
 export interface ThunkExtraArgument {
   api: AxiosInstance
-  navigate?: (to: To, options?: NavigateOptions) => void
 }
 
 export interface ThunkApiConfig<T> {

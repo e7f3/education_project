@@ -20,7 +20,7 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { PageContainer } from 'shared/ui/PageContainer/PageContainer'
+import { PageContainer } from 'widgets/PageContainer'
 
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader'
 import { ProfilePageValidationErrors } from './ProfilePageValidationErrors/ProfilePageValidationErrors'

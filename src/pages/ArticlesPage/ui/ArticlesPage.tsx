@@ -10,17 +10,18 @@ import {
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
 import { useDebouncedCallback } from 'shared/lib/hooks/useDebounceCallback'
-import { PageContainer } from 'shared/ui/PageContainer/PageContainer'
 import { ContentControls } from 'widgets/ContentControls'
+import { PageContainer } from 'widgets/PageContainer'
 
 import { getArticlesHasMore } from '../model/selectors/getArticlesHasMore/getArticlesHasMore'
+import { getArticlesInitialized } from '../model/selectors/getArticlesInitialized/getArticlesInitialized'
 import { getArticlesIsLoading } from '../model/selectors/getArticlesIsLoading/getArticlesIsLoading'
 import { getArticlesLimit } from '../model/selectors/getArticlesLimit/getArticlesLimit'
 import { getArticlesList } from '../model/selectors/getArticlesList/getArticlesList'
 import { getArticlesPageNumber } from '../model/selectors/getArticlesPageNumber/getArticlesPageNumber'
 import { getArticlesView } from '../model/selectors/getArticlesView/getArticlesView'
-import { fetchArticlesList } from '../model/services/fetchArticlesList/fetchArticlesList'
 import { fetchNextArticles } from '../model/services/fetchNextArticles/fetchNextArticles'
+import { initializeArticlesPage } from '../model/services/initializeArticlesPage/initializeArticlesPage'
 import {
   articlesPageActions,
   articlesPageReducer,
@@ -35,6 +36,7 @@ const debounceDelay = 500
 const ArticlesPage: FC = memo(() => {
   const { t } = useTranslation('articles')
   const dispatch = useAppDispatch()
+  const initialized = useSelector(getArticlesInitialized)
   const isLoading = useSelector(getArticlesIsLoading)
   const articlesList = useSelector(getArticlesList)
   const articlesView = useSelector(getArticlesView)
@@ -61,17 +63,12 @@ const ArticlesPage: FC = memo(() => {
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
-      dispatch(articlesPageActions.initState())
-      dispatch(
-        fetchArticlesList({
-          page: 1,
-        })
-      )
+      dispatch(initializeArticlesPage())
     }
-  }, [dispatch])
+  }, [dispatch, initialized])
 
   return (
-    <DynamicReducerLoader reducers={reducers} removeAfterUnmount>
+    <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
       <PageContainer onPageReachesBottom={onPageReachesBottomDebounced}>
         <ContentControls view={articlesView} onViewChange={onViewChange} />
         <ArticlesList

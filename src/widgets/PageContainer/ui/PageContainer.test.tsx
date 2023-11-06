@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react'
 
+import { componentRender } from 'shared/lib/testHelpers/componentRender/componentRender'
+
 import { PageContainer } from './PageContainer'
 
 describe('PageContainer ui component', () => {
@@ -15,7 +17,7 @@ describe('PageContainer ui component', () => {
   })
 
   test('Appearance on screen', () => {
-    render(<PageContainer>PageContainer</PageContainer>)
+    componentRender(<PageContainer>PageContainer</PageContainer>)
 
     screen.debug()
     expect(screen.getByTestId('page-container')).toBeInTheDocument()

@@ -30,6 +30,7 @@ const articlesPageSlice = createSlice({
     page: 1,
     limit: 5,
     hasMore: true,
+    _initialized: false,
   }),
   reducers: {
     // Can pass adapter functions directly as case reducers.  Because we're passing this
@@ -53,6 +54,7 @@ const articlesPageSlice = createSlice({
         View.LIST
       state.view = view
       state.limit = view === View.LIST ? 5 : 9
+      state._initialized = true
     },
   },
   extraReducers: (builder) => {

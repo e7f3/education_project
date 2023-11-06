@@ -2,7 +2,7 @@ import { FC, memo } from 'react'
 import { useTranslation } from 'react-i18next'
 
 import { classNames } from 'shared/lib/utils/classNames/classNames'
-import { PageContainer } from 'shared/ui/PageContainer/PageContainer'
+import { PageContainer } from 'widgets/PageContainer'
 
 import classes from './NotFoundPage.module.scss'
 

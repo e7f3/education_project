@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 
 import { SpecificArticle } from 'entities/Article'
-import { PageContainer } from 'shared/ui/PageContainer/PageContainer'
 import { CommentsSection } from 'widgets/CommentsSection'
+import { PageContainer } from 'widgets/PageContainer'
 
 import { addCommentToArticle } from '../model/services/addCommentToArticle/addCommentToArticle'
 import { getFetcher } from '../model/services/fetchArticleComments/fetchArticleComments'
