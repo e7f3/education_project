@@ -5,6 +5,7 @@ import { ThunkApiConfig } from 'app/providers/StoreProvider'
 import { getArticlesHasMore } from '../../selectors/getArticlesHasMore/getArticlesHasMore'
 import { getArticlesIsLoading } from '../../selectors/getArticlesIsLoading/getArticlesIsLoading'
 import { getArticlesPageNumber } from '../../selectors/getArticlesPageNumber/getArticlesPageNumber'
+import { articlesPageActions } from '../../slices/articlesPageSlice'
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList'
 
 export const fetchNextArticles = createAsyncThunk<
@@ -19,6 +20,7 @@ export const fetchNextArticles = createAsyncThunk<
     const hasMore = getArticlesHasMore(getState())
 
     if (hasMore && !isLoading) {
+      dispatch(articlesPageActions.setPageNumber(page + 1))
       await dispatch(fetchArticlesList({ page: page + 1 }))
     }
 

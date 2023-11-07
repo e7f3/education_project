@@ -42,13 +42,23 @@ export const PageContainer: FC<PageContainerProps> = (props) => {
     getScrollPositionForPage(state, location.pathname)
   )
 
+  const callback = useCallback(() => {
+    if (onPageReachesBottom) {
+      if (wrapperRef.current) {
+        // Go to the saved scroll position to prevent jumping
+        wrapperRef.current.scrollTop = scrollPosition
+      }
+      onPageReachesBottom()
+    }
+  }, [onPageReachesBottom, scrollPosition])
+
   const params: UseInfiniteScrollParams = useMemo(
     () => ({
       wrapperRef: wrapperRef as MutableRefObject<HTMLElement>,
       targetRef: targetRef as MutableRefObject<HTMLElement>,
-      callback: onPageReachesBottom,
+      callback,
     }),
-    [onPageReachesBottom]
+    [callback]
   )
 
   const onPageScroll = useCallback(() => {
@@ -86,7 +96,9 @@ export const PageContainer: FC<PageContainerProps> = (props) => {
       data-testid='page-container'
     >
       {children}
-      <div className={classes.trigger} ref={targetRef} />
+      {onPageReachesBottom && (
+        <div className={classes.trigger} ref={targetRef} />
+      )}
     </div>
   )
 }

@@ -9,6 +9,13 @@
   overflow-y: scroll;
 }
 
+// .trigger {
+//   width: 100%;
+//   height: 10px;
+
+//   pointer-events: none;
+// }
+
 @media only screen and (min-width: 992px) {
   .PageContainer {
     padding: 0 var(--page-content-padding) 1px;

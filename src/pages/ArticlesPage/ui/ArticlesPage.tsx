@@ -9,7 +9,6 @@ import {
   ReducersList,
 } from 'shared/lib/components/DynamicReducerLoader/DynamicReducerLoader'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch'
-import { useDebouncedCallback } from 'shared/lib/hooks/useDebounceCallback'
 import { ContentControls } from 'widgets/ContentControls'
 import { PageContainer } from 'widgets/PageContainer'
 
@@ -31,10 +30,7 @@ const reducers: ReducersList = {
   articlesList: articlesPageReducer,
 }
 
-const debounceDelay = 500
-
 const ArticlesPage: FC = memo(() => {
-  const { t } = useTranslation('articles')
   const dispatch = useAppDispatch()
   const initialized = useSelector(getArticlesInitialized)
   const isLoading = useSelector(getArticlesIsLoading)
@@ -52,14 +48,10 @@ const ArticlesPage: FC = memo(() => {
   )
 
   const onPageReachesBottom = useCallback(() => {
-    dispatch(fetchNextArticles())
-    dispatch(articlesPageActions.setPageNumber(pageNumber + 1))
-  }, [pageNumber, dispatch])
-
-  const onPageReachesBottomDebounced = useDebouncedCallback(
-    onPageReachesBottom,
-    debounceDelay
-  )
+    if (hasMore) {
+      dispatch(fetchNextArticles())
+    }
+  }, [hasMore, dispatch])
 
   useEffect(() => {
     if (__PROJECT__ !== 'storybook') {
@@ -69,7 +61,7 @@ const ArticlesPage: FC = memo(() => {
 
   return (
     <DynamicReducerLoader reducers={reducers} removeAfterUnmount={false}>
-      <PageContainer onPageReachesBottom={onPageReachesBottomDebounced}>
+      <PageContainer onPageReachesBottom={onPageReachesBottom}>
         <ContentControls view={articlesView} onViewChange={onViewChange} />
         <ArticlesList
           articles={articlesList}

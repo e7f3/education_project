@@ -1,10 +1,10 @@
-import { FC, memo, useCallback, useEffect } from 'react'
+import { FC, memo, useCallback } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
 import ArrowLeft from 'shared/assets/icons/arrow-left.svg'
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
-import { Button, ButtonTheme, ButtonVariant } from 'shared/ui/Button/Button'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
 import { Icon } from 'shared/ui/Icon/Icon'
 import { Loader } from 'shared/ui/Loader/Loader'
 

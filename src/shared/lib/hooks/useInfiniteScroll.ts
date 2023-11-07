@@ -25,6 +25,7 @@ export const useInfiniteScroll = ({
     }
     const observer = new IntersectionObserver(handleObserver, options)
     observer.observe(targetRef.current)
+
     return () => {
       observer.disconnect()
     }
