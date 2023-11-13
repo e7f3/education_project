@@ -23,5 +23,8 @@
   "Logout": "Sign out",
   "Country": "Country",
   "Currency": "Currency",
-  "Back": "Back"
+  "Back": "Back",
+  "ContentSortByDate": "By date",
+  "ContentSortByTitle": "By title",
+  "ContentSortByViews": "By views"
 }

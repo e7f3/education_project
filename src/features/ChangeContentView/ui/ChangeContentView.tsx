@@ -12,9 +12,9 @@ import {
 } from 'shared/ui/Button/Button'
 import { Icon } from 'shared/ui/Icon/Icon'
 
-import classes from './ChangeView.module.scss'
+import classes from './ChangeContentView.module.scss'
 
-interface ChangeViewProps {
+interface ChangeContentViewProps {
   className?: string
   view?: View
   onViewChange?: (view: View) => void
@@ -31,7 +31,7 @@ const viewTypes = [
   },
 ]
 
-export const ChangeView: FC<ChangeViewProps> = memo((props) => {
+export const ChangeContentView: FC<ChangeContentViewProps> = memo((props) => {
   const { className, view = View.GRID, onViewChange } = props
 
   const onClick = useCallback(() => {

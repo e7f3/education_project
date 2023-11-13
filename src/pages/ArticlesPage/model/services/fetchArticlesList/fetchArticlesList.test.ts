@@ -390,9 +390,7 @@ describe('fetchArticlesList.test', () => {
       Promise.resolve({ data: articlesList.slice(0, 5) })
     )
 
-    const result = await thunk.callThunk({
-      page: 1,
-    })
+    const result = await thunk.callThunk({})
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
 
@@ -416,9 +414,7 @@ describe('fetchArticlesList.test', () => {
 
     thunk.api.get.mockReturnValue(Promise.resolve({ status: 403 }))
 
-    const result = await thunk.callThunk({
-      page: 1,
-    })
+    const result = await thunk.callThunk({})
 
     expect(thunk.dispatch).toHaveBeenCalledTimes(2)
     expect(thunk.api.get).toHaveBeenCalled()

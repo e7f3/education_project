@@ -23,5 +23,8 @@
   "Logout": "Выйти",
   "Country": "Страна",
   "Currency": "Валюта",
-  "Back": "Назад"
+  "Back": "Назад",
+  "ContentSortByDate": "По дате",
+  "ContentSortByTitle": "По алфавиту",
+  "ContentSortByViews": "По просмотрам"
 }

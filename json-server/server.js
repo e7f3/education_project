@@ -1,6 +1,7 @@
 const cors = require('cors')
 const fs = require('fs')
 const jsonServer = require('json-server')
+const _ = require('lodash')
 // const jwt = require('jsonwebtoken')
 const path = require('path')
 
@@ -142,6 +143,49 @@ server.post('/getUserById', (req, res) => {
     }
 
     return res.status(401).json({ message: 'User not found' })
+  } catch (error) {
+    console.log(error)
+    return res.status(500).json({ message: error.message })
+  }
+})
+
+server.get('/articles', (req, res) => {
+  try {
+    const types = req.query?.types.split(',')
+
+    const articles = router.db.get('articles').value()
+
+    const filteredArticles =
+      Array.isArray(types) && types.length
+        ? articles.filter((article) => {
+            const result = types.find((type) => article.type.includes(type))
+            return Boolean(result)
+          })
+        : articles
+
+    const orderedAndSortedArticles = _.orderBy(
+      filteredArticles,
+      [req.query._sort],
+      [req.query._order]
+    )
+
+    const searchQuery = req.query.q
+    const searchedArticles = searchQuery
+      ? orderedAndSortedArticles.filter((article) =>
+          Object.values(article).some((value) =>
+            value.toString().toLowerCase().includes(searchQuery.toLowerCase())
+          )
+        )
+      : orderedAndSortedArticles
+
+    // Apply pagination using standard JavaScript array methods
+    const page = parseInt(req.query._page, 10) || 1
+    const limit = parseInt(req.query._limit, 10) || 10
+    const startIndex = (page - 1) * limit
+    const endIndex = startIndex + limit
+    const paginatedArticles = searchedArticles.slice(startIndex, endIndex)
+
+    res.jsonp(paginatedArticles)
   } catch (error) {
     console.log(error)
     return res.status(500).json({ message: error.message })

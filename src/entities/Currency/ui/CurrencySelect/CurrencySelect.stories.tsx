@@ -12,7 +12,7 @@ import { CurrencySelect, CurrencyOption } from './CurrencySelect'
 import { Currency } from '../../model/types/currency'
 
 const selectOptions: CurrencyOption[] = Object.entries(Currency).map(
-  ([value, content]) => ({ value, content })
+  ([_, content]) => ({ value: content, content })
 )
 
 export default {

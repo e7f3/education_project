@@ -1,0 +1,25 @@
+.SearchContent {
+  display: grid;
+  grid-template-columns: subgrid;
+
+  column-gap: 20px;
+}
+
+.SearchInput {
+  grid-column: 1 / 3;
+}
+
+.SearchInput input {
+  width: 100%;
+}
+
+.SearchButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.SearchButton svg {
+  width: 20px;
+  height: 20px;
+}

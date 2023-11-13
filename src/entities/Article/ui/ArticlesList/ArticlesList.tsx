@@ -19,11 +19,14 @@ export const ArticlesList: FC<ArticlesListProps> = memo((props) => {
 
   const articlesListItems = useMemo(
     () =>
-      articles.map((article) => (
-        <li key={article.id} className={classes.ArticlesListItem}>
-          <ArticlePreview article={article} view={view} />
-        </li>
-      )),
+      articles.map((article) => {
+        console.log(article.id, article.createdAt)
+        return (
+          <li key={article.id} className={classes.ArticlesListItem}>
+            <ArticlePreview article={article} view={view} />
+          </li>
+        )
+      }),
 
     [articles, view]
   )

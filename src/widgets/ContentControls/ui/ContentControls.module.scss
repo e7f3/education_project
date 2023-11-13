@@ -1,8 +1,29 @@
 .ContentControls {
+  display: grid;
+  grid-template-rows: max-content max-content max-content;
+  grid-template-columns: max-content 1fr max-content;
+  row-gap: 10px;
+
   padding: 20px 0;
+
+  column-gap: 20px;
 }
 
 .ViewToggler svg {
   width: 20px;
   height: 20px;
+}
+
+.SelectSort {
+  margin-left: auto;
+}
+
+.OrderToggler svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ContentSearch {
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
 }

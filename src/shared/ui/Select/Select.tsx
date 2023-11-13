@@ -1,4 +1,4 @@
-import { FC, memo, SelectHTMLAttributes, useMemo } from 'react'
+import { FC, memo, SelectHTMLAttributes, useCallback, useMemo } from 'react'
 
 import { classNames, Mods } from 'shared/lib/utils/classNames/classNames'
 
@@ -9,25 +9,29 @@ type SelectAttributes = Omit<
   'value' | 'onChange' | 'readOnly'
 >
 
-export interface SelectOption {
-  value: string
+export interface SelectOption<T extends string> {
+  value: T
   content: string
 }
 
-export interface SelectProps extends SelectAttributes {
+export interface SelectProps<T extends string> extends SelectAttributes {
   className?: string
   label?: string
-  value?: string
-  onChange?: (value: string) => void
-  options?: SelectOption[]
+  value?: T
+  onChange?: (value: T) => void
+  options?: SelectOption<T>[]
   readonly?: boolean
 }
 
-export const Select: FC<SelectProps> = memo((props) => {
+export const Select = <T extends string>(props: SelectProps<T>) => {
   const { className, label, value, onChange, options, readonly = false } = props
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    onChange?.(event.target.value)
-  }
+
+  const handleChange = useCallback(
+    (event: React.ChangeEvent<HTMLSelectElement>) => {
+      onChange?.(event.target.value as T)
+    },
+    [onChange]
+  )
 
   const optionsList = useMemo(() => {
     return options?.map(({ value: optionValue, content }) => (
@@ -58,4 +62,4 @@ export const Select: FC<SelectProps> = memo((props) => {
       </select>
     </div>
   )
-})
+}

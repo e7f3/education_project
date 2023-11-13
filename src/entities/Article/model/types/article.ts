@@ -13,6 +13,7 @@ export interface Article {
 }
 
 export enum ArticleType {
+  // 'ALL' = 'ALL',
   'NEWS' = 'NEWS',
   'STYLE' = 'STYLE',
   'CRAFTSMANSHIP' = 'CRAFTSMANSHIP',

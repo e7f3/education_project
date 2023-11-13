@@ -12,7 +12,7 @@ import { CountrySelect, CountryOption } from './CountrySelect'
 import { Country } from '../../model/types/country'
 
 const selectOptions: CountryOption[] = Object.entries(Country).map(
-  ([value, content]) => ({ value, content })
+  ([_, content]) => ({ value: content, content })
 )
 
 export default {

@@ -23,12 +23,12 @@
   "articles": [
     {
       "id": "1",
-      "title": "Nicks boots.",
+      "title": "Nicks boots. AAAB",
       "subtitle": "Exploring the Craftsmanship and Quality of Nick's Boots: Where Tradition Meets Modern Comfort, a Journey into Footwear Excellence.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": ["STYLE", "HISTORY"],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
-      "views": "100",
-      "createdAt": "09.07.2023",
+      "views": "1000000",
+      "createdAt": "01.07.2023",
       "userId": "1",
       "blocks": [
         {
@@ -61,12 +61,12 @@
     },
     {
       "id": "2",
-      "title": "Nicks boots.",
+      "title": "Nicks boots. AAAA",
       "subtitle": "Exploring the Craftsmanship and Quality of Nick's Boots: Where Tradition Meets Modern Comfort, a Journey into Footwear Excellence.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": ["STYLE", "CRAFTSMANSHIP"],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
       "views": "100",
-      "createdAt": "09.07.2023",
+      "createdAt": "02.07.2023",
       "userId": "1",
       "blocks": [
         {
@@ -99,12 +99,12 @@
     },
     {
       "id": "3",
-      "title": "Nicks boots.",
+      "title": "Nicks boots. BAAA",
       "subtitle": "Exploring the Craftsmanship and Quality of Nick's Boots: Where Tradition Meets Modern Comfort, a Journey into Footwear Excellence.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": ["HISTORY", "CRAFTSMANSHIP"],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
-      "views": "100",
-      "createdAt": "09.07.2023",
+      "views": "10000",
+      "createdAt": "31.07.2023",
       "userId": "1",
       "blocks": [
         {
@@ -137,11 +137,11 @@
     },
     {
       "id": "4",
-      "title": "Nicks boots.",
+      "title": "Nicks boots. AABB",
       "subtitle": "Exploring the Craftsmanship and Quality of Nick's Boots: Where Tradition Meets Modern Comfort, a Journey into Footwear Excellence.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": ["NEWS"],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
-      "views": "100",
+      "views": "101",
       "createdAt": "09.07.2023",
       "userId": "1",
       "blocks": [
@@ -175,12 +175,12 @@
     },
     {
       "id": "5",
-      "title": "Nicks boots.",
+      "title": "Nicks boots. ABAB",
       "subtitle": "Exploring the Craftsmanship and Quality of Nick's Boots: Where Tradition Meets Modern Comfort, a Journey into Footwear Excellence.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": ["PEOPLE", "TRAVEL"],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
-      "views": "100",
-      "createdAt": "09.07.2023",
+      "views": "1001",
+      "createdAt": "10.07.2023",
       "userId": "1",
       "blocks": [
         {
@@ -213,12 +213,12 @@
     },
     {
       "id": "6",
-      "title": "Nicks boots.",
+      "title": "Nicks boots. BAAA",
       "subtitle": "Exploring the Craftsmanship and Quality of Nick's Boots: Where Tradition Meets Modern Comfort, a Journey into Footwear Excellence.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": ["CULTURE", "PEOPLE"],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
-      "views": "100",
-      "createdAt": "09.07.2023",
+      "views": "999",
+      "createdAt": "03.07.2023",
       "userId": "1",
       "blocks": [
         {
@@ -251,12 +251,12 @@
     },
     {
       "id": "7",
-      "title": "Nicks boots.",
+      "title": "Nicks boots. ABBB",
       "subtitle": "Exploring the Craftsmanship and Quality of Nick's Boots: Where Tradition Meets Modern Comfort, a Journey into Footwear Excellence.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": ["NEWS", "STYLE"],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
-      "views": "100",
-      "createdAt": "09.07.2023",
+      "views": "110",
+      "createdAt": "27.07.2023",
       "userId": "1",
       "blocks": [
         {
@@ -289,12 +289,12 @@
     },
     {
       "id": "8",
-      "title": "Nicks boots.",
+      "title": "Nicks boots. BABB",
       "subtitle": "Exploring the Craftsmanship and Quality of Nick's Boots: Where Tradition Meets Modern Comfort, a Journey into Footwear Excellence.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": ["CRAFTSMANSHIP", "PEOPLE"],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
-      "views": "100",
-      "createdAt": "09.07.2023",
+      "views": "10001",
+      "createdAt": "20.07.2023",
       "userId": "1",
       "blocks": [
         {
@@ -327,11 +327,11 @@
     },
     {
       "id": "9",
-      "title": "Nicks boots.",
+      "title": "Nicks boots. BAAB",
       "subtitle": "Exploring the Craftsmanship and Quality of Nick's Boots: Where Tradition Meets Modern Comfort, a Journey into Footwear Excellence.",
-      "type": ["STYLE", "HISTORY", "CRAFTSMANSHIP"],
+      "type": ["NEWS"],
       "image": "https://images.squarespace-cdn.com/content/v1/5beb2aef45776e0b962b8773/126bef1f-ac92-4bd9-8d20-da11e2449844/Nicks-Handmade-Boots-Heritage-Header.jpg?format=2500w",
-      "views": "100",
+      "views": "99",
       "createdAt": "09.07.2023",
       "userId": "1",
       "blocks": [
