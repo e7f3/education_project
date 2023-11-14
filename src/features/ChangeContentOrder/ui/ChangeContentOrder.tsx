@@ -9,7 +9,7 @@ import {
   ButtonTheme,
   ButtonVariant,
 } from 'shared/ui/Button/Button'
-import { Icon } from 'shared/ui/Icon/Icon'
+import { ColoredWith, Icon } from 'shared/ui/Icon/Icon'
 
 import classes from './ChangeContentOrder.module.scss'
 
@@ -43,7 +43,12 @@ export const ChangeContentOrder: FC<ChangeContentOrderProps> = memo((props) => {
         size={ButtonSize.L}
         onClick={onClick}
       >
-        <Icon className={classes.MirroredIcon} icon={OrderIcon} />
+        <Icon
+          className={classNames(classes.Icon, {}, [classes.MirroredIcon])}
+          icon={OrderIcon}
+          coloredWith={ColoredWith.FILL}
+          coloredDeep
+        />
       </Button>
       <Button
         theme={
@@ -53,7 +58,12 @@ export const ChangeContentOrder: FC<ChangeContentOrderProps> = memo((props) => {
         size={ButtonSize.L}
         onClick={onClick}
       >
-        <Icon icon={OrderIcon} />
+        <Icon
+          className={classes.Icon}
+          icon={OrderIcon}
+          coloredWith={ColoredWith.FILL}
+          coloredDeep
+        />
       </Button>
     </div>
   )

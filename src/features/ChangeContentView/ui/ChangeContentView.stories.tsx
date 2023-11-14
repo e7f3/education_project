@@ -7,41 +7,20 @@ import {
 } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
 import { View } from 'shared/const/common'
-import { ContentOrder, ContentSortBy } from 'shared/types/common'
 
-import { ContentControls } from './ContentControls'
+import { ChangeContentView } from './ChangeContentView'
 
 export default {
-  title: 'widgets/ContentControls',
-  component: ContentControls,
+  title: 'features/ChangeContentView',
+  component: ChangeContentView,
   argTypes: {},
   args: {
-    view: View.LIST,
-    sort: ContentSortBy.DATE,
-    order: ContentOrder.ASC,
-    search: '',
-    tags: [
-      {
-        value: 'CULTURE',
-        selected: true,
-        content: 'CULTURE',
-      },
-      {
-        value: 'CRAFTSMANSHIP',
-        selected: true,
-        content: 'CRAFTSMANSHIP',
-      },
-      {
-        value: 'STYLE',
-        selected: true,
-        content: 'STYLE',
-      },
-    ],
+    view: View.GRID,
   },
-} as ComponentMeta<typeof ContentControls>
+} as ComponentMeta<typeof ChangeContentView>
 
-const Template: ComponentStory<typeof ContentControls> = (args) => (
-  <ContentControls {...args} />
+const Template: ComponentStory<typeof ChangeContentView> = (args) => (
+  <ChangeContentView {...args} />
 )
 
 export const LightTheme = Template.bind({})

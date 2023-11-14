@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import SearchIcon from 'shared/assets/icons/find.svg'
 import { classNames } from 'shared/lib/utils/classNames/classNames'
 import { Button } from 'shared/ui/Button/Button'
-import { Icon } from 'shared/ui/Icon/Icon'
+import { ColoredWith, Icon } from 'shared/ui/Icon/Icon'
 import { Input } from 'shared/ui/Input/Input'
 
 import classes from './SearchContent.module.scss'
@@ -30,7 +30,7 @@ export const SearchContent: FC<SearchContentProps> = memo((props) => {
         onChange={onChange}
       />
       <Button className={classes.SearchButton} onClick={onSearchClick}>
-        <Icon icon={SearchIcon} />
+        <Icon icon={SearchIcon} coloredWith={ColoredWith.FILL} />
       </Button>
     </div>
   )

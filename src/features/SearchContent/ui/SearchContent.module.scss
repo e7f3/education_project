@@ -1,6 +1,7 @@
 .SearchContent {
   display: grid;
-  grid-template-columns: subgrid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr max-content;
 
   column-gap: 20px;
 }

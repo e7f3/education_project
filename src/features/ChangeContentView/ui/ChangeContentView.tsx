@@ -10,7 +10,7 @@ import {
   ButtonTheme,
   ButtonVariant,
 } from 'shared/ui/Button/Button'
-import { Icon } from 'shared/ui/Icon/Icon'
+import { ColoredWith, Icon } from 'shared/ui/Icon/Icon'
 
 import classes from './ChangeContentView.module.scss'
 
@@ -24,10 +24,12 @@ const viewTypes = [
   {
     view: View.GRID,
     icon: GridIcon,
+    coloredWith: ColoredWith.STROKE,
   },
   {
     view: View.LIST,
     icon: ListIcon,
+    coloredWith: ColoredWith.FILL,
   },
 ]
 
@@ -50,7 +52,11 @@ export const ChangeContentView: FC<ChangeContentViewProps> = memo((props) => {
           onClick={onClick}
           key={item.view}
         >
-          <Icon icon={item.icon} />
+          <Icon
+            className={classes.Icon}
+            icon={item.icon}
+            coloredWith={item.coloredWith}
+          />
         </Button>
       ))}
     </div>

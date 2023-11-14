@@ -6,42 +6,21 @@ import {
   FlexDecoratorVariant,
 } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { View } from 'shared/const/common'
-import { ContentOrder, ContentSortBy } from 'shared/types/common'
+import { ContentSortBy } from 'shared/types/common'
 
-import { ContentControls } from './ContentControls'
+import { ChangeContentSort } from './ChangeContentSort'
 
 export default {
-  title: 'widgets/ContentControls',
-  component: ContentControls,
+  title: 'features/ChangeContentSort',
+  component: ChangeContentSort,
   argTypes: {},
   args: {
-    view: View.LIST,
     sort: ContentSortBy.DATE,
-    order: ContentOrder.ASC,
-    search: '',
-    tags: [
-      {
-        value: 'CULTURE',
-        selected: true,
-        content: 'CULTURE',
-      },
-      {
-        value: 'CRAFTSMANSHIP',
-        selected: true,
-        content: 'CRAFTSMANSHIP',
-      },
-      {
-        value: 'STYLE',
-        selected: true,
-        content: 'STYLE',
-      },
-    ],
   },
-} as ComponentMeta<typeof ContentControls>
+} as ComponentMeta<typeof ChangeContentSort>
 
-const Template: ComponentStory<typeof ContentControls> = (args) => (
-  <ContentControls {...args} />
+const Template: ComponentStory<typeof ChangeContentSort> = (args) => (
+  <ChangeContentSort {...args} />
 )
 
 export const LightTheme = Template.bind({})

@@ -6,20 +6,14 @@ import {
   FlexDecoratorVariant,
 } from 'shared/config/storybook/FlexDecorator/FlexDecorator'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator'
-import { View } from 'shared/const/common'
-import { ContentOrder, ContentSortBy } from 'shared/types/common'
 
-import { ContentControls } from './ContentControls'
+import { SelectContentTags } from './SelectContentTags'
 
 export default {
-  title: 'widgets/ContentControls',
-  component: ContentControls,
+  title: 'features/SelectContentTags',
+  component: SelectContentTags,
   argTypes: {},
   args: {
-    view: View.LIST,
-    sort: ContentSortBy.DATE,
-    order: ContentOrder.ASC,
-    search: '',
     tags: [
       {
         value: 'CULTURE',
@@ -38,10 +32,10 @@ export default {
       },
     ],
   },
-} as ComponentMeta<typeof ContentControls>
+} as ComponentMeta<typeof SelectContentTags>
 
-const Template: ComponentStory<typeof ContentControls> = (args) => (
-  <ContentControls {...args} />
+const Template: ComponentStory<typeof SelectContentTags> = (args) => (
+  <SelectContentTags {...args} />
 )
 
 export const LightTheme = Template.bind({})
