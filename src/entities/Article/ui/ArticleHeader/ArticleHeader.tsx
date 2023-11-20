@@ -17,7 +17,7 @@ interface ArticleHeaderProps {
 export const ArticleHeader: FC<ArticleHeaderProps> = memo((props) => {
   const { data } = props
   const { image, title, subtitle, views, createdAt, type } = data
-  const { t } = useTranslation('article')
+  const { t } = useTranslation('articles')
 
   const tags = useMemo(() => type.map((tag) => t(tag)), [type, t])
 

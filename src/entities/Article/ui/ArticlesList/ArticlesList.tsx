@@ -6,29 +6,42 @@ import { Skeleton, SkeletonPurpose } from 'shared/ui/Skeleton/Skeleton'
 
 import classes from './ArticlesList.module.scss'
 import { Article } from '../../model/types/article'
+import { ArticleCardSize } from '../ArticleCard/ArticleCard'
 import { ArticlePreview } from '../ArticlePreview/ArticlePreview'
 
 interface ArticlesListProps {
   articles: Article[]
   view?: View
+  size?: ArticleCardSize
   isLoading?: boolean
+  className?: string
 }
 
 export const ArticlesList: FC<ArticlesListProps> = memo((props) => {
-  const { articles, view = View.GRID, isLoading = true } = props
+  const {
+    articles,
+    view = View.GRID,
+    size = ArticleCardSize.MEDIUM,
+    isLoading = true,
+    className,
+  } = props
 
   const articlesListItems = useMemo(
     () =>
       articles.map((article) => {
-        console.log(article.id, article.createdAt)
         return (
           <li key={article.id} className={classes.ArticlesListItem}>
-            <ArticlePreview article={article} view={view} />
+            <ArticlePreview
+              className={classes.ArticlePreview}
+              article={article}
+              view={view}
+              size={size}
+            />
           </li>
         )
       }),
 
-    [articles, view]
+    [articles, view, size]
   )
 
   let purpuse
@@ -47,14 +60,19 @@ export const ArticlesList: FC<ArticlesListProps> = memo((props) => {
   let content
 
   if (isLoading) {
-    // content = <Skeleton purpose={purpuse} />
+    content = <Skeleton purpose={purpuse} />
   } else {
     content = articlesListItems
     // content = <Skeleton purpose={purpuse} />
   }
 
   return (
-    <ul className={classNames(classes.ArticlesList, {}, [classes[view]])}>
+    <ul
+      className={classNames(classes.ArticlesList, {}, [
+        classes[view],
+        className,
+      ])}
+    >
       {content}
       {isLoading && <Skeleton purpose={purpuse} />}
     </ul>

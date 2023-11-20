@@ -1,4 +1,4 @@
-.ArticlePreviewCard {
+.ArticleCard {
   background-color: transparent;
 
   transition-property: background-color;
@@ -6,13 +6,13 @@
   transition-duration: 0.2s;
 }
 
-// .ArticlePreviewCard:hover {
+// .ArticleCardCard:hover {
 //   background-color: var(--secondary-bg-color);
 
 //   cursor: pointer;
 // }
 
-.ArticlePreview {
+.ArticleCardContent {
   position: relative;
 
   display: grid;
@@ -20,14 +20,15 @@
   width: 100%;
 }
 
-.ArticlePreview.Grid {
+.ArticleCardContent.Grid {
   grid-template-rows: max-content 1fr;
   row-gap: 20px;
 
+  height: 100%;
   padding: 20px;
 }
 
-.ArticlePreview.List {
+.ArticleCardContent.List {
   grid-template-rows: max-content;
   grid-template-columns: 1fr;
   row-gap: 20px;
@@ -37,12 +38,18 @@
   column-gap: 40px;
 }
 
-.ArticlePreview.Grid > .ArticlePreviewHead {
+.ArticleCardContent.Grid > .ArticleCardHead {
   display: grid;
   grid-template-columns: 1fr min-content;
 }
 
-.ArticlePreview.List > .ArticlePreviewHead {
+.ArticleCardContent.Grid > .ArticleCardBody {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.ArticleCardContent.List > .ArticleCardHead {
   grid-row: 1 / 2;
   grid-column: 1 / -1;
 
@@ -50,7 +57,7 @@
   grid-template-columns: 1fr max-content;
 }
 
-.ArticlePreview.List > .ArticlePreviewBody {
+.ArticleCardContent.List > .ArticleCardBody {
   grid-row: 2 / 3;
   grid-column: 1 / 2;
 
@@ -60,17 +67,17 @@
   row-gap: 10px;
 }
 
-.ArticlePreviewImage {
+.ArticleCardImage {
   object-fit: cover;
   object-position: center;
 }
 
-.ArticlePreview.List .ArticlePreviewImage {
+.ArticleCardContent.List .ArticleCardImage {
   width: auto;
   height: 250px;
 }
 
-.ArticlePreviewButton {
+.ArticleCardButton {
   grid-column: 1 / -1;
 
   z-index: 2;
@@ -81,18 +88,3 @@
 .navigate {
   cursor: pointer;
 }
-
-// .ArticlePreview.List::after {
-//   position: absolute;
-//   inset: 0;
-//   content: "";
-
-//   background-image:
-//     linear-gradient(
-//       to bottom,
-//       transparent 60%,
-//       var(--secondary-bg-color) 100%
-//     );
-
-//   pointer-events: none;
-// }

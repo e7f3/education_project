@@ -151,7 +151,7 @@ server.post('/getUserById', (req, res) => {
 
 server.get('/articles', (req, res) => {
   try {
-    const types = req.query?.types.split(',')
+    const types = req.query?.types?.split(',')
 
     const articles = router.db.get('articles').value()
 

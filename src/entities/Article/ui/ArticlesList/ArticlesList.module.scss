@@ -16,6 +16,10 @@
   width: 100%;
 }
 
+.ArticlesList.Grid .ArticlePreview {
+  height: 100%;
+}
+
 .ArticlesList.List {
   display: flex;
   flex-direction: column;

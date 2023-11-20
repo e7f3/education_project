@@ -50,8 +50,7 @@ const esRules = {
   'react/jsx-props-no-spreading': 'warn',
   'no-underscore-dangle': 'off',
   'import/no-import-module-exports': 'off',
-
-  'max-len': [2, { ignoreComments: true, ignoreUrls: true, code: 110, ignorePattern: '^import .*' }],
+  'max-len': [2, { ignoreComments: true, ignoreUrls: true, code: 140, ignorePattern: "^(import\\s.+\\sfrom\\s.+|\\} from)" }],
   '@typescript-eslint/no-var-requires': 'warn',
   'no-use-before-define': 'off',
   '@typescript-eslint/no-use-before-define': ['error', { enums: false }],

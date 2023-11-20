@@ -14,6 +14,7 @@ import type { ProfileSchema } from 'entities/Profile'
 import type { UserSchema } from 'entities/User'
 import type { NewCommentSchema } from 'features/AddComment'
 import type { LoginSchema } from 'features/AuthByUsername'
+import type { ArticleRecomendationsSchema } from 'features/FetchArticleRecomendations'
 import type { CommentsSchema } from 'features/FetchComments'
 import { ScrollPositionSchema } from 'features/SaveScrollPosition'
 import type { ArticlesPageSchema } from 'pages/ArticlesPage/'
@@ -25,6 +26,7 @@ export interface StateSchema {
   loginForm?: LoginSchema
   profile?: ProfileSchema
   article?: ArticleSchema
+  articleRecomendations?: ArticleRecomendationsSchema
   articlesList?: ArticlesPageSchema
   comments?: CommentsSchema
   newComment?: NewCommentSchema

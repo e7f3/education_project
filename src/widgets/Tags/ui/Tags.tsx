@@ -10,12 +10,12 @@ export enum TagSize {
 }
 
 interface TagsProps {
-  tags: string[]
+  tags?: string[]
   size?: TagSize
 }
 
 export const Tags: FC<TagsProps> = memo((props) => {
-  const { tags, size = TagSize.MEDIUM } = props
+  const { tags = [], size = TagSize.MEDIUM } = props
 
   let textVariant: TextVariant
   switch (size) {
@@ -30,6 +30,10 @@ export const Tags: FC<TagsProps> = memo((props) => {
       break
     default:
       textVariant = TextVariant.PARAGRAPH
+  }
+
+  if (!tags.length) {
+    return null
   }
 
   return (

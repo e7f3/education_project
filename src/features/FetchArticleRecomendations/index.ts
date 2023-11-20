@@ -1,0 +1,6 @@
+export { ArticleRecomendationsSchema } from './model/types/articleRecomendations'
+export { articleRecomendationsReducer } from './model/slices/articleRecomendationsSlice'
+export { articleRecomendationsActions } from './model/slices/articleRecomendationsSlice'
+export { getArticleRecomendationsIsLoading } from './model/selectors/getArticleRecomendationsIsLoading/getArticleRecomendationsIsLoading'
+export { getArticleRecomendationsError } from './model/selectors/getArticleRecomendationsError/getArticleRecomendationsError'
+export { ArticleRecomendations } from './ui/ArticleRecomendations/ArticleRecomendations'

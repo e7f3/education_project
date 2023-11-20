@@ -1,96 +1,62 @@
-import { FC, memo, useCallback, useMemo } from 'react'
-import { useTranslation } from 'react-i18next'
-import { Link, useLocation, useNavigate, useNavigation } from 'react-router-dom'
+import { FC, memo, useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig'
 import { View } from 'shared/const/common'
-import { Mods, classNames } from 'shared/lib/utils/classNames/classNames'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
-import { Button, ButtonVariant } from 'shared/ui/Button/Button'
-import { Card, CardTheme } from 'shared/ui/Card/Card'
-import { Text, TextVariant } from 'shared/ui/Text/Text'
-import { Tags, TagSize } from 'widgets/Tags'
 
-import classes from './ArticlePreview.module.scss'
-import {
-  Article,
-  ArticleBlockText,
-  ArticleBlockType,
-} from '../../model/types/article'
+import { Article } from '../../model/types/article'
+import { ArticleCard, ArticleCardSize } from '../ArticleCard/ArticleCard'
 
 interface ArticlePreviewProps {
   view?: View
+  size?: ArticleCardSize
   article?: Article
+  className?: string
 }
 
 export const ArticlePreview: FC<ArticlePreviewProps> = memo((props) => {
-  const { article, view = View.GRID } = props
-  const navigate = useNavigate()
-  const { t } = useTranslation('articles')
+  const {
+    article,
+    view = View.GRID,
+    size = ArticleCardSize.MEDIUM,
+    className,
+  } = props
 
-  const onCardClick = useCallback(() => {
+  const navigate = useNavigate()
+
+  const onClick = useCallback(() => {
     if (article) {
       navigate(RoutePath[AppRoutes.SPECIFIC_ARTICLE] + article.id)
     }
   }, [navigate, article])
 
-  const mods: Mods = useMemo(
-    () => ({ [classes.navigate]: view === View.GRID }),
-    [view]
-  )
-
   if (!article) {
     return null
   }
 
-  const firstTextBlock = article.blocks.find(
-    (block) => block.type === ArticleBlockType.TEXT
-  ) as ArticleBlockText | undefined
-
-  const tags = article.type.map((tag) => t(tag))
-
-  return (
-    <Card
-      className={classNames(classes.ArticlePreviewCard, mods, [])}
-      theme={CardTheme.DEFAULT}
-      onClick={view === View.GRID ? onCardClick : undefined}
-      role='link'
-    >
-      <div className={classNames(classes.ArticlePreview, {}, [classes[view]])}>
-        <div className={classes.ArticlePreviewHead}>
-          <Tags tags={tags} size={TagSize.SMALL} />
-          <div className={classes.ArticlePreviewDate}>
-            <Text content={article.createdAt} variant={TextVariant.CAPTION} />
-          </div>
-        </div>
-        <div className={classes.ArticlePreviewBody}>
-          <Text content={article.title} variant={TextVariant.TITLE} />
-          <Text content={article.subtitle} variant={TextVariant.SUBTITLE} />
-          {view === View.LIST && (
-            <>
-              <img
-                className={classes.ArticlePreviewImage}
-                src={article.image}
-                alt={article.title}
-              />
-              {firstTextBlock && (
-                <Text
-                  className={classes.ArticlePreviewText}
-                  content={firstTextBlock.paragraphs[0]}
-                  variant={TextVariant.PARAGRAPH}
-                />
-              )}
-            </>
-          )}
-        </div>
-        <Button
-          className={classes.ArticlePreviewButton}
-          variant={ButtonVariant.DEFAULT}
-          onClick={onCardClick}
-        >
-          {t('More')}
-        </Button>
-      </div>
-    </Card>
-  )
+  switch (view) {
+    case View.GRID:
+      return (
+        <AppLink to={RoutePath[AppRoutes.SPECIFIC_ARTICLE] + article.id}>
+          <ArticleCard
+            view={view}
+            size={size}
+            article={article}
+            onClick={onClick}
+            className={className}
+          />
+        </AppLink>
+      )
+    default:
+      return (
+        <ArticleCard
+          view={view}
+          size={size}
+          article={article}
+          onClick={onClick}
+          className={className}
+        />
+      )
+  }
 })
